@@ -22,22 +22,23 @@
             --foamico-light-grey: #DDDDDD;
             --foamico-mist: #F2F4EC;
             --foamico-paper: #F6F8F1;
+            --foamico-sage: #C9DDA0;
             --foamico-font-head: "Montserrat", "Calibri", Arial, sans-serif;
             --foamico-font-body: "Poppins", "Calibri", Arial, sans-serif;
             --foamico-radius-card: 8px;
             --foamico-radius-pill: 999px;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         @media (prefers-reduced-motion: reduce) {
             html {
                 scroll-behavior: auto;
@@ -49,7 +50,7 @@
                 transition-duration: .01ms!important;
             }
         }
-        
+
         body {
             font-family: var(--foamico-font-body);
             background: var(--foamico-paper);
@@ -58,7 +59,7 @@
             font-size: 16px;
             -webkit-font-smoothing: antialiased;
         }
-        
+
         h1,
         h2,
         h3 {
@@ -67,31 +68,31 @@
             line-height: 1.2;
             color: var(--foamico-key-black);
         }
-        
+
         a {
             color: inherit;
             text-decoration: none;
         }
-        
+
         button {
             font-family: var(--foamico-font-body);
             cursor: pointer;
             border: none;
         }
-        
+
          :focus-visible {
             outline: 3px solid var(--foamico-avocado);
             outline-offset: 3px;
             border-radius: 4px;
         }
-        
+
         .wrap {
             max-width: 1180px;
             margin: 0 auto;
             padding: 0 24px;
         }
         /* NAV */
-        
+
         header {
             position: sticky;
             top: 0;
@@ -101,7 +102,7 @@
             border-bottom: 1px solid rgba(26, 26, 26, .08);
             box-shadow: 0 10px 30px rgba(26, 26, 26, .05);
         }
-        
+
         .nav {
             display: flex;
             align-items: center;
@@ -109,14 +110,14 @@
             height: 80px;
             gap: 20px;
         }
-        
+
         .brand {
             display: flex;
             align-items: center;
             gap: 12px;
             flex-shrink: 0;
         }
-        
+
         .brand-mark {
             width: 46px;
             height: 46px;
@@ -125,7 +126,7 @@
             flex-shrink: 0;
             border: 5px solid var(--foamico-kiwi);
         }
-        
+
         .brand-mark::after {
             content: '';
             position: absolute;
@@ -135,11 +136,11 @@
             border-width: 5px 0 0 5px;
             transform: rotate(-45deg);
         }
-        
+
         .brand-text {
             line-height: 1.1;
         }
-        
+
         .brand-text b {
             display: block;
             font-family: var(--foamico-font-head);
@@ -148,7 +149,7 @@
             letter-spacing: .06em;
             color: var(--foamico-key-black);
         }
-        
+
         .brand-text span {
             display: block;
             font-size: 9px;
@@ -157,7 +158,7 @@
             color: var(--foamico-key-black);
             font-weight: 500;
         }
-        
+
         .nav-links {
             display: flex;
             gap: 24px;
@@ -165,11 +166,11 @@
             align-items: center;
             margin-left: auto;
         }
-        
+
         .nav-links>li {
             position: relative;
         }
-        
+
         .nav-links a {
             font-family: var(--foamico-font-head);
             font-weight: 700;
@@ -177,17 +178,17 @@
             color: var(--foamico-key-black);
             transition: color .2s;
         }
-        
+
         .nav-links a:hover {
             color: var(--foamico-avocado);
         }
-        
+
         .has-drop>a::after {
             content: ' ▾';
             font-size: 12px;
             color: var(--foamico-sand);
         }
-        
+
         .drop {
             position: absolute;
             top: calc(100% + 14px);
@@ -204,14 +205,14 @@
             transform: translateY(-6px);
             transition: all .2s;
         }
-        
+
         .has-drop:hover .drop,
         .has-drop:focus-within .drop {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-        
+
         .drop-header {
             font-family: var(--foamico-font-head);
             font-weight: 800;
@@ -222,14 +223,14 @@
             margin-bottom: 14px;
             display: block;
         }
-        
+
         .drop-sub {
             font-size: 12px;
             color: var(--foamico-sand);
             margin-bottom: 12px;
             display: block;
         }
-        
+
         .drop a {
             display: block;
             padding: 9px 14px;
@@ -241,16 +242,16 @@
             transition: background .2s;
             margin-bottom: 4px;
         }
-        
+
         .drop a:hover {
             background: var(--foamico-calm);
         }
-        
+
         .drop-sep {
             border-top: 1px solid var(--foamico-light-grey);
             margin: 12px 6px;
         }
-        
+
         .drop-cta {
             display: block;
             padding: 9px 14px;
@@ -263,11 +264,11 @@
             margin-top: 12px;
             transition: color .2s;
         }
-        
+
         .drop-cta:hover {
             color: var(--foamico-kiwi);
         }
-        
+
         .pill {
             background: var(--foamico-key-black);
             color: var(--foamico-key-black);
@@ -283,38 +284,49 @@
             border: 2px solid var(--foamico-key-black);
             white-space: nowrap;
         }
-        
+
         .pill:hover {
             background: var(--foamico-kiwi);
             color: var(--foamico-key-black);
             transform: translateY(-1px);
         }
-        
+
         @media(max-width:980px) {
             .nav-links {
                 display: none;
             }
         }
         /* HERO */
-        
+
         .hero {
-            background: linear-gradient(90deg, rgba(254, 254, 254, .96) 0%, rgba(254, 254, 254, .88) 46%, rgba(242, 244, 236, .92) 100%), var(--foamico-paper);
+            background: linear-gradient(125deg, var(--foamico-egg-white) 0%, var(--foamico-paper) 58%, var(--foamico-calm) 100%);
             position: relative;
-            min-height: calc(100vh - 80px);
+            min-height: 76vh;
             display: grid;
-            grid-template-columns: minmax(0, 520px) minmax(420px, 1fr);
+            grid-template-columns: minmax(0, 1.05fr) minmax(340px, .75fr);
             align-items: center;
-            gap: 56px;
-            padding: 72px max(24px, calc((100vw - 1180px) / 2)) 52px;
+            gap: 72px;
+            padding: 86px max(24px, calc((100vw - 1180px) / 2)) 76px;
             overflow: hidden;
         }
-        
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            right: max(24px, calc((100vw - 1180px) / 2));
+            top: 70px;
+            width: min(36vw, 420px);
+            height: min(36vw, 420px);
+            border: 1px solid rgba(63, 94, 18, .16);
+            border-radius: 50%;
+        }
+
         .hero-content {
             position: relative;
             z-index: 2;
             max-width: 680px;
         }
-        
+
         .eyebrow {
             display: inline-flex;
             align-items: center;
@@ -327,20 +339,20 @@
             letter-spacing: .12em;
             text-transform: uppercase;
         }
-        
+
         .hero h1 {
             font-size: clamp(38px, 6vw, 76px);
             margin-bottom: 24px;
             line-height: 1.02;
         }
-        
+
         .hero p.lede {
             font-size: 19px;
             color: var(--foamico-slate);
             margin-bottom: 18px;
             line-height: 1.7;
         }
-        
+
         .hero-buttons {
             display: flex;
             gap: 16px;
@@ -348,7 +360,7 @@
             flex-wrap: wrap;
             margin-top: 32px;
         }
-        
+
         .btn-primary {
             background: var(--foamico-kiwi);
             color: var(--foamico-key-black);
@@ -359,11 +371,11 @@
             font-size: 15px;
             transition: filter .2s;
         }
-        
+
         .btn-primary:hover {
             filter: brightness(.94);
         }
-        
+
         .btn-secondary {
             background: var(--foamico-egg-white);
             color: var(--foamico-key-black);
@@ -376,129 +388,105 @@
             transition: all .2s;
             cursor: pointer;
         }
-        
+
         .btn-secondary:hover {
             background: var(--foamico-key-black);
             color: var(--foamico-egg-white);
         }
-        
+
         .hero-visual {
             position: relative;
             z-index: 2;
-        }
-        
-        .hero-range {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-auto-rows: 150px;
-            gap: 14px;
-            align-items: stretch;
-        }
-        
-        .hero-tile {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            background: var(--foamico-egg-white);
-            border: 1px solid rgba(26, 26, 26, .08);
-            box-shadow: 0 20px 48px rgba(26, 26, 26, .12);
-        }
-        
-        .hero-tile img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform .4s ease;
-        }
-        
-        .hero-tile:hover img {
-            transform: scale(1.04);
-        }
-        
-        .hero-tile::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 46%, rgba(26, 26, 26, .62));
-        }
-        
-        .hero-tile span {
-            position: absolute;
-            left: 14px;
-            bottom: 12px;
-            z-index: 1;
-            color: var(--foamico-egg-white);
-            font-family: var(--foamico-font-head);
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-        }
-        
-        .hero-tile.large {
-            grid-column: span 3;
-            grid-row: span 2;
-        }
-        
-        .hero-tile.medium {
-            grid-column: span 3;
-        }
-        
-        .hero-tile.small {
-            grid-column: span 2;
-        }
-        
-        .range-note {
-            grid-column: span 2;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            gap: 4px;
-            border-radius: 8px;
-            padding: 18px;
-            background: var(--foamico-key-black);
-            color: var(--foamico-egg-white);
-            box-shadow: 0 20px 48px rgba(26, 26, 26, .14);
+            gap: 20px;
         }
-        
-        .range-note strong {
+
+        .hero-photo {
+            aspect-ratio: 16/11;
+            border-radius: var(--foamico-radius-card);
+            background: linear-gradient(135deg, var(--foamico-calm), var(--foamico-mist));
+            border: 1px dashed rgba(63, 94, 18, .35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 24px;
+            color: var(--foamico-avocado);
+            font-size: 12px;
+            font-family: var(--foamico-font-head);
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+        }
+
+        .hero-card {
+            background: rgba(254, 254, 254, .86);
+            border: 1px solid rgba(26, 26, 26, .08);
+            border-radius: 8px;
+            padding: 34px;
+            box-shadow: 0 24px 60px rgba(26, 26, 26, .1);
+        }
+
+        .hero-card h2 {
+            font-size: clamp(24px, 3vw, 34px);
+            margin-bottom: 14px;
+        }
+
+        .hero-card p {
+            color: var(--foamico-slate);
+            font-size: 15px;
+            line-height: 1.75;
+            margin-bottom: 28px;
+        }
+
+        .hero-proof-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .hero-proof {
+            border-radius: 8px;
+            background: var(--foamico-mist);
+            border: 1px solid var(--foamico-light-grey);
+            padding: 18px;
+        }
+
+        .hero-proof strong {
+            display: block;
+            color: var(--foamico-avocado);
             font-family: var(--foamico-font-head);
             font-size: 28px;
+            font-weight: 800;
             line-height: 1;
+            margin-bottom: 8px;
         }
-        
-        .range-note span {
+
+        .hero-proof span {
+            color: var(--foamico-slate);
             font-size: 13px;
-            color: rgba(254, 254, 254, .72);
         }
-        
+
         @media(max-width:960px) {
             .hero {
                 grid-template-columns: 1fr;
                 min-height: auto;
                 padding-top: 56px;
             }
-            .hero-range {
-                grid-auto-rows: 130px;
-            }
         }
-        
+
         @media(max-width:620px) {
-            .hero-range {
-                grid-template-columns: 1fr 1fr;
-                grid-auto-rows: 120px;
+            .hero {
+                padding-bottom: 48px;
             }
-            .hero-tile.large,
-            .hero-tile.medium,
-            .hero-tile.small,
-            .range-note {
-                grid-column: span 1;
-                grid-row: span 1;
+            .hero-proof-grid {
+                grid-template-columns: 1fr;
             }
         }
         /* TRUST STRIP */
-        
+
         .trust-strip {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -511,13 +499,13 @@
             box-shadow: 0 18px 48px rgba(26, 26, 26, .08);
             transform: translateY(-24px);
         }
-        
+
         @media(max-width:768px) {
             .trust-strip {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        
+
         .trust-item strong {
             display: block;
             font-family: var(--foamico-font-head);
@@ -526,54 +514,47 @@
             margin-bottom: 4px;
             color: var(--foamico-avocado);
         }
-        
+
         .trust-item span {
             font-size: 13px;
             color: var(--foamico-sand);
         }
         /* COLLECTION */
-        
+
         .collection {
-            background: var(--foamico-paper);
+            background: var(--foamico-egg-white);
             padding: 72px 0 96px;
         }
-        
+
         .collection-head {
             text-align: center;
             max-width: 680px;
             margin: 0 auto 72px;
         }
-        
+
         .collection-head h2 {
             font-size: clamp(28px, 4vw, 44px);
             margin-bottom: 20px;
         }
-        
+
         .collection-head p {
             font-size: 16.5px;
             color: var(--foamico-slate);
             line-height: 1.8;
         }
-        
+
         .product-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 28px;
         }
-        
-        @media(max-width:1020px) {
-            .product-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
-            }
+
+        .product-card {
+            flex: 1 1 320px;
+            max-width: 372px;
         }
-        
-        @media(max-width:700px) {
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
+
         .product-card {
             background: var(--foamico-egg-white);
             border-radius: var(--foamico-radius-card);
@@ -582,82 +563,51 @@
             border: 1px solid rgba(26, 26, 26, .08);
             box-shadow: 0 14px 34px rgba(26, 26, 26, .07);
         }
-        
+
         .product-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 20px 50px rgba(26, 26, 26, .12);
         }
-        
+
         .product-gallery {
             background: linear-gradient(180deg, var(--foamico-egg-white), var(--foamico-mist));
             border-bottom: 1px solid var(--foamico-light-grey);
-            padding: 16px;
-            min-height: 340px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+            padding: 18px;
         }
-        
+
         .product-main {
             background: var(--foamico-egg-white);
             border-radius: 8px;
-            aspect-ratio: 4/3;
+            aspect-ratio: 5/3;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 13px;
             color: var(--foamico-sand);
-            flex: 1;
             overflow: hidden;
         }
-        
+
         .product-main img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
-        .product-thumbs {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-        }
-        
-        .product-thumb {
-            background: var(--foamico-egg-white);
-            border-radius: 6px;
-            aspect-ratio: 1/1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            color: var(--foamico-sand);
-            font-weight: 500;
-            border: 1px solid var(--foamico-light-grey);
-            overflow: hidden;
-        }
-        
-        .product-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
+
         .product-body {
             padding: 24px;
         }
-        
+
         .product-name {
             font-size: 24px;
             font-weight: 800;
             margin-bottom: 16px;
             text-transform: uppercase;
         }
-        
+
         .product-bestfor {
             margin-bottom: 20px;
         }
-        
+
         .bestfor-label {
             font-family: var(--foamico-font-head);
             font-weight: 700;
@@ -668,13 +618,13 @@
             margin-bottom: 10px;
             display: block;
         }
-        
+
         .bestfor-items {
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
-        
+
         .bestfor-item {
             font-size: 14px;
             color: var(--foamico-key-black);
@@ -682,14 +632,14 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .bestfor-item::before {
             content: '✓';
             color: var(--foamico-kiwi);
             font-weight: 800;
             font-size: 16px;
         }
-        
+
         .product-cta {
             display: inline-flex;
             align-items: center;
@@ -703,183 +653,276 @@
             transition: color .2s;
             margin-top: 16px;
         }
-        
+
         .product-cta:hover {
             color: var(--foamico-kiwi);
         }
-        
+
         .product-cta::after {
             content: '→';
             font-size: 16px;
         }
         /* WHY FOAMICO */
-        
+
         .why-foamico {
             background: var(--foamico-paper);
             padding: 96px 0;
         }
-        
+
         .why-head {
             text-align: center;
             max-width: 620px;
             margin: 0 auto 72px;
         }
-        
+
         .why-head h2 {
             font-size: clamp(26px, 3.5vw, 40px);
             margin-bottom: 20px;
         }
-        
+
         .why-head p {
             font-size: 17px;
             color: var(--foamico-slate);
             line-height: 1.8;
         }
-        
-        .why-grid {
+
+        .why-body {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            grid-template-columns: minmax(260px, 380px) 1fr;
+            gap: 56px;
+            align-items: center;
         }
-        
+
         @media(max-width:900px) {
-            .why-grid {
+            .why-body {
                 grid-template-columns: 1fr;
-                gap: 32px;
+                gap: 36px;
             }
         }
-        
-        .why-card {
+
+        .why-photo {
+            aspect-ratio: 3/4;
+            border-radius: var(--foamico-radius-card);
+            background: linear-gradient(135deg, var(--foamico-mist), var(--foamico-calm));
+            border: 1px dashed rgba(63, 94, 18, .35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            padding: 24px;
+            color: var(--foamico-avocado);
+            font-size: 12px;
+            font-family: var(--foamico-font-head);
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
         }
-        
+
+        .why-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .why-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            text-align: left;
+        }
+
         .why-icon {
-            width: 72px;
-            height: 72px;
+            width: 60px;
+            height: 60px;
             background: var(--foamico-calm);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 32px;
+            flex-shrink: 0;
+            color: var(--foamico-avocado);
         }
-        
+
+        .why-icon svg {
+            width: 26px;
+            height: 26px;
+        }
+
         .why-card h3 {
             font-size: 20px;
             margin-bottom: 12px;
         }
-        
+
         .why-card p {
             color: var(--foamico-slate);
             font-size: 15px;
             line-height: 1.75;
         }
         /* LAYER BREAKDOWN */
-        
+
         .layers {
             background: var(--foamico-egg-white);
             padding: 96px 0;
             border-top: 1px solid var(--foamico-light-grey);
             border-bottom: 1px solid var(--foamico-light-grey);
         }
-        
+
         .layer-head {
             text-align: center;
             max-width: 620px;
             margin: 0 auto 72px;
         }
-        
+
         .layer-head h2 {
             font-size: clamp(26px, 3.5vw, 40px);
             margin-bottom: 20px;
         }
-        
+
         .layer-head p {
             font-size: 16px;
             color: var(--foamico-slate);
         }
-        
+
         .layer-visual-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 56px;
             align-items: center;
         }
-        
+
         @media(max-width:900px) {
             .layer-visual-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
         }
-        
+
         .layer-illustration {
             background: var(--foamico-mist);
             border-radius: var(--foamico-radius-card);
             padding: 40px;
             border: 1px solid var(--foamico-light-grey);
-            min-height: 400editspx;
+            min-height: 400px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 2px;
         }
-        
+
+        .layer-stack {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 24px 48px rgba(26, 26, 26, .14);
+            border: 1px solid rgba(26, 26, 26, .08);
+        }
+
         .layer-block {
-            background: var(--foamico-egg-white);
-            border: 2px solid var(--foamico-light-grey);
-            border-radius: 8px;
-            padding: 18px 20px;
-            text-align: center;
+            border: none;
+            border-left: 4px solid transparent;
+            border-bottom: 1px solid rgba(26, 26, 26, .08);
+            border-radius: 0;
+            padding: 20px 24px;
+            text-align: left;
             cursor: pointer;
-            transition: all .3s;
+            color: var(--foamico-key-black);
+            transition: filter .25s, border-color .25s;
         }
-        
-        .layer-block:hover {
-            border-color: var(--foamico-kiwi);
+
+        .layer-block:last-child {
+            border-bottom: none;
+        }
+
+        .layer-block[data-layer="fabric"] {
+            background: var(--foamico-egg-white);
+            background-image: radial-gradient(rgba(26, 26, 26, .06) 1px, transparent 1.4px);
+            background-size: 16px 16px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+
+        .layer-block[data-layer="ortho"] {
             background: var(--foamico-calm);
+            padding-top: 22px;
+            padding-bottom: 22px;
         }
-        
+
+        .layer-block[data-layer="latex"] {
+            background: var(--foamico-mist);
+            padding-top: 22px;
+            padding-bottom: 22px;
+        }
+
+        .layer-block[data-layer="support"] {
+            background: var(--foamico-sage);
+            padding-top: 36px;
+            padding-bottom: 36px;
+        }
+
+        .layer-block[data-layer="base"] {
+            background: var(--foamico-charcoal);
+            color: var(--foamico-egg-white);
+            padding-top: 18px;
+            padding-bottom: 18px;
+        }
+
+        .layer-block:hover {
+            border-left-color: var(--foamico-kiwi);
+            filter: brightness(.96);
+        }
+
         .layer-block.active {
-            border-color: var(--foamico-kiwi);
+            border-left-color: var(--foamico-kiwi);
             background: var(--foamico-kiwi);
             color: var(--foamico-key-black);
         }
-        
+
         .layer-block-name {
             font-family: var(--foamico-font-head);
             font-weight: 700;
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: .06em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
         }
-        
+
+        .layer-block-name::after {
+            content: '→';
+            font-size: 14px;
+            opacity: .45;
+            transition: opacity .25s;
+        }
+
+        .layer-block.active .layer-block-name::after {
+            opacity: 1;
+        }
+
         .layer-details {
             margin-top: 48px;
         }
-        
+
         .layer-details h3 {
             font-size: 18px;
             margin-bottom: 12px;
             color: var(--foamico-key-black);
         }
-        
+
         .layer-details p {
             color: var(--foamico-slate);
             font-size: 15px;
             line-height: 1.75;
         }
-        
+
         .layer-details .description {
             display: none;
             animation: fadeIn .3s ease-in;
         }
-        
+
         .layer-details .description.active {
             display: block;
         }
-        
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -889,7 +932,7 @@
             }
         }
         /* TRUST SECTION */
-        
+
         .trust-section {
             background: linear-gradient(135deg, var(--foamico-avocado) 0%, var(--foamico-kiwi) 100%);
             padding: 96px 0;
@@ -897,7 +940,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .trust-section::before {
             content: '';
             position: absolute;
@@ -908,7 +951,7 @@
             right: -150px;
             top: -150px;
         }
-        
+
         .trust-section::after {
             content: '';
             position: absolute;
@@ -919,30 +962,30 @@
             left: -100px;
             bottom: -100px;
         }
-        
+
         .trust-section .wrap {
             position: relative;
             z-index: 2;
         }
-        
+
         .trust-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 64px;
             align-items: center;
         }
-        
+
         @media(max-width:900px) {
             .trust-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
         }
-        
+
         .warranty-badge {
             text-align: center;
         }
-        
+
         .warranty-number {
             font-size: clamp(72px, 10vw, 120px);
             font-family: var(--foamico-font-head);
@@ -950,7 +993,7 @@
             line-height: 1;
             margin-bottom: 8px;
         }
-        
+
         .warranty-label {
             font-family: var(--foamico-font-head);
             font-weight: 700;
@@ -958,62 +1001,325 @@
             letter-spacing: .08em;
             text-transform: uppercase;
         }
-        
+
         .warranty-sublabel {
             font-size: 13px;
             margin-top: 12px;
             opacity: .85;
         }
-        
+
         .trust-details {
             display: flex;
             flex-direction: column;
             gap: 24px;
         }
-        
+
         .trust-detail {
             display: flex;
             align-items: flex-start;
             gap: 16px;
         }
-        
+
         .trust-detail::before {
             content: '✓';
             font-size: 28px;
             font-weight: 700;
             flex-shrink: 0;
         }
-        
+
         .trust-detail p {
             font-size: 15.5px;
             line-height: 1.7;
         }
-        
+
         .trust-detail strong {
             display: block;
             font-size: 16px;
             font-weight: 700;
             margin-bottom: 4px;
         }
-        /* REVIEWS */
-        
-        .reviews {
+        /* CAMPAIGN BANNERS */
+
+        .campaigns {
+            background: var(--foamico-paper);
+            padding: 56px 0 96px;
+        }
+
+        .campaign-shell {
+            position: relative;
+            overflow: hidden;
+            min-height: 430px;
+            border-radius: 8px;
+            background: var(--foamico-key-black);
+            box-shadow: 0 22px 60px rgba(26, 26, 26, .12);
+        }
+
+        .campaign-slide {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+            align-items: center;
+            gap: 28px;
+            padding: clamp(28px, 5vw, 60px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .6s ease, visibility .6s ease;
+        }
+
+        .campaign-slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .campaign-slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(115deg, rgba(26, 26, 26, .88) 0%, rgba(26, 26, 26, .72) 44%, rgba(26, 26, 26, .18) 100%);
+            z-index: 1;
+        }
+
+        .campaign-copy,
+        .campaign-panel {
+            position: relative;
+            z-index: 2;
+        }
+
+        .campaign-copy {
+            color: var(--foamico-egg-white);
+            max-width: 520px;
+        }
+
+        .campaign-kicker {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 16px;
+            color: var(--foamico-kiwi);
+            font-family: var(--foamico-font-head);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .campaign-copy h2 {
+            color: var(--foamico-egg-white);
+            font-size: clamp(30px, 5vw, 54px);
+            margin-bottom: 18px;
+            max-width: 11ch;
+        }
+
+        .campaign-copy p {
+            color: rgba(254, 254, 254, .82);
+            font-size: 17px;
+            line-height: 1.75;
+            margin-bottom: 28px;
+        }
+
+        .campaign-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .campaign-actions .btn-secondary {
+            background: transparent;
+            color: var(--foamico-egg-white);
+            border-color: rgba(254, 254, 254, .7);
+        }
+
+        .campaign-actions .btn-secondary:hover {
             background: var(--foamico-egg-white);
+            color: var(--foamico-key-black);
+        }
+
+        .campaign-panel {
+            border-radius: 8px;
+            border: 1px solid rgba(254, 254, 254, .16);
+            background: rgba(254, 254, 254, .08);
+            padding: 28px;
+            color: var(--foamico-egg-white);
+        }
+
+        .campaign-panel strong {
+            display: block;
+            color: var(--foamico-kiwi);
+            font-family: var(--foamico-font-head);
+            font-size: clamp(38px, 6vw, 72px);
+            line-height: .95;
+            margin-bottom: 12px;
+        }
+
+        .campaign-panel span {
+            display: block;
+            color: rgba(254, 254, 254, .78);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .campaign-controls {
+            position: absolute;
+            left: clamp(28px, 5vw, 60px);
+            bottom: 28px;
+            z-index: 4;
+            display: flex;
+            gap: 10px;
+        }
+
+        .campaign-dot {
+            width: 34px;
+            height: 4px;
+            border-radius: 999px;
+            background: rgba(254, 254, 254, .34);
+            transition: background .2s, width .2s;
+        }
+
+        .campaign-dot.active {
+            width: 48px;
+            background: var(--foamico-kiwi);
+        }
+
+        @media(max-width:900px) {
+            .campaign-shell {
+                min-height: 660px;
+            }
+            .campaign-slide {
+                grid-template-columns: 1fr;
+                align-content: center;
+            }
+            .campaign-copy h2 {
+                max-width: 12ch;
+            }
+        }
+
+        @media(max-width:620px) {
+            .campaign-shell {
+                min-height: 720px;
+            }
+            .campaign-actions .btn-primary,
+            .campaign-actions .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        /* FOUNDER STORY */
+
+        .founder {
+            background: var(--foamico-egg-white);
+            padding: 96px 0;
+            border-top: 1px solid var(--foamico-light-grey);
+        }
+
+        .founder-panel {
+            display: grid;
+            grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+            gap: 56px;
+            align-items: center;
+        }
+
+        @media(max-width:900px) {
+            .founder-panel {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+        }
+
+        .founder-photo {
+            aspect-ratio: 4/5;
+            border-radius: var(--foamico-radius-card);
+            background: var(--foamico-mist);
+            border: 1px dashed var(--foamico-light-grey);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 24px;
+            color: var(--foamico-sand);
+            font-size: 13px;
+            font-family: var(--foamico-font-head);
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+        }
+
+        .founder-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 16px;
+            color: var(--foamico-avocado);
+            font-family: var(--foamico-font-head);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .founder-copy h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            margin-bottom: 24px;
+        }
+
+        .founder-quote {
+            border-left: 3px solid var(--foamico-kiwi);
+            padding-left: 20px;
+            margin-bottom: 24px;
+            font-size: 19px;
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--foamico-key-black);
+        }
+
+        .founder-bio {
+            color: var(--foamico-slate);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .founder-name {
+            display: block;
+            margin-top: 12px;
+            font-family: var(--foamico-font-head);
+            font-weight: 700;
+            font-size: 15px;
+            font-style: normal;
+            color: var(--foamico-avocado);
+        }
+
+        .founder-name span {
+            display: block;
+            font-family: var(--foamico-font-body);
+            font-weight: 400;
+            font-size: 13px;
+            color: var(--foamico-sand);
+            margin-top: 2px;
+        }
+        /* REVIEWS */
+
+        .reviews {
+            background: var(--foamico-paper);
             padding: 88px 0;
             border-top: 1px solid var(--foamico-light-grey);
         }
-        
+
         .reviews-head {
             text-align: center;
             max-width: 620px;
             margin: 0 auto 56px;
         }
-        
+
         .reviews-head h2 {
             font-size: clamp(26px, 3.5vw, 40px);
             margin-bottom: 16px;
         }
-        
+
+        .reviews-head p {
+            color: var(--foamico-slate);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1021,40 +1327,60 @@
             max-width: 980px;
             margin: 0 auto;
         }
-        
+
         @media(max-width:900px) {
             .reviews-grid {
                 grid-template-columns: 1fr;
             }
         }
-        
+
         .review-card {
-            background: var(--foamico-paper);
+            background: var(--foamico-egg-white);
             border-radius: var(--foamico-radius-card);
             padding: 32px;
             border: 1px solid var(--foamico-light-grey);
+            box-shadow: 0 14px 34px rgba(26, 26, 26, .06);
+            min-height: 270px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        
+
         .review-stars {
             color: var(--foamico-kiwi);
             font-size: 14px;
             margin-bottom: 16px;
             letter-spacing: 2px;
         }
-        
+
         .review-text {
             color: var(--foamico-key-black);
-            font-size: 15px;
+            font-size: 15.5px;
             margin-bottom: 20px;
             line-height: 1.7;
             font-style: italic;
         }
-        
+
+        .review-product {
+            display: inline-flex;
+            align-self: flex-start;
+            margin-bottom: 18px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: var(--foamico-calm);
+            color: var(--foamico-avocado);
+            font-size: 11px;
+            font-family: var(--foamico-font-head);
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
         .review-author {
             font-size: 13px;
             color: var(--foamico-sand);
         }
-        
+
         .review-author strong {
             display: block;
             color: var(--foamico-key-black);
@@ -1062,26 +1388,146 @@
             font-weight: 700;
             margin-bottom: 2px;
         }
+        /* STORE LOCATOR */
+
+        .store-locator {
+            background: var(--foamico-key-black);
+            color: var(--foamico-egg-white);
+            padding: 88px 0;
+        }
+
+        .store-panel {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+            gap: 48px;
+            align-items: center;
+        }
+
+        .store-copy h2 {
+            color: var(--foamico-egg-white);
+            font-size: clamp(30px, 4vw, 48px);
+            margin-bottom: 18px;
+        }
+
+        .store-copy p {
+            color: rgba(254, 254, 254, .76);
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 620px;
+            margin-bottom: 30px;
+        }
+
+        .store-stats {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+            max-width: 520px;
+        }
+
+        .store-stat {
+            border: 1px solid rgba(254, 254, 254, .14);
+            border-radius: 8px;
+            padding: 20px;
+            background: rgba(254, 254, 254, .06);
+        }
+
+        .store-stat strong {
+            display: block;
+            color: var(--foamico-kiwi);
+            font-family: var(--foamico-font-head);
+            font-size: 34px;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .store-stat span {
+            color: rgba(254, 254, 254, .74);
+            font-size: 13px;
+        }
+
+        .store-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .store-actions .btn-secondary {
+            background: transparent;
+            color: var(--foamico-egg-white);
+            border-color: rgba(254, 254, 254, .7);
+        }
+
+        .store-actions .btn-secondary:hover {
+            background: var(--foamico-egg-white);
+            color: var(--foamico-key-black);
+        }
+
+        .city-list {
+            background: var(--foamico-egg-white);
+            color: var(--foamico-key-black);
+            border-radius: 8px;
+            padding: 28px;
+            box-shadow: 0 20px 48px rgba(0, 0, 0, .22);
+        }
+
+        .city-list h3 {
+            font-size: 20px;
+            margin-bottom: 18px;
+        }
+
+        .city-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .city-tags span {
+            display: inline-flex;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: var(--foamico-mist);
+            color: var(--foamico-avocado);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        @media(max-width:900px) {
+            .store-panel {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:620px) {
+            .store-stats {
+                grid-template-columns: 1fr;
+            }
+            .store-actions .btn-primary,
+            .store-actions .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+        }
         /* FINANCING */
-        
+
         .financing {
             background: var(--foamico-paper);
             padding: 80px 0;
             text-align: center;
         }
-        
+
         .financing h2 {
             font-size: clamp(28px, 3.5vw, 40px);
             margin-bottom: 12px;
         }
-        
+
         .financing p {
             font-size: 17px;
             color: var(--foamico-slate);
             margin-bottom: 24px;
             line-height: 1.8;
         }
-        
+
         .emi-highlight {
             font-family: var(--foamico-font-head);
             font-weight: 700;
@@ -1089,7 +1535,7 @@
             color: var(--foamico-kiwi);
             margin-bottom: 32px;
         }
-        
+
         .financing-button {
             background: var(--foamico-kiwi);
             color: var(--foamico-key-black);
@@ -1100,12 +1546,12 @@
             font-size: 15px;
             transition: filter .2s;
         }
-        
+
         .financing-button:hover {
             filter: brightness(.94);
         }
         /* FINAL CTA */
-        
+
         .final-cta {
             position: relative;
             min-height: 60vh;
@@ -1116,54 +1562,54 @@
             padding: 80px 24px;
             background: var(--foamico-egg-white);
         }
-        
+
         .final-cta-bg {
             position: absolute;
             inset: 0;
             background: linear-gradient(135deg, var(--foamico-mist) 0%, var(--foamico-calm) 100%);
             z-index: 1;
         }
-        
+
         .final-cta-content {
             position: relative;
             z-index: 2;
             max-width: 680px;
             margin: 0 auto;
         }
-        
+
         .final-cta h2 {
             font-size: clamp(32px, 5vw, 52px);
             margin-bottom: 32px;
             line-height: 1.2;
         }
-        
+
         .final-cta .btn-primary {
             margin-top: 24px;
             font-size: 16px;
             padding: 18px 40px;
         }
         /* FOOTER */
-        
+
         footer {
             background: var(--foamico-key-black);
             color: var(--foamico-sand);
             padding: 56px 0 32px;
         }
-        
+
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 40px;
             margin-bottom: 40px;
         }
-        
+
         @media(max-width:768px) {
             .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 24px;
             }
         }
-        
+
         .footer-col h4 {
             font-family: var(--foamico-font-head);
             font-weight: 700;
@@ -1173,25 +1619,25 @@
             color: var(--foamico-kiwi);
             margin-bottom: 16px;
         }
-        
+
         .footer-col ul {
             list-style: none;
         }
-        
+
         .footer-col li {
             margin-bottom: 10px;
         }
-        
+
         .footer-col a {
             color: var(--foamico-sand);
             font-size: 14px;
             transition: color .2s;
         }
-        
+
         .footer-col a:hover {
             color: var(--foamico-egg-white);
         }
-        
+
         .footer-base {
             border-top: 1px solid var(--foamico-charcoal);
             padding-top: 24px;
@@ -1202,138 +1648,19 @@
             font-size: 12.5px;
             color: var(--foamico-slate);
         }
-        
+
         .footer-brand {
             margin-bottom: 8px;
         }
-        
+
         .footer-brand .brand-text b {
             color: var(--foamico-egg-white);
         }
-        
+
         .footer-brand p {
             font-size: 13px;
             margin-top: 12px;
             max-width: 35ch;
-        }
-        /* MODAL GALLERY */
-        
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 100;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(26, 26, 26, .95);
-            backdrop-filter: blur(4px);
-            opacity: 0;
-            transition: opacity .3s ease;
-        }
-        
-        .modal.active {
-            display: flex;
-            opacity: 1;
-        }
-        
-        .modal-content {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-        }
-        
-        .modal-image-container {
-            position: relative;
-            max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-        }
-        
-        .modal-image {
-            width: 100%;
-            height: auto;
-            max-height: 70vh;
-            object-fit: contain;
-            border-radius: 12px;
-        }
-        
-        .modal-counter {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(26, 26, 26, .8);
-            color: var(--foamico-egg-white);
-            padding: 8px 16px;
-            border-radius: 24px;
-            font-family: var(--foamico-font-body);
-            font-size: 14px;
-            font-weight: 600;
-        }
-        
-        .modal-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(254, 254, 254, .15);
-            color: var(--foamico-egg-white);
-            border: none;
-            padding: 16px 20px;
-            font-size: 28px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: background .2s;
-            z-index: 101;
-        }
-        
-        .modal-nav:hover {
-            background: rgba(254, 254, 254, .25);
-        }
-        
-        .modal-nav.prev {
-            left: 0;
-        }
-        
-        .modal-nav.next {
-            right: 0;
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(26, 26, 26, .8);
-            color: var(--foamico-egg-white);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            transition: background .2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .modal-close:hover {
-            background: rgba(26, 26, 26, .95);
-        }
-        
-        .product-main,
-        .product-thumb {
-            cursor: pointer;
-            transition: opacity .2s;
-        }
-        
-        .product-main:hover,
-        .product-thumb:hover {
-            opacity: .8;
         }
     </style>
 </head>
@@ -1365,9 +1692,10 @@
                     </ul>
                 </li>
                 <li><a href="https://www.foamicomattress.com/blog">The SleepyTimes</a></li>
+                <li><a href="#stores">Find a Store</a></li>
                 <li><a href="https://wa.me/917496982886?text=Hi%20FOAMICO%2C%20I%20would%20like%20to%20get%20in%20touch" target="_blank">Contact Us</a></li>
             </ul>
-            <a class="pill" href="https://forms.gle/YOUR_FORM_ID" target="_blank">Become a Dealer</a>
+            <a class="pill" href="tel:+917496982886">Call Us</a>
         </div>
     </header>
 
@@ -1384,31 +1712,29 @@
             </div>
         </div>
         <div class="hero-visual">
-            <div class="hero-range" aria-label="Foamico mattress range">
-                <a class="hero-tile large" href="https://www.foamicomattress.com/products/sovaclassic">
-                    <img src="images/products/sova/main.JPG" alt="Sova mattress">
-                    <span>Sova</span>
-                </a>
-                <a class="hero-tile medium" href="https://www.foamicomattress.com/products/ultimaclassic">
-                    <img src="images/products/ultima/main.JPG" alt="Ultima mattress">
-                    <span>Ultima</span>
-                </a>
-                <a class="hero-tile small" href="https://www.foamicomattress.com/products/lumaclassic">
-                    <img src="images/products/luma/main.JPG" alt="Luma mattress">
-                    <span>Luma</span>
-                </a>
-                <a class="hero-tile small" href="https://www.foamicomattress.com/products/restoclassic">
-                    <img src="images/products/resto/main.JPG" alt="Resto mattress">
-                    <span>Resto</span>
-                </a>
-                <a class="hero-tile small" href="https://www.foamicomattress.com/products/riva1000">
-                    <img src="images/products/riva/main.JPG" alt="Riva mattress">
-                    <span>Riva</span>
-                </a>
-                <div class="range-note">
-                    <strong>25</strong>
-                    <span>year warranty on premium ranges</span>
+            <div class="hero-photo" aria-hidden="true">Lifestyle Photo<br>— replace with real image —</div>
+            <div class="hero-card">
+                <h2>Built for Indian homes. Backed by decades of craft.</h2>
+                <p>Visit a Foamico partner store, compare comfort levels, and choose with help from a sleep expert.</p>
+                <div class="hero-proof-grid">
+                    <div class="hero-proof">
+                        <strong>300+</strong>
+                        <span>stores</span>
+                    </div>
+                    <div class="hero-proof">
+                        <strong>15</strong>
+                        <span>cities</span>
+                    </div>
+                    <div class="hero-proof">
+                        <strong>25</strong>
+                        <span>year warranty</span>
+                    </div>
+                    <div class="hero-proof">
+                        <strong>4.9</strong>
+                        <span>customer rating</span>
+                    </div>
                 </div>
+                <a class="product-cta" href="#stores">Find a store near you</a>
             </div>
         </div>
     </section>
@@ -1425,15 +1751,73 @@
                 <span>Built to Last</span>
             </div>
             <div class="trust-item">
-                <strong>Made in India</strong>
-                <span>Since 1960s</span>
+                <strong>300+ Stores</strong>
+                <span>Across India</span>
             </div>
             <div class="trust-item">
-                <strong>50,000+</strong>
-                <span>Happy Sleepers</span>
+                <strong>15 Cities</strong>
+                <span>Find Foamico Near You</span>
             </div>
         </div>
     </div>
+
+    <!-- CAMPAIGN BANNERS -->
+    <section class="campaigns" aria-label="Foamico sleep campaigns">
+        <div class="wrap">
+            <div class="campaign-shell">
+                <article class="campaign-slide active">
+                    <div class="campaign-copy">
+                        <span class="campaign-kicker">Sleep campaign</span>
+                        <h2>Wake up lighter.</h2>
+                        <p>Pressure-relieving comfort and firm spinal support come together for mornings that feel easier from the first stretch.</p>
+                        <div class="campaign-actions">
+                            <a class="btn-primary" href="#collection">Explore Mattresses</a>
+                            <a class="btn-secondary" href="#stores">Find a Store</a>
+                        </div>
+                    </div>
+                    <div class="campaign-panel" aria-hidden="true">
+                        <strong>25 yr</strong>
+                        <span>Warranty-led confidence on premium ranges.</span>
+                    </div>
+                </article>
+                <article class="campaign-slide">
+                    <div class="campaign-copy">
+                        <span class="campaign-kicker">Cool comfort edit</span>
+                        <h2>Sleep cool. Stay supported.</h2>
+                        <p>Breathable comfort layers help release heat while the support core keeps your body aligned through the night.</p>
+                        <div class="campaign-actions">
+                            <a class="btn-primary" href="https://www.foamicomattress.com/products/lumaclassic">Shop Luma</a>
+                            <a class="btn-secondary" href="tel:+917496982886">Call Us</a>
+                        </div>
+                    </div>
+                    <div class="campaign-panel" aria-hidden="true">
+                        <strong>5</strong>
+                        <span>Distinct comfort ranges for different sleepers.</span>
+                    </div>
+                </article>
+                <article class="campaign-slide">
+                    <div class="campaign-copy">
+                        <span class="campaign-kicker">Store experience</span>
+                        <h2>Try before you choose.</h2>
+                        <p>Visit Foamico at 300+ stores across 15 cities and compare the feel of Sova, Ultima, Luma, Resto, and Riva in person.</p>
+                        <div class="campaign-actions">
+                            <a class="btn-primary" href="#stores">Find Nearest Store</a>
+                            <a class="btn-secondary" href="https://wa.me/917496982886?text=Hi%20FOAMICO%2C%20please%20help%20me%20find%20the%20nearest%20store" target="_blank">Message Us</a>
+                        </div>
+                    </div>
+                    <div class="campaign-panel" aria-hidden="true">
+                        <strong>300+</strong>
+                        <span>Stores across 15 cities for in-person trials.</span>
+                    </div>
+                </article>
+                <div class="campaign-controls" aria-label="Choose campaign banner">
+                    <button class="campaign-dot active" type="button" aria-label="Show wake up lighter banner"></button>
+                    <button class="campaign-dot" type="button" aria-label="Show cool comfort banner"></button>
+                    <button class="campaign-dot" type="button" aria-label="Show store experience banner"></button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- COLLECTION -->
     <section class="collection" id="collection">
@@ -1448,12 +1832,6 @@
                     <div class="product-gallery">
                         <div class="product-main">
                             <img src="images/products/sova/main.JPG" alt="Sova Mattress">
-                        </div>
-                        <div class="product-thumbs">
-                            <div class="product-thumb"><img src="images/products/sova/angle1.JPG" alt="Angle 1"></div>
-                            <div class="product-thumb"><img src="images/products/sova/angle2.JPG" alt="Angle 2"></div>
-                            <div class="product-thumb"><img src="images/products/sova/angle3.JPG" alt="Angle 3"></div>
-                            <div class="product-thumb"><img src="images/products/sova/angle4.jpg" alt="Angle 4"></div>
                         </div>
                     </div>
                     <div class="product-body">
@@ -1474,12 +1852,6 @@
                     <div class="product-gallery">
                         <div class="product-main">
                             <img src="images/products/ultima/main.JPG" alt="Ultima Mattress">
-                        </div>
-                        <div class="product-thumbs">
-                            <div class="product-thumb"><img src="images/products/ultima/angle1.JPG" alt="Angle 1"></div>
-                            <div class="product-thumb"><img src="images/products/ultima/angle2.JPG" alt="Angle 2"></div>
-                            <div class="product-thumb"><img src="images/products/ultima/angle3.JPG" alt="Angle 3"></div>
-                            <div class="product-thumb"><img src="images/products/ultima/angle4.JPG" alt="Angle 4"></div>
                         </div>
                     </div>
                     <div class="product-body">
@@ -1502,12 +1874,6 @@
                         <div class="product-main">
                             <img src="images/products/luma/main.JPG" alt="Luma Mattress">
                         </div>
-                        <div class="product-thumbs">
-                            <div class="product-thumb"><img src="images/products/luma/angle1.JPG" alt="Angle 1"></div>
-                            <div class="product-thumb"><img src="images/products/luma/angle2.JPG" alt="Angle 2"></div>
-                            <div class="product-thumb"><img src="images/products/luma/angle3.JPG" alt="Angle 3"></div>
-                            <div class="product-thumb"><img src="images/products/luma/angle4.JPG" alt="Angle 4"></div>
-                        </div>
                     </div>
                     <div class="product-body">
                         <h3 class="product-name">Luma</h3>
@@ -1529,12 +1895,6 @@
                         <div class="product-main">
                             <img src="images/products/resto/main.JPG" alt="Resto Mattress">
                         </div>
-                        <div class="product-thumbs">
-                            <div class="product-thumb"><img src="images/products/resto/angle1.JPG" alt="Angle 1"></div>
-                            <div class="product-thumb"><img src="images/products/resto/angle2.JPG" alt="Angle 2"></div>
-                            <div class="product-thumb"><img src="images/products/resto/angle3.JPG" alt="Angle 3"></div>
-                            <div class="product-thumb"><img src="images/products/resto/angle4.JPG" alt="Angle 4"></div>
-                        </div>
                     </div>
                     <div class="product-body">
                         <h3 class="product-name">Resto</h3>
@@ -1555,11 +1915,6 @@
                     <div class="product-gallery">
                         <div class="product-main">
                             <img src="images/products/riva/main.JPG" alt="Riva Mattress">
-                        </div>
-                        <div class="product-thumbs">
-                            <div class="product-thumb"><img src="images/products/riva/angle1.JPG" alt="Angle 1"></div>
-                            <div class="product-thumb"><img src="images/products/riva/angle2.JPG" alt="Angle 2"></div>
-                            <div class="product-thumb"><img src="images/products/riva/angle3.JPG" alt="Angle 3"></div>
                         </div>
                     </div>
                     <div class="product-body">
@@ -1586,21 +1941,48 @@
                 <h2>Great sleep isn't magic.<br>It's smart engineering.</h2>
                 <p>Every Foamico mattress is built with one purpose: to help you wake up feeling better.</p>
             </div>
-            <div class="why-grid">
-                <div class="why-card">
-                    <div class="why-icon">🦴</div>
-                    <h3>Supports Your Spine</h3>
-                    <p>Keeps your back naturally aligned throughout the night so you wake up refreshed instead of stiff.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">❄️</div>
-                    <h3>Stays Cooler All Night</h3>
-                    <p>Special comfort layers help release heat instead of trapping it. No more waking up drenched.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">⏱️</div>
-                    <h3>Built to Last</h3>
-                    <p>Premium materials maintain their shape and support for years. Your mattress will feel new for decades.</p>
+            <div class="why-body">
+                <div class="why-photo" aria-hidden="true">Lifestyle Photo<br>— replace with real image —</div>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 3l7 3.2v4.6c0 5-3 9.4-7 10.7-4-1.3-7-5.7-7-10.7V6.2L12 3z"></path>
+                                <path d="M9 12.2l2.1 2.1L15.5 10" stroke="var(--foamico-kiwi)"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Supports Your Spine</h3>
+                            <p>Keeps your back naturally aligned throughout the night so you wake up refreshed instead of stiff.</p>
+                        </div>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <line x1="12" y1="2.5" x2="12" y2="21.5"></line>
+                                <line x1="4.9" y1="6.75" x2="19.1" y2="17.25"></line>
+                                <line x1="19.1" y1="6.75" x2="4.9" y2="17.25"></line>
+                                <path d="M12 2.5l-2 2.1M12 2.5l2 2.1M12 21.5l-2-2.1M12 21.5l2-2.1"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Stays Cooler All Night</h3>
+                            <p>Special comfort layers help release heat instead of trapping it. No more waking up drenched.</p>
+                        </div>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="13" r="8.25"></circle>
+                                <path d="M12 13V8.25M12 13l3.2 1.9"></path>
+                                <path d="M9.5 2.25h5"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Built to Last</h3>
+                            <p>Premium materials maintain their shape and support for years. Your mattress will feel new for decades.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1615,20 +1997,22 @@
             </div>
             <div class="layer-visual-grid">
                 <div class="layer-illustration">
-                    <div class="layer-block" data-layer="fabric">
-                        <div class="layer-block-name">Premium Fabric</div>
-                    </div>
-                    <div class="layer-block" data-layer="ortho">
-                        <div class="layer-block-name">OrthoSense® Layer</div>
-                    </div>
-                    <div class="layer-block" data-layer="latex">
-                        <div class="layer-block-name">Zero G Latex</div>
-                    </div>
-                    <div class="layer-block" data-layer="support">
-                        <div class="layer-block-name">Support Core</div>
-                    </div>
-                    <div class="layer-block" data-layer="base">
-                        <div class="layer-block-name">Base Layer</div>
+                    <div class="layer-stack">
+                        <div class="layer-block" data-layer="fabric">
+                            <div class="layer-block-name">Premium Fabric</div>
+                        </div>
+                        <div class="layer-block" data-layer="ortho">
+                            <div class="layer-block-name">OrthoSense® Layer</div>
+                        </div>
+                        <div class="layer-block" data-layer="latex">
+                            <div class="layer-block-name">Zero G Latex</div>
+                        </div>
+                        <div class="layer-block" data-layer="support">
+                            <div class="layer-block-name">Support Core</div>
+                        </div>
+                        <div class="layer-block" data-layer="base">
+                            <div class="layer-block-name">Base Layer</div>
+                        </div>
                     </div>
                 </div>
                 <div class="layer-details">
@@ -1673,7 +2057,7 @@
                     <p><strong>Trusted Since 1960s</strong><br>Three generations of mattress expertise.</p>
                 </div>
                 <div class="trust-detail">
-                    <p><strong>50,000+ Customers</strong><br>Real reviews from real mornings.</p>
+                    <p><strong>300+ Stores</strong><br>Available across 15 cities for in-person trials.</p>
                 </div>
                 <div class="trust-detail">
                     <p><strong>4.9/5 Rating</strong><br>Independently verified across all metros.</p>
@@ -1685,27 +2069,93 @@
         </div>
     </section>
 
+    <!-- FOUNDER STORY -->
+    <section class="founder">
+        <div class="wrap founder-panel">
+            <div class="founder-photo" aria-hidden="true">Founder Photo<br>— replace with real image —</div>
+            <div class="founder-copy">
+                <span class="founder-eyebrow">Our Story</span>
+                <h2>Three generations. One promise: better sleep.</h2>
+                <p class="founder-quote">"We didn't set out to build mattresses. We set out to fix mornings — starting with our own family's, back in the 1960s."<span class="founder-name">Founder Name<span>Placeholder title, LPPL</span></span></p>
+                <p class="founder-bio">Placeholder bio copy: what began as a small family workshop has grown into Foamico — three generations of mattress-making expertise, German-engineered comfort, and a promise to every Indian home that better sleep shouldn't be a luxury.</p>
+                <a class="product-cta" href="https://www.foamicomattress.com/about">Read our full story</a>
+            </div>
+        </div>
+    </section>
+
     <!-- REVIEWS -->
     <section class="reviews">
         <div class="wrap">
             <div class="reviews-head">
                 <h2>What Our Customers Say</h2>
+                <p>Real comfort stories from people who tried Foamico at home and in store.</p>
             </div>
             <div class="reviews-grid">
                 <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"The best mattress we've ever owned. My back pain is completely gone."</p>
+                    <div>
+                        <div class="review-stars">★★★★★</div>
+                        <span class="review-product">Ultima</span>
+                        <p class="review-text">"I wanted firm support without the mattress feeling hard. Ultima has that hotel-like feel, and my lower back feels much better in the morning."</p>
+                    </div>
                     <div class="review-author"><strong>Priya Sharma</strong>Delhi</div>
                 </div>
                 <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"No more morning back pain. Feels luxurious and supportive at the same time."</p>
-                    <div class="review-author"><strong>Arjun Malhotra</strong>Gurgaon</div>
+                    <div>
+                        <div class="review-stars">★★★★★</div>
+                        <span class="review-product">Luma</span>
+                        <p class="review-text">"We visited the store, compared three models, and picked Luma. It stays cooler than our old mattress and there is less partner disturbance."</p>
+                    </div>
+                    <div class="review-author"><strong>Arjun Malhotra</strong>Gurugram</div>
                 </div>
                 <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Feels luxurious. The quality is truly exceptional for the price."</p>
-                    <div class="review-author"><strong>Meera Reddy</strong>Bangalore</div>
+                    <div>
+                        <div class="review-stars">★★★★★</div>
+                        <span class="review-product">Sova</span>
+                        <p class="review-text">"The store team helped us choose the right firmness. Sova feels balanced, supportive, and premium without being over the top."</p>
+                    </div>
+                    <div class="review-author"><strong>Meera Reddy</strong>Bengaluru</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORE LOCATOR -->
+    <section class="store-locator" id="stores">
+        <div class="wrap store-panel">
+            <div class="store-copy">
+                <span class="campaign-kicker">Store network</span>
+                <h2>Try Foamico at 300+ stores across 15 cities.</h2>
+                <p>Talk to a sleep expert, compare mattress feels, and choose the Foamico range that fits your body, room, and budget.</p>
+                <div class="store-stats">
+                    <div class="store-stat">
+                        <strong>300+</strong>
+                        <span>Retail stores and partner touchpoints</span>
+                    </div>
+                    <div class="store-stat">
+                        <strong>15</strong>
+                        <span>Cities with Foamico availability</span>
+                    </div>
+                </div>
+                <div class="store-actions">
+                    <a class="btn-primary" href="tel:+917496982886">Call Us</a>
+                    <a class="btn-secondary" href="https://wa.me/917496982886?text=Hi%20FOAMICO%2C%20please%20help%20me%20find%20the%20nearest%20store" target="_blank">Find a Store</a>
+                </div>
+            </div>
+            <div class="city-list">
+                <h3>Popular store cities</h3>
+                <div class="city-tags" aria-label="Cities with Foamico stores">
+                    <span>Delhi NCR</span>
+                    <span>Mumbai</span>
+                    <span>Bengaluru</span>
+                    <span>Hyderabad</span>
+                    <span>Chennai</span>
+                    <span>Pune</span>
+                    <span>Ahmedabad</span>
+                    <span>Kolkata</span>
+                    <span>Jaipur</span>
+                    <span>Lucknow</span>
+                    <span>Chandigarh</span>
+                    <span>Indore</span>
                 </div>
             </div>
         </div>
@@ -1776,22 +2226,42 @@
         </div>
     </footer>
 
-    <!-- IMAGE GALLERY MODAL -->
-    <div id="imageModal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()" aria-label="Close gallery">&times;</button>
-            <div class="modal-image-container">
-                <img id="modalImage" class="modal-image" src="" alt="Product image">
-                <div class="modal-counter"><span id="currentImageIndex">1</span> / <span id="totalImages">5</span></div>
-                <button class="modal-nav prev" onclick="prevImage()" aria-label="Previous image">‹</button>
-                <button class="modal-nav next" onclick="nextImage()" aria-label="Next image">›</button>
-            </div>
-        </div>
-    </div>
-
     <script>
-        let currentGallery = [];
-        let currentImageIndex = 0;
+        // Rotating campaign banners
+        const campaignSlides = document.querySelectorAll('.campaign-slide');
+        const campaignDots = document.querySelectorAll('.campaign-dot');
+        let activeCampaign = 0;
+        let campaignTimer;
+
+        function showCampaign(index) {
+            activeCampaign = index;
+            campaignSlides.forEach((slide, slideIndex) => {
+                slide.classList.toggle('active', slideIndex === activeCampaign);
+            });
+            campaignDots.forEach((dot, dotIndex) => {
+                dot.classList.toggle('active', dotIndex === activeCampaign);
+                dot.setAttribute('aria-pressed', dotIndex === activeCampaign ? 'true' : 'false');
+            });
+        }
+
+        function startCampaignRotation() {
+            campaignTimer = window.setInterval(() => {
+                showCampaign((activeCampaign + 1) % campaignSlides.length);
+            }, 5200);
+        }
+
+        campaignDots.forEach((dot, index) => {
+            dot.setAttribute('aria-pressed', index === activeCampaign ? 'true' : 'false');
+            dot.addEventListener('click', () => {
+                window.clearInterval(campaignTimer);
+                showCampaign(index);
+                startCampaignRotation();
+            });
+        });
+
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            startCampaignRotation();
+        }
 
         // Layer breakdown interactivity
         const layerBlocks = document.querySelectorAll('.layer-block');
@@ -1809,69 +2279,6 @@
 
         // Set first layer as active on load
         layerBlocks[0].classList.add('active');
-
-        // Image gallery modal functionality
-        function openGallery(images, index) {
-            currentGallery = images;
-            currentImageIndex = index;
-            showImage();
-            document.getElementById('imageModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            document.getElementById('imageModal').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        function showImage() {
-            const img = currentGallery[currentImageIndex];
-            document.getElementById('modalImage').src = img;
-            document.getElementById('currentImageIndex').textContent = currentImageIndex + 1;
-            document.getElementById('totalImages').textContent = currentGallery.length;
-        }
-
-        function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % currentGallery.length;
-            showImage();
-        }
-
-        function prevImage() {
-            currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
-            showImage();
-        }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (!document.getElementById('imageModal').classList.contains('active')) return;
-            if (e.key === 'ArrowRight') nextImage();
-            if (e.key === 'ArrowLeft') prevImage();
-            if (e.key === 'Escape') closeModal();
-        });
-
-        // Close modal on outside click
-        document.getElementById('imageModal').addEventListener('click', (e) => {
-            if (e.target === document.getElementById('imageModal')) closeModal();
-        });
-
-        // Add click handlers to all product images
-        document.querySelectorAll('.product-card').forEach(card => {
-            const productMain = card.querySelector('.product-main');
-            const productThumbs = card.querySelectorAll('.product-thumb');
-            const mainImg = productMain.querySelector('img');
-            const thumbImgs = Array.from(productThumbs).map(t => t.querySelector('img'));
-
-            // All images point to the same gallery
-            const gallery = [mainImg.src, ...thumbImgs.map(img => img.src)];
-
-            // Click on main image
-            productMain.addEventListener('click', () => openGallery(gallery, 0));
-
-            // Click on thumbnails
-            thumbImgs.forEach((img, idx) => {
-                productThumbs[idx].addEventListener('click', () => openGallery(gallery, idx + 1));
-            });
-        });
     </script>
 
 </body>
