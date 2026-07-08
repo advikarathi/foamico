@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foamico — Premium Mattresses, German Engineered. Made in India.</title>
+    <meta name="description" content="German-engineered mattresses crafted for Indian homes. Wake up without back pain. Premium sleep with 25-year warranty.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --foamico-key-black: #1A1A1A;
+            --foamico-kiwi: #95C12B;
+            --foamico-avocado: #3F5E12;
+            --foamico-calm: #E4F2C5;
+            --foamico-sand: #9D9E9E;
+            --foamico-egg-white: #FEFEFE;
+            --foamico-charcoal: #2B2B2B;
+            --foamico-slate: #6B6B6B;
+            --foamico-light-grey: #DDDDDD;
+            --foamico-mist: #F2F4EC;
+            --foamico-paper: #F6F8F1;
+            --foamico-font-head: "Montserrat", "Calibri", Arial, sans-serif;
+            --foamico-font-body: "Poppins", "Calibri", Arial, sans-serif;
+            --foamico-radius-card: 8px;
+            --foamico-radius-pill: 999px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms!important;
+                transition-duration: .01ms!important;
+            }
+        }
+        
+        body {
+            font-family: var(--foamico-font-body);
+            background: var(--foamico-paper);
+            color: var(--foamico-key-black);
+            line-height: 1.75;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: var(--foamico-font-head);
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--foamico-key-black);
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        button {
+            font-family: var(--foamico-font-body);
+            cursor: pointer;
+            border: none;
+        }
+        
+         :focus-visible {
+            outline: 3px solid var(--foamico-avocado);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+        
+        .wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* NAV */
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(254, 254, 254, .98);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(26, 26, 26, .08);
+            box-shadow: 0 10px 30px rgba(26, 26, 26, .05);
+        }
+        
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            gap: 20px;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+        
+        .brand-mark {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            position: relative;
+            flex-shrink: 0;
+            border: 5px solid var(--foamico-kiwi);
+        }
+        
+        .brand-mark::after {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            border: 5px solid var(--foamico-egg-white);
+            border-width: 5px 0 0 5px;
+            transform: rotate(-45deg);
+        }
+        
+        .brand-text {
+            line-height: 1.1;
+        }
+        
+        .brand-text b {
+            display: block;
+            font-family: var(--foamico-font-head);
+            font-weight: 800;
+            font-size: 19px;
+            letter-spacing: .06em;
+            color: var(--foamico-key-black);
+        }
+        
+        .brand-text span {
+            display: block;
+            font-size: 9px;
+            letter-spacing: .34em;
+            text-transform: uppercase;
+            color: var(--foamico-key-black);
+            font-weight: 500;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            align-items: center;
+            margin-left: auto;
+        }
+        
+        .nav-links>li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            font-family: var(--foamico-font-head);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--foamico-key-black);
+            transition: color .2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--foamico-avocado);
+        }
+        
+        .has-drop>a::after {
+            content: ' ▾';
+            font-size: 12px;
+            color: var(--foamico-sand);
+        }
+        
+        .drop {
+            position: absolute;
+            top: calc(100% + 14px);
+            left: -16px;
+            min-width: 280px;
+            background: var(--foamico-egg-white);
+            border: 1px solid var(--foamico-light-grey);
+            border-radius: var(--foamico-radius-card);
+            padding: 20px;
+            list-style: none;
+            box-shadow: 0 16px 40px rgba(26, 26, 26, .12);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-6px);
+            transition: all .2s;
+        }
+        
+        .has-drop:hover .drop,
+        .has-drop:focus-within .drop {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .drop-header {
+            font-family: var(--foamico-font-head);
+            font-weight: 800;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: var(--foamico-avocado);
+            margin-bottom: 14px;
+            display: block;
+        }
+        
+        .drop-sub {
+            font-size: 12px;
+            color: var(--foamico-sand);
+            margin-bottom: 12px;
+            display: block;
+        }
+        
+        .drop a {
+            display: block;
+            padding: 9px 14px;
+            border-radius: 8px;
+            font-size: 14.5px;
+            font-family: var(--foamico-font-body);
+            font-weight: 500;
+            color: var(--foamico-key-black);
+            transition: background .2s;
+            margin-bottom: 4px;
+        }
+        
+        .drop a:hover {
+            background: var(--foamico-calm);
+        }
+        
+        .drop-sep {
+            border-top: 1px solid var(--foamico-light-grey);
+            margin: 12px 6px;
+        }
+        
+        .drop-cta {
+            display: block;
+            padding: 9px 14px;
+            font-size: 13px;
+            font-family: var(--foamico-font-head);
+            font-weight: 700;
+            color: var(--foamico-avocado);
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            margin-top: 12px;
+            transition: color .2s;
+        }
+        
+        .drop-cta:hover {
+            color: var(--foamico-kiwi);
+        }
+        
+        .pill {
+            background: var(--foamico-key-black);
+            color: var(--foamico-key-black);
+            font-family: var(--foamico-font-head);
+            font-weight: 800;
+            font-size: 14px;
+            border-radius: 8px;
+            padding: 13px 22px;
+            transition: background .2s, color .2s, transform .2s;
+            display: inline-block;
+            cursor: pointer;
+            color: var(--foamico-egg-white);
+            border: 2px solid var(--foamico-key-black);
+            white-space: nowrap;
+        }
+        
+        .pill:hover {
+            background: var(--foamico-kiwi);
+            color: var(--foamico-key-black);
+            transform: translateY(-1px);
+        }
+        
+        @media(max-width:980px) {
+            .nav-links {
+                display: none;
+            }
+        }
+        /* HERO */
+        
+        .hero {
+            background: linear-gradient(90deg, rgba(254, 254, 254, .96) 0%, rgba(254, 254, 254, .88) 46%, rgba(242, 244, 236, .92) 100%), var(--foamico-paper);
+            position: relative;
+            min-height: calc(100vh - 80px);
+            display: grid;
+            grid-template-columns: minmax(0, 520px) minmax(420px, 1fr);
+            align-items: center;
+            gap: 56px;
+            padding: 72px max(24px, calc((100vw - 1180px) / 2)) 52px;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 680px;
+        }
+        
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 18px;
+            color: var(--foamico-avocado);
+            font-family: var(--foamico-font-head);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+        
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 76px);
+            margin-bottom: 24px;
+            line-height: 1.02;
+        }
+        
+        .hero p.lede {
+            font-size: 19px;
+            color: var(--foamico-slate);
+            margin-bottom: 18px;
+            line-height: 1.7;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+        
+        .btn-primary {
+            background: var(--foamico-kiwi);
+            color: var(--foamico-key-black);
+            padding: 16px 36px;
+            border-radius: var(--foamico-radius-pill);
+            font-family: var(--foamico-font-head);
+            font-weight: 700;
+            font-size: 15px;
+            transition: filter .2s;
+        }
+        
+        .btn-primary:hover {
+            filter: brightness(.94);
+        }
+        
+        .btn-secondary {
+            background: var(--foamico-egg-white);
+            color: var(--foamico-key-black);
+            border: 2px solid var(--foamico-key-black);
+            padding: 14px 32px;
+            border-radius: var(--foamico-radius-pill);
+            font-family: var(--foamico-font-head);
+            font-weight: 700;
+            font-size: 15px;
+            transition: all .2s;
+            cursor: pointer;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--foamico-key-black);
+            color: var(--foamico-egg-white);
+        }
+        
+        .hero-visual {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-range {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-auto-rows: 150px;
+            gap: 14px;
+            align-items: stretch;
+        }
+        
+        .hero-tile {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            background: var(--foamico-egg-white);
+            border: 1px solid rgba(26, 26, 26, .08);
+            box-shadow: 0 20px 48px rgba(26, 26, 26, .12);
+        }
+        
+        .hero-tile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .4s ease;
+        }
+        
+        .hero-tile:hover img {
+            transform: scale(1.04);
+        }
+        
+        .hero-tile::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 46%, rgba(26, 26, 26, .62));
+        }
+        
+        .hero-tile span {
+            position: absolute;
+            left: 14px;
+            bottom: 12px;
+            z-index: 1;
+            color: var(--foamico-egg-white);
+            font-family: var(--foamico-font-head);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        
+        .hero-tile.large {
+            grid-column: span 3;
+            grid-row: span 2;
+        }
+        
+        .hero-tile.medium {
+            grid-column: span 3;
+        }
+        
+        .hero-tile.small {
+            grid-column: span 2;
+        }
+        
+        .range-note {
+            grid-column: span 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 4px;
+            border-radius: 8px;
+            padding: 18px;
+            background: var(--foamico-key-black);
+            color: var(--foamico-egg-white);
+            box-shadow: 0 20px 48px rgba(26, 26, 26, .14);
+        }
+        
+        .range-note strong {
+            font-family: var(--foamico-font-head);
+            font-size: 28px;
+            line-height: 1;
+        }
+        
+        .range-note span {
+            font-size: 13px;
+            color: rgba(254, 254, 254, .72);
+        }
+        
+        @media(max-width:960px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                padding-top: 56px;
+            }
+            .hero-range {
+                grid-auto-rows: 130px;
+            }
+        }
+        
+        @media(max-width:620px) {
+            .hero-range {
+                grid-template-columns: 1fr 1fr;
+                grid-auto-rows: 120px;
+            }
+            .hero-tile.large,
+            .hero-tile.medium,
+            .hero-tile.small,
+            .range-note {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
+        /* TRUST STRIP */
+        
+        .trust-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            padding: 26px;
+            text-align: center;
+            background: var(--foamico-egg-white);
+            border: 1px solid rgba(26, 26, 26, .08);
+            border-radius: 8px;
+            box-shadow: 0 18px 48px rgba(26, 26, 26, .08);
+            transform: translateY(-24px);
+        }
+        
+        @media(max-width:768px) {
+            .trust-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .trust-item strong {
+            display: block;
+            font-family: var(--foamico-font-head);
+            font-weight: 800;
+            font-size: 16px;
+            margin-bottom: 4px;
+            color: var(--foamico-avocado);
+        }
+        
+        .trust-item span {
+            font-size: 13px;
+            color: var(--foamico-sand);
+        }
+        /* COLLECTION */
+        
+        .collection {
+            background: var(--foamico-paper);
+            padding: 72px 0 96px;
+        }
+        
+        .collection-head {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 72px;
+        }
+        
+        .collection-head h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            margin-bottom: 20px;
+        }
+        
+        .collection-head p {
+            font-size: 16.5px;
+            color: var(--foamico-slate);
+            line-height: 1.8;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        
+        @media(max-width:1020px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+            }
+        }
+        
+        @media(max-width:700px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .product-card {
+            background: var(--foamico-egg-white);
+            border-radius: var(--foamico-radius-card);
+            overflow: hidden;
+            transition: transform .3s, box-shadow .3s;
+            border: 1px solid rgba(26, 26, 26, .08);
+            box-shadow: 0 14px 34px rgba(26, 26, 26, .07);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(26, 26, 26, .12);
+        }
+        
+        .product-gallery {
+            background: linear-gradient(180deg, var(--foamico-egg-white), var(--foamico-mist));
+            border-bottom: 1px solid var(--foamico-light-grey);
+            padding: 16px;
+            min-height: 340px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .product-main {
+            background: var(--foamico-egg-white);
+            border-radius: 8px;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: var(--foamico-sand);
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        .product-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-thumbs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+        
+        .product-thumb {
+            background: var(--foamico-egg-white);
+            border-radius: 6px;
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: var(--foamico-sand);
+            font-weight: 500;
+            border: 1px solid var(--foamico-light-grey);
+            overflow: hidden;
+        }
+        
+        .product-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-body {
+            padding: 24px;
+        }
+        
+        .product-name {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+        
+        .product-bestfor {
+            margin-bottom: 20px;
+        }
+        
+        .bestfor-label {
+            font-family: var(--foamico-font-head);
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: var(--foamico-avocado);
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .bestfor-items {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .bestfor-item {
+            font-size: 14px;
+            color: var(--foamico-key-black);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .bestfor-item::before {
+            content: '✓';
+            color: var(--foamico-kiwi);
+            font-weight: 800;
+            font-size: 16px;
+        }
+        
+        .product-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--foamico-font-head);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--foamico-avocado);
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            transition: color .2s;
+            margin-top: 16px;
+        }
+        
+        .product-cta:hover {
+            color: var(--foamico-kiwi);
+        }
+        
+        .product-cta::after {
+            content: '→';
+            font-size: 16px;
+        }
+        /* WHY FOAMICO */
+        
+        .why-foamico {
+            background: var(--foamico-paper);
+            padding: 96px 0;
+        }
+        
+        .why-head {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 72px;
+        }
+        
+        .why-head h2 {
+            font-size: clamp(26px, 3.5vw, 40px);
+            margin-bottom: 20px;
+        }
+        
+        .why-head p {
+            font-size: 17px;
+            color: var(--foamico-slate);
+            line-height: 1.8;
+        }
+        
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        @media(max-width:900px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+        
+        .why-card {
+            text-align: center;
+        }
+        
+        .why-icon {
+            width: 72px;
+            height: 72px;
+            background: var(--foamico-calm);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 32px;
+        }
+        
+        .why-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        
+        .why-card p {
+            color: var(--foamico-slate);
+            font-size: 15px;
+            line-height: 1.75;
+        }
+        /* LAYER BREAKDOWN */
+        
+        .layers {
+            background: var(--foamico-egg-white);
+            padding: 96px 0;
+            border-top: 1px solid var(--foamico-light-grey);
+            border-bottom: 1px solid var(--foamico-light-grey);
+        }
+        
+        .layer-head {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 72px;
+        }
+        
+        .layer-head h2 {
+            font-size: clamp(26px, 3.5vw, 40px);
+            margin-bottom: 20px;
+        }
+        
+        .layer-head p {
+            font-size: 16px;
+            color: var(--foamico-slate);
+        }
+        
+        .layer-visual-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+        }
+        
+        @media(max-width:900px) {
+            .layer-visual-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        .layer-illustration {
+            background: var(--foamico-mist);
+            border-radius: var(--foamico-radius-card);
+            padding: 40px;
+            border: 1px solid var(--foamico-light-grey);
+            min-height: 400editspx;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2px;
+        }
+        
+        .layer-block {
+            background: var(--foamico-egg-white);
+            border: 2px solid var(--foamico-light-grey);
+            border-radius: 8px;
+            padding: 18px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all .3s;
+        }
+        
+        .layer-block:hover {
+            border-color: var(--foamico-kiwi);
+            background: var(--foamico-calm);
+        }
+        
+        .layer-block.active {
+            border-color: var(--foamico-kiwi);
+            background: var(--foamico-kiwi);
+            color: var(--foamico-key-black);
+        }
+        
+        .layer-block-name {
+            font-family: var(--foamico-font-head);
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+        }
+        
+        .layer-details {
+            margin-top: 48px;
+        }
+        
+        .layer-details h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--foamico-key-black);
+        }
+        
+        .layer-details p {
+            color: var(--foamico-slate);
+            font-size: 15px;
+            line-height: 1.75;
+        }
+        
+        .layer-details .description {
+            display: none;
+            animation: fadeIn .3s ease-in;
+        }
+        
+        .layer-details .description.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        /* TRUST SECTION */
+        
+        .trust-section {
+            background: linear-gradient(135deg, var(--foamico-avocado) 0%, var(--foamico-kiwi) 100%);
+            padding: 96px 0;
+            color: var(--foamico-egg-white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .trust-section::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(254, 254, 254, .05);
+            right: -150px;
+            top: -150px;
+        }
+        
+        .trust-section::after {
+            content: '';
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: rgba(254, 254, 254, .03);
+            left: -100px;
+            bottom: -100px;
+        }
+        
+        .trust-section .wrap {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .trust-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        
+        @media(max-width:900px) {
+            .trust-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        .warranty-badge {
+            text-align: center;
+        }
+        
+        .warranty-number {
+            font-size: clamp(72px, 10vw, 120px);
+            font-family: var(--foamico-font-head);
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        
+        .warranty-label {
+            font-family: var(--foamico-font-head);
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        
+        .warranty-sublabel {
+            font-size: 13px;
+            margin-top: 12px;
+            opacity: .85;
+        }
+        
+        .trust-details {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .trust-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .trust-detail::before {
+            content: '✓';
+            font-size: 28px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .trust-detail p {
+            font-size: 15.5px;
+            line-height: 1.7;
+        }
+        
+        .trust-detail strong {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        /* REVIEWS */
+        
+        .reviews {
+            background: var(--foamico-egg-white);
+            padding: 88px 0;
+            border-top: 1px solid var(--foamico-light-grey);
+        }
+        
+        .reviews-head {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 56px;
+        }
+        
+        .reviews-head h2 {
+            font-size: clamp(26px, 3.5vw, 40px);
+            margin-bottom: 16px;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        
+        @media(max-width:900px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .review-card {
+            background: var(--foamico-paper);
+            border-radius: var(--foamico-radius-card);
+            padding: 32px;
+            border: 1px solid var(--foamico-light-grey);
+        }
+        
+        .review-stars {
+            color: var(--foamico-kiwi);
+            font-size: 14px;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+        
+        .review-text {
+            color: var(--foamico-key-black);
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            font-style: italic;
+        }
+        
+        .review-author {
+            font-size: 13px;
+            color: var(--foamico-sand);
+        }
+        
+        .review-author strong {
+            display: block;
+            color: var(--foamico-key-black);
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+        /* FINANCING */
+        
+        .financing {
+            background: var(--foamico-paper);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .financing h2 {
+            font-size: clamp(28px, 3.5vw, 40px);
+            margin-bottom: 12px;
+        }
+        
+        .financing p {
+            font-size: 17px;
+            color: var(--foamico-slate);
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+        
+        .emi-highlight {
+            font-family: var(--foamico-font-head);
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--foamico-kiwi);
+            margin-bottom: 32px;
+        }
+        
+        .financing-button {
+            background: var(--foamico-kiwi);
+            color: var(--foamico-key-black);
+            padding: 16px 36px;
+            border-radius: var(--foamico-radius-pill);
+            font-family: var(--foamico-font-head);
+            font-weight: 700;
+            font-size: 15px;
+            transition: filter .2s;
+        }
+        
+        .financing-button:hover {
+            filter: brightness(.94);
+        }
+        /* FINAL CTA */
+        
+        .final-cta {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 24px;
+            background: var(--foamico-egg-white);
+        }
+        
+        .final-cta-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--foamico-mist) 0%, var(--foamico-calm) 100%);
+            z-index: 1;
+        }
+        
+        .final-cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        
+        .final-cta h2 {
+            font-size: clamp(32px, 5vw, 52px);
+            margin-bottom: 32px;
+            line-height: 1.2;
+        }
+        
+        .final-cta .btn-primary {
+            margin-top: 24px;
+            font-size: 16px;
+            padding: 18px 40px;
+        }
+        /* FOOTER */
+        
+        footer {
+            background: var(--foamico-key-black);
+            color: var(--foamico-sand);
+            padding: 56px 0 32px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        @media(max-width:768px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+        }
+        
+        .footer-col h4 {
+            font-family: var(--foamico-font-head);
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--foamico-kiwi);
+            margin-bottom: 16px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col a {
+            color: var(--foamico-sand);
+            font-size: 14px;
+            transition: color .2s;
+        }
+        
+        .footer-col a:hover {
+            color: var(--foamico-egg-white);
+        }
+        
+        .footer-base {
+            border-top: 1px solid var(--foamico-charcoal);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 12.5px;
+            color: var(--foamico-slate);
+        }
+        
+        .footer-brand {
+            margin-bottom: 8px;
+        }
+        
+        .footer-brand .brand-text b {
+            color: var(--foamico-egg-white);
+        }
+        
+        .footer-brand p {
+            font-size: 13px;
+            margin-top: 12px;
+            max-width: 35ch;
+        }
+        /* MODAL GALLERY */
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, .95);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            transition: opacity .3s ease;
+        }
+        
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .modal-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        
+        .modal-image-container {
+            position: relative;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: auto;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+        
+        .modal-counter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(26, 26, 26, .8);
+            color: var(--foamico-egg-white);
+            padding: 8px 16px;
+            border-radius: 24px;
+            font-family: var(--foamico-font-body);
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(254, 254, 254, .15);
+            color: var(--foamico-egg-white);
+            border: none;
+            padding: 16px 20px;
+            font-size: 28px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background .2s;
+            z-index: 101;
+        }
+        
+        .modal-nav:hover {
+            background: rgba(254, 254, 254, .25);
+        }
+        
+        .modal-nav.prev {
+            left: 0;
+        }
+        
+        .modal-nav.next {
+            right: 0;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(26, 26, 26, .8);
+            color: var(--foamico-egg-white);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background .2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-close:hover {
+            background: rgba(26, 26, 26, .95);
+        }
+        
+        .product-main,
+        .product-thumb {
+            cursor: pointer;
+            transition: opacity .2s;
+        }
+        
+        .product-main:hover,
+        .product-thumb:hover {
+            opacity: .8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="wrap nav">
+            <a class="brand" href="#" aria-label="Foamico">
+                <span class="brand-mark" aria-hidden="true"></span>
+                <span class="brand-text"><b>FOAMICO</b><span>Luxury Mattress</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="https://www.foamicomattress.com/about">About us</a></li>
+                <li class="has-drop">
+                    <a href="#collection">Products</a>
+                    <ul class="drop">
+                        <li><span class="drop-header">Premium Collection</span><span class="drop-sub">Choose by feel</span></li>
+                        <li><a href="https://www.foamicomattress.com/products/sovaclassic">Sova</a></li>
+                        <li><a href="https://www.foamicomattress.com/products/ultimaclassic">Ultima</a></li>
+                        <li><a href="https://www.foamicomattress.com/products/lumaclassic">Luma</a></li>
+                        <li class="drop-sep" aria-hidden="true"></li>
+                        <li><a href="https://www.foamicomattress.com/products/restoclassic">Resto</a></li>
+                        <li><a href="https://www.foamicomattress.com/products/natura1">Natura</a></li>
+                        <li><a href="https://www.foamicomattress.com/products/riva1000">Riva</a></li>
+                        <li class="drop-sep" aria-hidden="true"></li>
+                        <li><a href="https://www.foamicomattress.com/products/compare" class="drop-cta">Compare Collection →</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://www.foamicomattress.com/blog">The SleepyTimes</a></li>
+                <li><a href="https://wa.me/917496982886?text=Hi%20FOAMICO%2C%20I%20would%20like%20to%20get%20in%20touch" target="_blank">Contact Us</a></li>
+            </ul>
+            <a class="pill" href="https://forms.gle/YOUR_FORM_ID" target="_blank">Become a Dealer</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="eyebrow">Sova · Ultima · Luma · Resto · Riva</span>
+            <h1>One premium mattress range for every kind of sleeper.</h1>
+            <p class="lede">Wake up without back pain. Sleep cooler. Feel supported every single night.</p>
+            <p style="font-size: 15px; color: var(--foamico-slate); margin-bottom: 32px;">Premium mattresses designed with German engineering and decades of mattress expertise.</p>
+            <div class="hero-buttons">
+                <a class="btn-primary" href="#collection">Shop Collection</a>
+                <a class="btn-secondary" href="https://wa.me/917496982886?text=Hi%20FOAMICO%2C%20I%20would%20like%20to%20talk%20to%20a%20sleep%20expert" target="_blank">Talk to a Sleep Expert</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-range" aria-label="Foamico mattress range">
+                <a class="hero-tile large" href="https://www.foamicomattress.com/products/sovaclassic">
+                    <img src="images/products/sova/main.JPG" alt="Sova mattress">
+                    <span>Sova</span>
+                </a>
+                <a class="hero-tile medium" href="https://www.foamicomattress.com/products/ultimaclassic">
+                    <img src="images/products/ultima/main.JPG" alt="Ultima mattress">
+                    <span>Ultima</span>
+                </a>
+                <a class="hero-tile small" href="https://www.foamicomattress.com/products/lumaclassic">
+                    <img src="images/products/luma/main.JPG" alt="Luma mattress">
+                    <span>Luma</span>
+                </a>
+                <a class="hero-tile small" href="https://www.foamicomattress.com/products/restoclassic">
+                    <img src="images/products/resto/main.JPG" alt="Resto mattress">
+                    <span>Resto</span>
+                </a>
+                <a class="hero-tile small" href="https://www.foamicomattress.com/products/riva1000">
+                    <img src="images/products/riva/main.JPG" alt="Riva mattress">
+                    <span>Riva</span>
+                </a>
+                <div class="range-note">
+                    <strong>25</strong>
+                    <span>year warranty on premium ranges</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <div class="wrap">
+        <div class="trust-strip">
+            <div class="trust-item">
+                <strong>★★★★★ 4.9</strong>
+                <span>Customer Rating</span>
+            </div>
+            <div class="trust-item">
+                <strong>25-Year Warranty</strong>
+                <span>Built to Last</span>
+            </div>
+            <div class="trust-item">
+                <strong>Made in India</strong>
+                <span>Since 1960s</span>
+            </div>
+            <div class="trust-item">
+                <strong>50,000+</strong>
+                <span>Happy Sleepers</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- COLLECTION -->
+    <section class="collection" id="collection">
+        <div class="wrap">
+            <div class="collection-head">
+                <h2>Find Your Perfect Mattress</h2>
+                <p>Five ranges. Five different feels. Choose the one that matches how you sleep.</p>
+            </div>
+            <div class="product-grid">
+                <!-- SOVA -->
+                <div class="product-card">
+                    <div class="product-gallery">
+                        <div class="product-main">
+                            <img src="images/products/sova/main.JPG" alt="Sova Mattress">
+                        </div>
+                        <div class="product-thumbs">
+                            <div class="product-thumb"><img src="images/products/sova/angle1.JPG" alt="Angle 1"></div>
+                            <div class="product-thumb"><img src="images/products/sova/angle2.JPG" alt="Angle 2"></div>
+                            <div class="product-thumb"><img src="images/products/sova/angle3.JPG" alt="Angle 3"></div>
+                            <div class="product-thumb"><img src="images/products/sova/angle4.jpg" alt="Angle 4"></div>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Sova</h3>
+                        <div class="product-bestfor">
+                            <span class="bestfor-label">Best For</span>
+                            <div class="bestfor-items">
+                                <div class="bestfor-item">Back Sleepers</div>
+                                <div class="bestfor-item">Everyday Comfort</div>
+                            </div>
+                        </div>
+                        <a class="product-cta" href="https://www.foamicomattress.com/products/sovaclassic">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- ULTIMA -->
+                <div class="product-card">
+                    <div class="product-gallery">
+                        <div class="product-main">
+                            <img src="images/products/ultima/main.JPG" alt="Ultima Mattress">
+                        </div>
+                        <div class="product-thumbs">
+                            <div class="product-thumb"><img src="images/products/ultima/angle1.JPG" alt="Angle 1"></div>
+                            <div class="product-thumb"><img src="images/products/ultima/angle2.JPG" alt="Angle 2"></div>
+                            <div class="product-thumb"><img src="images/products/ultima/angle3.JPG" alt="Angle 3"></div>
+                            <div class="product-thumb"><img src="images/products/ultima/angle4.JPG" alt="Angle 4"></div>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Ultima</h3>
+                        <div class="product-bestfor">
+                            <span class="bestfor-label">Best For</span>
+                            <div class="bestfor-items">
+                                <div class="bestfor-item">Back Pain Relief</div>
+                                <div class="bestfor-item">Firm Support</div>
+                                <div class="bestfor-item">Luxury Feel</div>
+                            </div>
+                        </div>
+                        <a class="product-cta" href="https://www.foamicomattress.com/products/ultimaclassic">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- LUMA -->
+                <div class="product-card">
+                    <div class="product-gallery">
+                        <div class="product-main">
+                            <img src="images/products/luma/main.JPG" alt="Luma Mattress">
+                        </div>
+                        <div class="product-thumbs">
+                            <div class="product-thumb"><img src="images/products/luma/angle1.JPG" alt="Angle 1"></div>
+                            <div class="product-thumb"><img src="images/products/luma/angle2.JPG" alt="Angle 2"></div>
+                            <div class="product-thumb"><img src="images/products/luma/angle3.JPG" alt="Angle 3"></div>
+                            <div class="product-thumb"><img src="images/products/luma/angle4.JPG" alt="Angle 4"></div>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Luma</h3>
+                        <div class="product-bestfor">
+                            <span class="bestfor-label">Best For</span>
+                            <div class="bestfor-items">
+                                <div class="bestfor-item">Side Sleepers</div>
+                                <div class="bestfor-item">Couples</div>
+                                <div class="bestfor-item">Cooler Sleep</div>
+                            </div>
+                        </div>
+                        <a class="product-cta" href="https://www.foamicomattress.com/products/lumaclassic">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- RESTO -->
+                <div class="product-card">
+                    <div class="product-gallery">
+                        <div class="product-main">
+                            <img src="images/products/resto/main.JPG" alt="Resto Mattress">
+                        </div>
+                        <div class="product-thumbs">
+                            <div class="product-thumb"><img src="images/products/resto/angle1.JPG" alt="Angle 1"></div>
+                            <div class="product-thumb"><img src="images/products/resto/angle2.JPG" alt="Angle 2"></div>
+                            <div class="product-thumb"><img src="images/products/resto/angle3.JPG" alt="Angle 3"></div>
+                            <div class="product-thumb"><img src="images/products/resto/angle4.JPG" alt="Angle 4"></div>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Resto</h3>
+                        <div class="product-bestfor">
+                            <span class="bestfor-label">Best For</span>
+                            <div class="bestfor-items">
+                                <div class="bestfor-item">Balanced Comfort</div>
+                                <div class="bestfor-item">Daily Recovery</div>
+                                <div class="bestfor-item">Pressure Relief</div>
+                            </div>
+                        </div>
+                        <a class="product-cta" href="https://www.foamicomattress.com/products/restoclassic">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- RIVA -->
+                <div class="product-card">
+                    <div class="product-gallery">
+                        <div class="product-main">
+                            <img src="images/products/riva/main.JPG" alt="Riva Mattress">
+                        </div>
+                        <div class="product-thumbs">
+                            <div class="product-thumb"><img src="images/products/riva/angle1.JPG" alt="Angle 1"></div>
+                            <div class="product-thumb"><img src="images/products/riva/angle2.JPG" alt="Angle 2"></div>
+                            <div class="product-thumb"><img src="images/products/riva/angle3.JPG" alt="Angle 3"></div>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Riva</h3>
+                        <div class="product-bestfor">
+                            <span class="bestfor-label">Best For</span>
+                            <div class="bestfor-items">
+                                <div class="bestfor-item">Premium Support</div>
+                                <div class="bestfor-item">Plush Comfort</div>
+                                <div class="bestfor-item">Restful Sleep</div>
+                            </div>
+                        </div>
+                        <a class="product-cta" href="https://www.foamicomattress.com/products/riva1000">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY FOAMICO -->
+    <section class="why-foamico" id="why">
+        <div class="wrap">
+            <div class="why-head">
+                <h2>Great sleep isn't magic.<br>It's smart engineering.</h2>
+                <p>Every Foamico mattress is built with one purpose: to help you wake up feeling better.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">🦴</div>
+                    <h3>Supports Your Spine</h3>
+                    <p>Keeps your back naturally aligned throughout the night so you wake up refreshed instead of stiff.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">❄️</div>
+                    <h3>Stays Cooler All Night</h3>
+                    <p>Special comfort layers help release heat instead of trapping it. No more waking up drenched.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">⏱️</div>
+                    <h3>Built to Last</h3>
+                    <p>Premium materials maintain their shape and support for years. Your mattress will feel new for decades.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYER BREAKDOWN -->
+    <section class="layers">
+        <div class="wrap">
+            <div class="layer-head">
+                <h2>What Makes Foamico Different</h2>
+                <p>Hover over each layer to learn how we engineer better sleep.</p>
+            </div>
+            <div class="layer-visual-grid">
+                <div class="layer-illustration">
+                    <div class="layer-block" data-layer="fabric">
+                        <div class="layer-block-name">Premium Fabric</div>
+                    </div>
+                    <div class="layer-block" data-layer="ortho">
+                        <div class="layer-block-name">OrthoSense® Layer</div>
+                    </div>
+                    <div class="layer-block" data-layer="latex">
+                        <div class="layer-block-name">Zero G Latex</div>
+                    </div>
+                    <div class="layer-block" data-layer="support">
+                        <div class="layer-block-name">Support Core</div>
+                    </div>
+                    <div class="layer-block" data-layer="base">
+                        <div class="layer-block-name">Base Layer</div>
+                    </div>
+                </div>
+                <div class="layer-details">
+                    <div class="description active" data-layer="fabric">
+                        <h3>Premium Fabric</h3>
+                        <p>Soft, breathable cover that keeps moisture away and maintains comfort through every season.</p>
+                    </div>
+                    <div class="description" data-layer="ortho">
+                        <h3>OrthoSense® Layer</h3>
+                        <p>Responds to your body's weight and sleeping position to provide balanced support throughout the night.</p>
+                    </div>
+                    <div class="description" data-layer="latex">
+                        <h3>Zero G Latex</h3>
+                        <p>Naturally breathable to help you sleep cooler and reduce pressure on your shoulders and hips.</p>
+                    </div>
+                    <div class="description" data-layer="support">
+                        <h3>Support Core</h3>
+                        <p>High-density foam engineered to maintain perfect spinal alignment while staying responsive.</p>
+                    </div>
+                    <div class="description" data-layer="base">
+                        <h3>Base Layer</h3>
+                        <p>Foundational support that prevents sagging and keeps your mattress feeling fresh for 25+ years.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST SECTION -->
+    <section class="trust-section">
+        <div class="wrap trust-content">
+            <div class="warranty-badge">
+                <div class="warranty-number">25</div>
+                <div class="warranty-label">Year</div>
+                <div class="warranty-sublabel">Warranty on Premium Ranges</div>
+            </div>
+            <div class="trust-details">
+                <div class="trust-detail">
+                    <p><strong>German Engineering</strong><br>Precision-designed for support and longevity.</p>
+                </div>
+                <div class="trust-detail">
+                    <p><strong>Trusted Since 1960s</strong><br>Three generations of mattress expertise.</p>
+                </div>
+                <div class="trust-detail">
+                    <p><strong>50,000+ Customers</strong><br>Real reviews from real mornings.</p>
+                </div>
+                <div class="trust-detail">
+                    <p><strong>4.9/5 Rating</strong><br>Independently verified across all metros.</p>
+                </div>
+                <div class="trust-detail">
+                    <p><strong>Made in India</strong><br>Premium quality, locally crafted.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews">
+        <div class="wrap">
+            <div class="reviews-head">
+                <h2>What Our Customers Say</h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The best mattress we've ever owned. My back pain is completely gone."</p>
+                    <div class="review-author"><strong>Priya Sharma</strong>Delhi</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"No more morning back pain. Feels luxurious and supportive at the same time."</p>
+                    <div class="review-author"><strong>Arjun Malhotra</strong>Gurgaon</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Feels luxurious. The quality is truly exceptional for the price."</p>
+                    <div class="review-author"><strong>Meera Reddy</strong>Bangalore</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINANCING -->
+    <section class="financing">
+        <div class="wrap" style="max-width: 680px;">
+            <h2>Own Better Sleep Today</h2>
+            <p>Flexible EMI options available on all ranges.</p>
+            <div class="emi-highlight">Starting from ₹4,999/month</div>
+            <a class="financing-button" href="https://wa.me/917496982886?text=Hi%20FOAMICO%2C%20I%20would%20like%20to%20know%20more%20about%20EMI%20options" target="_blank">Talk on WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="final-cta-bg"></div>
+        <div class="final-cta-content">
+            <h2>Better mornings begin tonight.</h2>
+            <a class="btn-primary" href="#collection">Shop Collection</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="brand" href="#" aria-label="Foamico">
+                        <span class="brand-mark" aria-hidden="true"></span>
+                        <span class="brand-text"><b>FOAMICO</b><span>Luxury Mattress</span></span>
+                    </a>
+                    <p>Premium mattresses designed with German engineering. Made in India since 1960s.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="https://www.foamicomattress.com/products/sovaclassic">Sova</a></li>
+                        <li><a href="https://www.foamicomattress.com/products/ultimaclassic">Ultima</a></li>
+                        <li><a href="https://www.foamicomattress.com/products/lumaclassic">Luma</a></li>
+                        <li><a href="https://www.foamicomattress.com/products/compare">Compare</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="https://www.foamicomattress.com/about">About</a></li>
+                        <li><a href="https://www.foamicomattress.com/blog">Sleepy Times</a></li>
+                        <li><a href="https://wa.me/917496982886" target="_blank">Contact</a></li>
+                        <li><a href="https://forms.gle/YOUR_FORM_ID" target="_blank">Become a Dealer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Warranty</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Shipping</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-base">
+                <span>© 2026 FOAMICO · From the house of LPPL. All rights reserved.</span>
+                <span>Made for better mornings.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- IMAGE GALLERY MODAL -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close gallery">&times;</button>
+            <div class="modal-image-container">
+                <img id="modalImage" class="modal-image" src="" alt="Product image">
+                <div class="modal-counter"><span id="currentImageIndex">1</span> / <span id="totalImages">5</span></div>
+                <button class="modal-nav prev" onclick="prevImage()" aria-label="Previous image">‹</button>
+                <button class="modal-nav next" onclick="nextImage()" aria-label="Next image">›</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentGallery = [];
+        let currentImageIndex = 0;
+
+        // Layer breakdown interactivity
+        const layerBlocks = document.querySelectorAll('.layer-block');
+        const layerDescriptions = document.querySelectorAll('.description');
+
+        layerBlocks.forEach(block => {
+            block.addEventListener('mouseenter', () => {
+                const layer = block.dataset.layer;
+                layerBlocks.forEach(b => b.classList.remove('active'));
+                layerDescriptions.forEach(d => d.classList.remove('active'));
+                block.classList.add('active');
+                document.querySelector(`.description[data-layer="${layer}"]`).classList.add('active');
+            });
+        });
+
+        // Set first layer as active on load
+        layerBlocks[0].classList.add('active');
+
+        // Image gallery modal functionality
+        function openGallery(images, index) {
+            currentGallery = images;
+            currentImageIndex = index;
+            showImage();
+            document.getElementById('imageModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function showImage() {
+            const img = currentGallery[currentImageIndex];
+            document.getElementById('modalImage').src = img;
+            document.getElementById('currentImageIndex').textContent = currentImageIndex + 1;
+            document.getElementById('totalImages').textContent = currentGallery.length;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % currentGallery.length;
+            showImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
+            showImage();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('imageModal').classList.contains('active')) return;
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Close modal on outside click
+        document.getElementById('imageModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('imageModal')) closeModal();
+        });
+
+        // Add click handlers to all product images
+        document.querySelectorAll('.product-card').forEach(card => {
+            const productMain = card.querySelector('.product-main');
+            const productThumbs = card.querySelectorAll('.product-thumb');
+            const mainImg = productMain.querySelector('img');
+            const thumbImgs = Array.from(productThumbs).map(t => t.querySelector('img'));
+
+            // All images point to the same gallery
+            const gallery = [mainImg.src, ...thumbImgs.map(img => img.src)];
+
+            // Click on main image
+            productMain.addEventListener('click', () => openGallery(gallery, 0));
+
+            // Click on thumbnails
+            thumbImgs.forEach((img, idx) => {
+                productThumbs[idx].addEventListener('click', () => openGallery(gallery, idx + 1));
+            });
+        });
+    </script>
+
+</body>
+
+</html>
