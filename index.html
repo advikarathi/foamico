@@ -1011,45 +1011,6 @@
             transform: rotate(180deg) translateX(8px);
         }
 
-        .category-shop-btn {
-            position: relative;
-            z-index: 10;
-            margin-top: auto;
-            padding: 12px 32px;
-            background: var(--ms-white);
-            color: var(--ms-charcoal);
-            border-radius: 999px;
-            font-family: var(--ms-font-body);
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: none;
-            overflow: hidden;
-            transition: transform .3s ease, box-shadow .3s ease;
-            transform: translateZ(34px);
-        }
-
-        .category-shop-btn::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(120deg, transparent 0%, rgba(0, 0, 0, .05) 50%, transparent 100%);
-            transform: translateX(-100%);
-            transition: transform .5s ease;
-        }
-
-        .category-shop-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, .15);
-        }
-
-        .category-shop-btn:hover::before {
-            transform: translateX(100%);
-        }
-
-        .category-shop-btn:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
-        }
         /* FOUNDER STORY */
 
         .founder-section {
@@ -1440,8 +1401,7 @@
             .category-card:hover,
             .matrix-card:hover,
             .trust-stat:hover,
-            .founder-photo-sm,
-            .category-shop-btn {
+            .founder-photo-sm {
                 transform: none;
             }
         }
@@ -1452,6 +1412,215 @@
                 bottom: 16px;
                 width: 52px;
                 height: 52px;
+            }
+        }
+        /* CHAT WIDGET */
+
+        .chat-widget {
+            position: fixed;
+            right: 22px;
+            bottom: 92px;
+            z-index: 85;
+        }
+
+        .chat-toggle {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: var(--ms-teal-deep);
+            color: var(--ms-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 28px rgba(26, 26, 26, .3);
+            transition: transform .2s ease;
+            position: relative;
+        }
+
+        .chat-toggle:hover {
+            transform: scale(1.08);
+        }
+
+        .chat-toggle svg {
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            transition: opacity .2s ease, transform .2s ease;
+        }
+
+        .chat-icon-close {
+            opacity: 0;
+            transform: rotate(-45deg) scale(.6);
+        }
+
+        .chat-widget.is-open .chat-icon-open {
+            opacity: 0;
+            transform: rotate(45deg) scale(.6);
+        }
+
+        .chat-widget.is-open .chat-icon-close {
+            opacity: 1;
+            transform: rotate(0) scale(1);
+        }
+
+        .chat-panel {
+            position: absolute;
+            right: 0;
+            bottom: 74px;
+            width: min(360px, calc(100vw - 44px));
+            height: min(480px, calc(100vh - 160px));
+            background: var(--ms-white);
+            border-radius: 18px;
+            box-shadow: 0 24px 60px rgba(26, 26, 26, .22);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(16px) scale(.97);
+            pointer-events: none;
+            transition: opacity .25s ease, transform .25s ease;
+        }
+
+        .chat-widget.is-open .chat-panel {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            background: var(--ms-teal-deep);
+            color: var(--ms-white);
+            flex-shrink: 0;
+        }
+
+        .chat-header-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chat-header-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--ms-white);
+            object-fit: cover;
+        }
+
+        .chat-header-brand strong {
+            display: block;
+            font-family: var(--ms-font-head);
+            font-size: 13.5px;
+        }
+
+        .chat-header-brand span {
+            display: block;
+            font-size: 11px;
+            color: rgba(255, 255, 255, .75);
+        }
+
+        .chat-close-btn {
+            color: var(--ms-white);
+            font-size: 20px;
+            line-height: 1;
+            opacity: .8;
+        }
+
+        .chat-close-btn:hover {
+            opacity: 1;
+        }
+
+        .chat-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: var(--ms-paper);
+        }
+
+        .chat-msg {
+            max-width: 84%;
+            font-size: 13.5px;
+            line-height: 1.55;
+            padding: 10px 14px;
+            border-radius: 14px;
+        }
+
+        .chat-msg.bot {
+            align-self: flex-start;
+            background: var(--ms-white);
+            color: var(--ms-charcoal);
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 2px 8px rgba(26, 26, 26, .06);
+        }
+
+        .chat-msg.user {
+            align-self: flex-end;
+            background: var(--ms-teal-deep);
+            color: var(--ms-white);
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-msg.bot a {
+            color: var(--ms-teal-deep);
+            font-weight: 700;
+        }
+
+        .chat-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-self: flex-start;
+            max-width: 92%;
+        }
+
+        .chat-option-btn {
+            text-align: left;
+            background: var(--ms-white);
+            border: 1px solid var(--ms-line);
+            color: var(--ms-charcoal);
+            font-family: var(--ms-font-body);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 14px;
+            border-radius: 12px;
+            transition: background .15s ease, border-color .15s ease;
+        }
+
+        .chat-option-btn:hover {
+            background: var(--ms-teal-pale);
+            border-color: var(--ms-teal);
+        }
+
+        .chat-wa-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: #fff;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            align-self: flex-start;
+        }
+
+        .chat-wa-btn svg {
+            width: 15px;
+            height: 15px;
+            fill: #fff;
+        }
+
+        @media(max-width:500px) {
+            .chat-widget {
+                right: 16px;
+                bottom: 80px;
             }
         }
     </style>
@@ -1560,19 +1729,16 @@
                 <video class="category-video" src="video/ultima.mp4" autoplay loop muted playsinline></video>
                 <div class="category-overlay"></div>
                 <h2 class="category-name">Firm</h2>
-                <span class="category-shop-btn">Shop Firm</span>
             </a>
             <a class="category-card" href="https://www.foamicomattress.com/products/restoclassic" style="transition-delay:150ms;">
                 <video class="category-video" src="video/resto.mp4" autoplay loop muted playsinline></video>
                 <div class="category-overlay"></div>
                 <h2 class="category-name">Medium</h2>
-                <span class="category-shop-btn">Shop Medium</span>
             </a>
             <a class="category-card" href="https://www.foamicomattress.com/products/riva1000" style="transition-delay:300ms;">
                 <video class="category-video" src="video/riva.mp4" autoplay loop muted playsinline></video>
                 <div class="category-overlay"></div>
                 <h2 class="category-name">Plush</h2>
-                <span class="category-shop-btn">Shop Plush</span>
             </a>
         </div>
     </section>
@@ -1806,6 +1972,23 @@
         <svg viewBox="0 0 24 24"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.87 11.88L4 20l4.24-1.11a7.9 7.9 0 0 0 3.8.97h.01a7.94 7.94 0 0 0 5.55-13.54zm-5.55 12.2a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.51.66.67-2.45-.16-.25a6.58 6.58 0 0 1 10.24-8.16 6.53 6.53 0 0 1 1.94 4.66 6.6 6.6 0 0 1-6.58 6.6zm3.6-4.93c-.2-.1-1.17-.58-1.35-.64-.18-.07-.31-.1-.44.1-.13.2-.5.64-.62.77-.11.13-.23.14-.42.05a5.4 5.4 0 0 1-1.6-.98 5.99 5.99 0 0 1-1.1-1.37c-.12-.2 0-.3.09-.4.09-.1.2-.23.29-.35.1-.11.13-.19.2-.32.06-.13.03-.24-.02-.34-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.34h-.38a.72.72 0 0 0-.52.24c-.18.2-.68.66-.68 1.6s.7 1.87.79 2c.1.13 1.37 2.09 3.32 2.93.46.2.83.32 1.11.41.47.15.9.13 1.24.08.38-.06 1.17-.48 1.33-.94.17-.46.17-.85.12-.94-.05-.09-.18-.14-.38-.24z"></path></svg>
     </a>
 
+    <div class="chat-widget" data-chat-widget>
+        <div class="chat-panel" data-chat-panel role="dialog" aria-label="Foamico chat assistant">
+            <div class="chat-header">
+                <div class="chat-header-brand">
+                    <img src="logo.jpeg" alt="">
+                    <div><strong>Foamico Assistant</strong><span>Typically replies instantly</span></div>
+                </div>
+                <button class="chat-close-btn" type="button" data-chat-close aria-label="Close chat">&times;</button>
+            </div>
+            <div class="chat-body" data-chat-body></div>
+        </div>
+        <button class="chat-toggle" type="button" data-chat-toggle aria-label="Chat with Foamico" aria-expanded="false">
+            <svg class="chat-icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-4-1L3 20l1-5.5A8.5 8.5 0 1 1 21 11.5z"></path></svg>
+            <svg class="chat-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="5" x2="19" y2="19"></line><line x1="19" y1="5" x2="5" y2="19"></line></svg>
+        </button>
+    </div>
+
     <script>
         (function() {
             var hero = document.querySelector('[data-scroll-hero]');
@@ -1893,6 +2076,200 @@
             });
             items.forEach(function(el) {
                 observer.observe(el);
+            });
+        })();
+
+        (function() {
+            var widget = document.querySelector('[data-chat-widget]');
+            if (!widget) return;
+            var toggle = widget.querySelector('[data-chat-toggle]');
+            var closeBtn = widget.querySelector('[data-chat-close]');
+            var body = widget.querySelector('[data-chat-body]');
+            var isHome = !!document.querySelector('[data-scroll-hero]');
+            var homePrefix = isHome ? '' : 'hero-concept.html';
+            var waLink = 'https://wa.me/917496982886?text=Hi%20Foamico%2C%20I%27d%20like%20to%20know%20more';
+
+            function link(hash) {
+                return homePrefix + hash;
+            }
+
+            var optionSets = {
+                followup: [{
+                    label: '⟵ Back to menu',
+                    next: 'main'
+                }, {
+                    label: '💬 Talk to a human',
+                    next: 'human'
+                }],
+                followupWa: [{
+                    label: '⟵ Back to menu',
+                    next: 'main'
+                }]
+            };
+
+            var nodes = {
+                main: {
+                    bot: "Hi! I'm the Foamico Sleep Assistant. What can I help you with?",
+                    options: [{
+                        label: 'Which mattress is right for me?',
+                        next: 'fit'
+                    }, {
+                        label: "What's the warranty?",
+                        next: 'warranty'
+                    }, {
+                        label: 'Delivery & returns',
+                        next: 'delivery'
+                    }, {
+                        label: 'EMI & financing',
+                        next: 'financing'
+                    }, {
+                        label: 'Find a store',
+                        next: 'stores'
+                    }, {
+                        label: 'Talk to a human',
+                        next: 'human'
+                    }]
+                },
+                fit: {
+                    bot: 'Tell me a bit about how you sleep:',
+                    options: [{
+                        label: 'I sleep on my back',
+                        next: 'fitBack'
+                    }, {
+                        label: 'I sleep on my side',
+                        next: 'fitSide'
+                    }, {
+                        label: 'I have back pain',
+                        next: 'fitPain'
+                    }, {
+                        label: 'I want something plush',
+                        next: 'fitPlush'
+                    }, {
+                        label: '⟵ Back to menu',
+                        next: 'main'
+                    }]
+                },
+                fitBack: {
+                    bot: 'Sova is a great everyday pick for back sleepers, with balanced comfort. <a href="' + link('products.html') + '">View Sova</a>',
+                    options: optionSets.followup
+                },
+                fitSide: {
+                    bot: 'Luma is built for side sleepers who want a cooler night’s sleep. <a href="' + link('products.html') + '">View Luma</a>',
+                    options: optionSets.followup
+                },
+                fitPain: {
+                    bot: 'Ultima gives targeted, supportive comfort and is our top pick for back pain relief. <a href="' + link('products.html') + '">View Ultima</a>',
+                    options: optionSets.followup
+                },
+                fitPlush: {
+                    bot: 'Riva is our plushest range with premium support — a cloud-like feel. <a href="' + link('products.html') + '">View Riva</a>',
+                    options: optionSets.followup
+                },
+                warranty: {
+                    bot: 'Warranty varies by range: Sova — 15 years, Ultima — 25 years, Riva — 30 years. <a href="' + link('#compare') + '">See the full comparison</a>',
+                    options: optionSets.followup
+                },
+                delivery: {
+                    bot: 'We deliver across India through our network of 300+ stores. For exact delivery timelines and return details in your city, our team can help directly.',
+                    options: optionSets.followupWa,
+                    showWa: true
+                },
+                financing: {
+                    bot: 'We offer easy EMI options through our stores. Our team can share current plans and eligibility for your city.',
+                    options: optionSets.followupWa,
+                    showWa: true
+                },
+                stores: {
+                    bot: 'We have 300+ stores across 15 cities in India. <a href="' + link('#stores') + '">Find a store near you</a>',
+                    options: optionSets.followup
+                },
+                human: {
+                    bot: 'Sure — tap below to chat with our team on WhatsApp.',
+                    options: optionSets.followupWa,
+                    showWa: true
+                }
+            };
+
+            function addMessage(text, from) {
+                var el = document.createElement('div');
+                el.className = 'chat-msg ' + from;
+                el.innerHTML = text;
+                body.appendChild(el);
+                body.scrollTop = body.scrollHeight;
+            }
+
+            function addWaButton() {
+                var a = document.createElement('a');
+                a.className = 'chat-wa-btn';
+                a.href = waLink;
+                a.target = '_blank';
+                a.rel = 'noopener';
+                a.innerHTML = '<svg viewBox="0 0 24 24"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.87 11.88L4 20l4.24-1.11a7.9 7.9 0 0 0 3.8.97h.01a7.94 7.94 0 0 0 5.55-13.54zm-5.55 12.2a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.51.66.67-2.45-.16-.25a6.58 6.58 0 0 1 10.24-8.16 6.53 6.53 0 0 1 1.94 4.66 6.6 6.6 0 0 1-6.58 6.6z"></path></svg> Chat on WhatsApp';
+                body.appendChild(a);
+                body.scrollTop = body.scrollHeight;
+            }
+
+            function renderOptions(list) {
+                if (!list || !list.length) return;
+                var wrap = document.createElement('div');
+                wrap.className = 'chat-options';
+                list.forEach(function(opt) {
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'chat-option-btn';
+                    btn.textContent = opt.label;
+                    btn.addEventListener('click', function() {
+                        goTo(opt.next, opt.label);
+                    });
+                    wrap.appendChild(btn);
+                });
+                body.appendChild(wrap);
+                body.scrollTop = body.scrollHeight;
+            }
+
+            function goTo(key, userLabel) {
+                var oldOptions = body.querySelectorAll('.chat-options');
+                oldOptions.forEach(function(o) {
+                    o.remove();
+                });
+
+                var node = nodes[key];
+                if (!node) return;
+
+                if (userLabel) addMessage(userLabel, 'user');
+
+                setTimeout(function() {
+                    addMessage(node.bot, 'bot');
+                    if (node.showWa) addWaButton();
+                    setTimeout(function() {
+                        renderOptions(node.options);
+                    }, 250);
+                }, userLabel ? 350 : 0);
+            }
+
+            var started = false;
+
+            function openChat() {
+                widget.classList.add('is-open');
+                toggle.setAttribute('aria-expanded', 'true');
+                if (!started) {
+                    started = true;
+                    goTo('main');
+                }
+            }
+
+            function closeChat() {
+                widget.classList.remove('is-open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+
+            toggle.addEventListener('click', function() {
+                if (widget.classList.contains('is-open')) closeChat();
+                else openChat();
+            });
+            closeBtn.addEventListener('click', closeChat);
+            document.addEventListener('click', function(e) {
+                if (widget.classList.contains('is-open') && e.composedPath().indexOf(widget) === -1) closeChat();
             });
         })();
     </script>
