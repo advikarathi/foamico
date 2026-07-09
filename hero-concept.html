@@ -381,6 +381,12 @@
             transform: translateY(0);
         }
         
+        .hero-text .eyebrow,
+        .hero-text h1,
+        .hero-text p {
+            text-shadow: 0 1px 3px rgba(255, 255, 255, .55), 0 2px 18px rgba(255, 255, 255, .7);
+        }
+
         .hero-text .eyebrow {
             color: var(--ms-teal-deep);
             margin-bottom: 16px;
@@ -392,16 +398,17 @@
             margin-bottom: 16px;
             max-width: 14ch;
         }
-        
+
         @media(max-width:700px) {
             .hero-copy-inner {
                 height: 420px;
             }
         }
-        
+
         .hero-text p {
             font-size: 17px;
-            color: var(--ms-navy-soft);
+            font-weight: 500;
+            color: var(--ms-charcoal);
             max-width: 46ch;
             margin-bottom: 26px;
         }
@@ -1296,7 +1303,7 @@
     <!-- SCROLL-DRIVEN VIDEO HERO -->
     <section class="scroll-hero" data-scroll-hero aria-label="Foamico sleep film">
         <div class="hero-stage" data-hero-stage>
-            <video class="hero-video" data-hero-video src="heropage.mp4" muted playsinline preload="auto" aria-hidden="true"></video>
+            <video class="hero-video" data-hero-video src="heropage.mp4" muted loop autoplay playsinline preload="auto" aria-hidden="true"></video>
             <div class="hero-overlay"></div>
             <div class="hero-progress-track">
                 <div class="hero-progress-fill"></div>
@@ -1362,18 +1369,18 @@
                     <div class="matrix-media"><img src="compare/sova.png" alt="Sova mattress"></div>
                     <div class="matrix-body">
                         <h3 class="matrix-name">Sova</h3>
-                        <p class="matrix-desc">Everyday ease with balanced, medium support.</p>
-                        <div class="matrix-row-label">Firmness: <strong>Medium</strong></div>
+                        <p class="matrix-desc">Firm, supportive feel built for everyday comfort.</p>
+                        <div class="matrix-row-label">Firmness: <strong>Firm</strong></div>
                         <div class="firmness-track">
                             <span class="firmness-end">Soft</span>
-                            <div class="firmness-line"><div class="firmness-node" style="left:60%;">6</div></div>
+                            <div class="firmness-line"><div class="firmness-node" style="left:80%;">8</div></div>
                             <span class="firmness-end">Firm</span>
                         </div>
                         <div class="matrix-row-label">Cooling Effect</div>
                         <div class="cooling-bar">
                             <span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span>
                         </div>
-                        <div class="matrix-row-label">Warranty: <strong>25 Years</strong></div>
+                        <div class="matrix-row-label">Warranty: <strong>15 Years</strong></div>
                         <a class="matrix-cta" href="https://www.foamicomattress.com/products/sovaclassic">Explore Sova</a>
                     </div>
                 </div>
@@ -1381,11 +1388,11 @@
                     <div class="matrix-media"><img src="compare/ultima.png" alt="Ultima mattress"></div>
                     <div class="matrix-body">
                         <h3 class="matrix-name">Ultima</h3>
-                        <p class="matrix-desc">Boosted firm support for back-pain relief.</p>
-                        <div class="matrix-row-label">Firmness: <strong>Firm</strong></div>
+                        <p class="matrix-desc">Balanced medium support for back-pain relief.</p>
+                        <div class="matrix-row-label">Firmness: <strong>Medium</strong></div>
                         <div class="firmness-track">
                             <span class="firmness-end">Soft</span>
-                            <div class="firmness-line"><div class="firmness-node" style="left:80%;">8</div></div>
+                            <div class="firmness-line"><div class="firmness-node" style="left:60%;">6</div></div>
                             <span class="firmness-end">Firm</span>
                         </div>
                         <div class="matrix-row-label">Cooling Effect</div>
@@ -1400,18 +1407,18 @@
                     <div class="matrix-media"><img src="compare/riva.png" alt="Riva mattress"></div>
                     <div class="matrix-body">
                         <h3 class="matrix-name">Riva</h3>
-                        <p class="matrix-desc">Premium plush comfort, cloud-like feel.</p>
-                        <div class="matrix-row-label">Firmness: <strong>Plush</strong></div>
+                        <p class="matrix-desc">Medium-soft plush comfort, cloud-like feel.</p>
+                        <div class="matrix-row-label">Firmness: <strong>Medium-Soft</strong></div>
                         <div class="firmness-track">
                             <span class="firmness-end">Soft</span>
-                            <div class="firmness-line"><div class="firmness-node" style="left:40%;">4</div></div>
+                            <div class="firmness-line"><div class="firmness-node" style="left:50%;">5</div></div>
                             <span class="firmness-end">Firm</span>
                         </div>
                         <div class="matrix-row-label">Cooling Effect</div>
                         <div class="cooling-bar">
                             <span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg"></span>
                         </div>
-                        <div class="matrix-row-label">Warranty: <strong>25 Years</strong></div>
+                        <div class="matrix-row-label">Warranty: <strong>30 Years</strong></div>
                         <a class="matrix-cta" href="https://www.foamicomattress.com/products/riva1000">Explore Riva</a>
                     </div>
                 </div>
@@ -1608,25 +1615,12 @@
             if (!hero) return;
             var frames = Array.prototype.slice.call(hero.querySelectorAll('[data-hero-frame]'));
             var textStates = Array.prototype.slice.call(hero.querySelectorAll('[data-hero-text]'));
-            var video = hero.querySelector('video[data-hero-video]');
             var cue = hero.querySelector('[data-hero-cue]');
             var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
             if (reduceMotion) {
                 hero.classList.add('hero--static');
                 return;
-            }
-
-            var videoSeeking = false;
-            var lastVideoSeekAt = 0;
-            var VIDEO_SEEK_INTERVAL = 70;
-            if (video) {
-                video.addEventListener('seeking', function() {
-                    videoSeeking = true;
-                });
-                video.addEventListener('seeked', function() {
-                    videoSeeking = false;
-                });
             }
 
             function progress() {
@@ -1647,15 +1641,7 @@
 
             function update() {
                 var p = progress();
-                if (video && video.duration) {
-                    var now = performance.now();
-                    if (!videoSeeking && (now - lastVideoSeekAt) >= VIDEO_SEEK_INTERVAL) {
-                        video.currentTime = p * video.duration;
-                        lastVideoSeekAt = now;
-                    }
-                } else if (frames.length) {
-                    setActive(frames, p);
-                }
+                if (frames.length) setActive(frames, p);
                 if (textStates.length) setActive(textStates, p);
                 hero.style.setProperty('--hero-progress', p.toFixed(4));
                 if (cue) cue.style.opacity = p > 0.05 ? '0' : '1';
@@ -1679,7 +1665,7 @@
 
         (function() {
             var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            var videos = document.querySelectorAll('.product-video, .category-video');
+            var videos = document.querySelectorAll('.product-video, .category-video, .hero-video');
             videos.forEach(function(v) {
                 if (reduceMotion) {
                     v.removeAttribute('autoplay');
