@@ -1617,6 +1617,18 @@
                 return;
             }
 
+            var videoSeeking = false;
+            var lastVideoSeekAt = 0;
+            var VIDEO_SEEK_INTERVAL = 70;
+            if (video) {
+                video.addEventListener('seeking', function() {
+                    videoSeeking = true;
+                });
+                video.addEventListener('seeked', function() {
+                    videoSeeking = false;
+                });
+            }
+
             function progress() {
                 var rect = hero.getBoundingClientRect();
                 var total = hero.offsetHeight - window.innerHeight;
@@ -1636,7 +1648,11 @@
             function update() {
                 var p = progress();
                 if (video && video.duration) {
-                    video.currentTime = p * video.duration;
+                    var now = performance.now();
+                    if (!videoSeeking && (now - lastVideoSeekAt) >= VIDEO_SEEK_INTERVAL) {
+                        video.currentTime = p * video.duration;
+                        lastVideoSeekAt = now;
+                    }
                 } else if (frames.length) {
                     setActive(frames, p);
                 }
