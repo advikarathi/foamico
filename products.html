@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foamico — Premium Sleep, Engineered</title>
-    <meta name="description" content="German-engineered mattresses crafted for Indian homes. Premium sleep with a 25-year warranty.">
+    <title>Shop All Mattresses — Foamico</title>
+    <meta name="description" content="Five ranges, five different feels. Browse the full Foamico mattress collection.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -142,18 +142,18 @@
             color: var(--ms-teal-deep);
         }
         /* REVEAL ON SCROLL */
-        
+
         .reveal {
             opacity: 0;
             transform: translateY(28px);
             transition: opacity .8s ease, transform .8s ease;
         }
-        
+
         .reveal.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         @media (prefers-reduced-motion: reduce) {
             .reveal {
                 opacity: 1 !important;
@@ -196,13 +196,13 @@
             flex-shrink: 0;
         }
         /* HEADER */
-        
+
         .site-header-group {
             position: sticky;
             top: 0;
             z-index: 60;
         }
-        
+
         header {
             background: rgba(254, 254, 254, .98);
             backdrop-filter: blur(12px);
@@ -224,13 +224,13 @@
             gap: 12px;
             flex-shrink: 0;
         }
-        
+
         .brand img {
             height: 52px;
             width: auto;
             display: block;
         }
-        
+
         .header-nav {
             display: flex;
             align-items: center;
@@ -341,14 +341,14 @@
             height: 100%;
             object-fit: cover;
         }
-        
+
         .hero-overlay {
             position: absolute;
             inset: 0;
             background: linear-gradient(180deg, rgba(255, 255, 255, .08) 0%, rgba(255, 255, 255, .38) 55%, rgba(255, 255, 255, .74) 100%);
             z-index: 2;
         }
-        
+
         .hero-copy {
             position: relative;
             z-index: 3;
@@ -385,7 +385,7 @@
             color: var(--ms-teal-deep);
             margin-bottom: 16px;
         }
-        
+
         .hero-text h1 {
             color: var(--ms-charcoal);
             font-size: clamp(30px, 4.6vw, 50px);
@@ -405,7 +405,7 @@
             max-width: 46ch;
             margin-bottom: 26px;
         }
-        
+
         .hero-progress-track {
             position: absolute;
             right: max(24px, calc((100vw - 1180px) / 2));
@@ -418,7 +418,7 @@
             border-radius: 2px;
             overflow: hidden;
         }
-        
+
         .hero-progress-fill {
             position: absolute;
             left: 0;
@@ -427,11 +427,11 @@
             background: var(--ms-teal-deep);
             height: calc(var(--hero-progress, 0) * 100%);
         }
-        
+
         .hero--static .hero-progress-track {
             display: none;
         }
-        
+
         .hero-scroll-cue {
             position: absolute;
             left: 50%;
@@ -450,7 +450,7 @@
             gap: 8px;
             transition: opacity .4s ease;
         }
-        
+
         .hero-scroll-cue span {
             width: 1px;
             height: 26px;
@@ -629,19 +629,19 @@
             gap: 6px;
         }
         /* COMPARISON MATRIX */
-        
+
         .matrix-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
-        
+
         @media(max-width:900px) {
             .matrix-grid {
                 grid-template-columns: 1fr;
             }
         }
-        
+
         .matrix-card {
             background: var(--ms-white);
             border: 1px solid var(--ms-line);
@@ -649,40 +649,40 @@
             overflow: hidden;
             transition: transform .25s ease, box-shadow .25s ease;
         }
-        
+
         .matrix-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--ms-shadow-card);
         }
-        
+
         .matrix-media {
             aspect-ratio: 4/3;
             background: var(--ms-paper);
         }
-        
+
         .matrix-media img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
         }
-        
+
         .matrix-body {
             padding: 24px 26px 28px;
         }
-        
+
         .matrix-name {
             font-size: 22px;
             margin-bottom: 6px;
             color: var(--card-accent, var(--ms-charcoal));
         }
-        
+
         .matrix-desc {
             font-size: 14px;
             color: var(--ms-navy-soft);
             margin-bottom: 22px;
         }
-        
+
         .matrix-row-label {
             font-size: 12px;
             font-weight: 700;
@@ -691,37 +691,37 @@
             letter-spacing: .04em;
             margin: 18px 0 10px;
         }
-        
+
         .matrix-row-label:first-of-type {
             margin-top: 0;
         }
-        
+
         .matrix-row-label strong {
             color: var(--card-accent, var(--ms-teal-deep));
             text-transform: none;
             letter-spacing: 0;
         }
-        
+
         .firmness-track {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        
+
         .firmness-end {
             font-size: 11px;
             color: var(--ms-sand);
             font-weight: 600;
             flex-shrink: 0;
         }
-        
+
         .firmness-line {
             position: relative;
             flex: 1;
             height: 2px;
             background: var(--ms-line);
         }
-        
+
         .firmness-node {
             position: absolute;
             top: 50%;
@@ -737,23 +737,23 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .cooling-bar {
             display: flex;
             gap: 4px;
         }
-        
+
         .cooling-bar .seg {
             flex: 1;
             height: 8px;
             border-radius: 4px;
             background: var(--ms-line);
         }
-        
+
         .cooling-bar .seg.is-filled {
             background: var(--card-accent, var(--ms-teal));
         }
-        
+
         .matrix-cta {
             display: block;
             text-align: center;
@@ -767,7 +767,7 @@
             font-size: 14px;
             transition: filter .2s;
         }
-        
+
         .matrix-cta:hover {
             filter: brightness(1.1);
         }
@@ -789,7 +789,7 @@
             overflow: hidden;
             transition: transform .25s ease;
         }
-        
+
         .testimonial-card:hover {
             transform: translateY(-5px);
         }
@@ -850,7 +850,7 @@
             color: var(--ms-navy-soft);
         }
         /* CATEGORIES */
-        
+
         .categories-section {
             background: var(--ms-white);
             color: var(--ms-white);
@@ -859,7 +859,7 @@
             flex-direction: column;
             justify-content: center;
         }
-        
+
         .categories-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -867,18 +867,18 @@
             transform: translateY(48px);
             transition: opacity 1s ease-out, transform 1s ease-out;
         }
-        
+
         .categories-grid.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         @media(min-width:768px) {
             .categories-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
-        
+
         .category-card {
             position: relative;
             display: flex;
@@ -890,21 +890,21 @@
             min-height: 400px;
             transition: transform .3s ease;
         }
-        
+
         @media(min-width:640px) {
             .category-card {
                 padding: 32px;
                 min-height: 500px;
             }
         }
-        
+
         @media(min-width:768px) {
             .category-card {
                 padding: 48px;
                 min-height: 750px;
             }
         }
-        
+
         .category-video {
             position: absolute;
             inset: 0;
@@ -913,22 +913,22 @@
             object-fit: cover;
             transition: transform .7s ease;
         }
-        
+
         .category-card:hover .category-video {
             transform: scale(1.05);
         }
-        
+
         .category-overlay {
             position: absolute;
             inset: 0;
             background: rgba(0, 0, 0, .1);
             transition: background-color .5s ease;
         }
-        
+
         .category-card:hover .category-overlay {
             background: rgba(0, 0, 0, .2);
         }
-        
+
         .category-name {
             position: relative;
             z-index: 10;
@@ -940,29 +940,29 @@
             transition: transform .5s ease;
             text-transform: lowercase;
         }
-        
+
         @media(min-width:640px) {
             .category-name {
                 font-size: 60px;
             }
         }
-        
+
         @media(min-width:768px) {
             .category-name {
                 font-size: 72px;
             }
         }
-        
+
         @media(min-width:1024px) {
             .category-name {
                 font-size: 96px;
             }
         }
-        
+
         .category-card:hover .category-name {
             transform: rotate(180deg) translateX(8px);
         }
-        
+
         .category-shop-btn {
             position: relative;
             z-index: 10;
@@ -978,7 +978,7 @@
             overflow: hidden;
             transition: transform .3s ease, box-shadow .3s ease;
         }
-        
+
         .category-shop-btn::before {
             content: '';
             position: absolute;
@@ -987,27 +987,27 @@
             transform: translateX(-100%);
             transition: transform .5s ease;
         }
-        
+
         .category-shop-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, .15);
         }
-        
+
         .category-shop-btn:hover::before {
             transform: translateX(100%);
         }
-        
+
         .category-shop-btn:active {
             transform: translateY(0);
             box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
         }
         /* FOUNDER STORY */
-        
+
         .founder-section {
             padding: 72px 0;
             background: var(--ms-paper);
         }
-        
+
         .founder-top {
             display: grid;
             grid-template-columns: 1fr 260px;
@@ -1015,18 +1015,18 @@
             align-items: center;
             margin-bottom: 32px;
         }
-        
+
         @media(max-width:800px) {
             .founder-top {
                 grid-template-columns: 1fr;
             }
         }
-        
+
         .founder-heading {
             font-size: clamp(30px, 4.2vw, 46px);
             line-height: 1.05;
         }
-        
+
         .founder-photo-sm {
             aspect-ratio: 4/5;
             border-radius: var(--ms-radius-card);
@@ -1044,7 +1044,7 @@
             letter-spacing: .08em;
             text-transform: uppercase;
         }
-        
+
         .founder-quote-banner {
             background: var(--ms-white);
             border-radius: var(--ms-radius-card);
@@ -1052,7 +1052,7 @@
             text-align: center;
             box-shadow: var(--ms-shadow-card);
         }
-        
+
         .founder-quote-mark {
             display: block;
             font-family: var(--ms-font-head);
@@ -1060,7 +1060,7 @@
             color: var(--ms-teal-pale);
             line-height: .6;
         }
-        
+
         .founder-quote-text {
             font-size: clamp(17px, 2.1vw, 21px);
             font-weight: 600;
@@ -1069,13 +1069,13 @@
             margin: 6px auto 16px;
             line-height: 1.45;
         }
-        
+
         .founder-attribution {
             font-size: 14px;
             color: var(--ms-navy-soft);
             font-weight: 600;
         }
-        
+
         .founder-attribution span {
             color: var(--ms-teal-deep);
             margin: 0 6px;
@@ -1162,7 +1162,7 @@
             box-shadow: var(--ms-shadow-card);
             transition: transform .25s ease;
         }
-        
+
         .showroom-card:hover {
             transform: translateY(-5px);
         }
@@ -1308,7 +1308,7 @@
             color: rgba(255, 255, 255, .68);
         }
         /* WHATSAPP FLOAT */
-        
+
         .whatsapp-float {
             position: fixed;
             right: 22px;
@@ -1324,17 +1324,17 @@
             box-shadow: 0 10px 28px rgba(26, 26, 26, .3);
             transition: transform .2s ease;
         }
-        
+
         .whatsapp-float:hover {
             transform: scale(1.08);
         }
-        
+
         .whatsapp-float svg {
             width: 30px;
             height: 30px;
             fill: #FEFEFE;
         }
-        
+
         @media(max-width:500px) {
             .whatsapp-float {
                 right: 16px;
@@ -1352,21 +1352,21 @@
         <div class="utility-bar">
             <div class="wrap utility-bar-inner">
                 <a href="https://forms.gle/YOUR_FORM_ID">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-4-8-7.5-8-12a8 8 0 0 1 16 0c0 4.5-4 8-8 12z"></path><circle cx="12" cy="9" r="2.4"></circle></svg>                    Become a Dealer
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-4-8-7.5-8-12a8 8 0 0 1 16 0c0 4.5-4 8-8 12z"></path><circle cx="12" cy="9" r="2.4"></circle></svg>                Become a Dealer
                 </a>
                 <a href="#">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.5 2.9.6a2 2 0 0 1 1.8 2z"></path></svg>                    Careers
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.5 2.9.6a2 2 0 0 1 1.8 2z"></path></svg>                Careers
                 </a>
             </div>
         </div>
 
         <header>
             <div class="wrap header-row">
-                <a class="brand" href="#">
+                <a class="brand" href="hero-concept.html">
                     <img src="logo.jpeg" alt="Foamico">
                 </a>
                 <ul class="header-nav">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="hero-concept.html">Home</a></li>
                     <li><a href="https://www.foamicomattress.com/about">About Us</a></li>
                     <li class="has-drop">
                         <a href="products.html">Products</a>
@@ -1379,276 +1379,82 @@
                         </ul>
                     </li>
                     <li><a href="https://www.foamicomattress.com/blog">The Sleepy Times</a></li>
-                    <li><a href="#footer">Contact Us</a></li>
+                    <li><a href="hero-concept.html#footer">Contact Us</a></li>
                 </ul>
                 <a class="pill-btn" style="padding:12px 26px;font-size:14px;" href="https://forms.gle/YOUR_FORM_ID">Become a Dealer</a>
             </div>
         </header>
     </div>
 
-    <section class="scroll-hero" data-scroll-hero aria-label="Foamico sleep film">
-        <div class="hero-stage" data-hero-stage>
-            <video class="hero-video" data-hero-video src="heropage.mp4" muted playsinline preload="auto" aria-hidden="true"></video>
-            <div class="hero-overlay"></div>
-            <div class="hero-progress-track">
-                <div class="hero-progress-fill"></div>
-            </div>
-            <div class="hero-scroll-cue" data-hero-cue>Scroll<span></span></div>
-            <div class="hero-copy">
-                <div class="wrap">
-                    <div class="hero-copy-inner">
-                        <div class="hero-text is-active" data-hero-text>
-                            <span class="eyebrow">Foamico</span>
-                            <h1>Sleep, engineered.</h1>
-                            <p>Every Foamico mattress starts with one question: what does your body actually need to fully rest?</p>
-                        </div>
-                        <div class="hero-text" data-hero-text>
-                            <span class="eyebrow">Layer by layer</span>
-                            <h1>Built from the inside out.</h1>
-                            <p>Adaptive support, breathable comfort, and a base that holds its shape for decades — engineered, not assembled.</p>
-                        </div>
-                        <div class="hero-text" data-hero-text>
-                            <span class="eyebrow">Every morning</span>
-                            <h1>Wake up. Feel it.</h1>
-                            <p>Backed by a 25-year warranty and a nationwide store network so you can try before you commit.</p>
-                            <a class="pill-btn" href="products.html">Explore Mattresses</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="trust-strip">
-        <div class="wrap trust-strip-inner">
-            <div class="trust-stat reveal" style="transition-delay:0ms;">
-                <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3.2v4.6c0 5-3 9.4-7 10.7-4-1.3-7-5.7-7-10.7V6.2L12 3z"></path></svg>
-                <div><strong>25-Year Warranty</strong><span>Built to last</span></div>
-            </div>
-            <div class="trust-stat reveal" style="transition-delay:80ms;">
-                <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-7h14l2 7"></path><path d="M5 12h14v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6z"></path></svg>
-                <div><strong>300+ Stores</strong><span>Across India</span></div>
-            </div>
-            <div class="trust-stat reveal" style="transition-delay:160ms;">
-                <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-4-8-7.5-8-12a8 8 0 0 1 16 0c0 4.5-4 8-8 12z"></path><circle cx="12" cy="9" r="2.4"></circle></svg>
-                <div><strong>15 Cities</strong><span>Find a showroom</span></div>
-            </div>
-            <div class="trust-stat reveal" style="transition-delay:240ms;">
-                <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L12 16.9 6.4 20l1.4-6.2-4.8-4.3 6.4-.6L12 3z"></path></svg>
-                <div><strong>4.9 / 5</strong><span>Customer rating</span></div>
-            </div>
-        </div>
-    </div>
-
-    <section class="section section--paper" id="compare">
+    <!-- PAGE TITLE -->
+    <section class="section" style="padding-bottom:56px;">
         <div class="wrap">
             <div class="section-head reveal">
-                <span class="eyebrow">Side by side</span>
-                <h2>Compare Mattresses</h2>
-                <p>Not sure where to start? Here's how our three most popular ranges stack up.</p>
+                <span class="eyebrow">Shop All</span>
+                <h2>Every Foamico Mattress</h2>
+                <p>Five ranges, five different feels — choose the one that matches how you sleep.</p>
             </div>
-            <div class="matrix-grid">
-                <div class="matrix-card reveal" style="--card-accent:#6B8E23; transition-delay:0ms;">
-                    <div class="matrix-media"><img src="compare/sova.png" alt="Sova mattress"></div>
-                    <div class="matrix-body">
-                        <h3 class="matrix-name">Sova</h3>
-                        <p class="matrix-desc">Everyday ease with balanced, medium support.</p>
-                        <div class="matrix-row-label">Firmness: <strong>Medium</strong></div>
-                        <div class="firmness-track">
-                            <span class="firmness-end">Soft</span>
-                            <div class="firmness-line">
-                                <div class="firmness-node" style="left:60%;">6</div>
-                            </div>
-                            <span class="firmness-end">Firm</span>
-                        </div>
-                        <div class="matrix-row-label">Cooling Effect</div>
-                        <div class="cooling-bar">
-                            <span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg"></span><span class="seg"></span>
-                            <span
-                                class="seg"></span>
-                        </div>
-                        <div class="matrix-row-label">Warranty: <strong>25 Years</strong></div>
-                        <a class="matrix-cta" href="https://www.foamicomattress.com/products/sovaclassic">Explore Sova</a>
+            <div class="product-grid">
+                <div class="product-card reveal" style="transition-delay:0ms;">
+                    <div class="product-media">
+                        <video class="product-video" src="video/sova.mp4" poster="images/products/sova/main.JPG" muted loop playsinline autoplay aria-label="Sova mattress, 3D rotating view"></video>
+                        <span class="media-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"></path><path d="M21 3v5h-5"></path></svg>3D View</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Sova</h3>
+                        <div class="product-tags"><span>Back Sleepers</span><span>Everyday Comfort</span></div>
+                        <a class="product-link" href="https://www.foamicomattress.com/products/sovaclassic">Learn more →</a>
                     </div>
                 </div>
-                <div class="matrix-card reveal" style="--card-accent:#95C12B; transition-delay:120ms;">
-                    <div class="matrix-media"><img src="compare/ultima.png" alt="Ultima mattress"></div>
-                    <div class="matrix-body">
-                        <h3 class="matrix-name">Ultima</h3>
-                        <p class="matrix-desc">Boosted firm support for back-pain relief.</p>
-                        <div class="matrix-row-label">Firmness: <strong>Firm</strong></div>
-                        <div class="firmness-track">
-                            <span class="firmness-end">Soft</span>
-                            <div class="firmness-line">
-                                <div class="firmness-node" style="left:80%;">8</div>
-                            </div>
-                            <span class="firmness-end">Firm</span>
-                        </div>
-                        <div class="matrix-row-label">Cooling Effect</div>
-                        <div class="cooling-bar">
-                            <span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg"></span>
-                            <span
-                                class="seg"></span>
-                        </div>
-                        <div class="matrix-row-label">Warranty: <strong>25 Years</strong></div>
-                        <a class="matrix-cta" href="https://www.foamicomattress.com/products/ultimaclassic">Explore Ultima</a>
+                <div class="product-card reveal" style="transition-delay:80ms;">
+                    <div class="product-media">
+                        <video class="product-video" src="video/ultima.mp4" poster="images/products/ultima/main.JPG" muted loop playsinline autoplay aria-label="Ultima mattress, 3D rotating view"></video>
+                        <span class="media-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"></path><path d="M21 3v5h-5"></path></svg>3D View</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Ultima</h3>
+                        <div class="product-tags"><span>Back Pain Relief</span><span>Firm Support</span></div>
+                        <a class="product-link" href="https://www.foamicomattress.com/products/ultimaclassic">Learn more →</a>
                     </div>
                 </div>
-                <div class="matrix-card reveal" style="--card-accent:#3F5E12; transition-delay:240ms;">
-                    <div class="matrix-media"><img src="compare/riva.png" alt="Riva mattress"></div>
-                    <div class="matrix-body">
-                        <h3 class="matrix-name">Riva</h3>
-                        <p class="matrix-desc">Premium plush comfort, cloud-like feel.</p>
-                        <div class="matrix-row-label">Firmness: <strong>Plush</strong></div>
-                        <div class="firmness-track">
-                            <span class="firmness-end">Soft</span>
-                            <div class="firmness-line">
-                                <div class="firmness-node" style="left:40%;">4</div>
-                            </div>
-                            <span class="firmness-end">Firm</span>
-                        </div>
-                        <div class="matrix-row-label">Cooling Effect</div>
-                        <div class="cooling-bar">
-                            <span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span>
-                            <span
-                                class="seg"></span>
-                        </div>
-                        <div class="matrix-row-label">Warranty: <strong>25 Years</strong></div>
-                        <a class="matrix-cta" href="https://www.foamicomattress.com/products/riva1000">Explore Riva</a>
+                <div class="product-card reveal" style="transition-delay:160ms;">
+                    <div class="product-media">
+                        <video class="product-video" src="video/luma.mp4" poster="images/products/luma/main.JPG" muted loop playsinline autoplay aria-label="Luma mattress, 3D rotating view"></video>
+                        <span class="media-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"></path><path d="M21 3v5h-5"></path></svg>3D View</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Luma</h3>
+                        <div class="product-tags"><span>Side Sleepers</span><span>Cooler Sleep</span></div>
+                        <a class="product-link" href="https://www.foamicomattress.com/products/lumaclassic">Learn more →</a>
+                    </div>
+                </div>
+                <div class="product-card reveal" style="transition-delay:240ms;">
+                    <div class="product-media">
+                        <video class="product-video" src="video/resto.mp4" poster="images/products/resto/main.JPG" muted loop playsinline autoplay aria-label="Resto mattress, 3D rotating view"></video>
+                        <span class="media-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"></path><path d="M21 3v5h-5"></path></svg>3D View</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Resto</h3>
+                        <div class="product-tags"><span>Balanced Comfort</span><span>Daily Recovery</span></div>
+                        <a class="product-link" href="https://www.foamicomattress.com/products/restoclassic">Learn more →</a>
+                    </div>
+                </div>
+                <div class="product-card reveal" style="transition-delay:320ms;">
+                    <div class="product-media">
+                        <video class="product-video" src="video/riva.mp4" poster="images/products/riva/main.JPG" muted loop playsinline autoplay aria-label="Riva mattress, 3D rotating view"></video>
+                        <span class="media-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"></path><path d="M21 3v5h-5"></path></svg>3D View</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Riva</h3>
+                        <div class="product-tags"><span>Premium Support</span><span>Plush Comfort</span></div>
+                        <a class="product-link" href="https://www.foamicomattress.com/products/riva1000">Learn more →</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="wrap">
-            <div class="section-head reveal">
-                <span class="eyebrow">Real stories</span>
-                <h2>Loved by Sleepers Everywhere</h2>
-                <p>Real comfort stories from people who tried Foamico at home and in-store.</p>
-            </div>
-            <div class="testimonial-scroll">
-                <div class="testimonial-card reveal" style="transition-delay:0ms;">
-                    <div class="testimonial-media">
-                        <div class="testimonial-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4z"></path></svg></div>
-                    </div>
-                    <div class="testimonial-body">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <p class="testimonial-quote">"I wanted firm support without the mattress feeling hard. Ultima has that hotel-like feel, and my lower back feels much better."</p>
-                        <div class="testimonial-name">Priya S. <span>Delhi</span></div>
-                    </div>
-                </div>
-                <div class="testimonial-card reveal" style="transition-delay:120ms;">
-                    <div class="testimonial-media">
-                        <div class="testimonial-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4z"></path></svg></div>
-                    </div>
-                    <div class="testimonial-body">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <p class="testimonial-quote">"We visited the showroom, compared three models, and picked Luma. It stays cooler than our old mattress."</p>
-                        <div class="testimonial-name">Arjun M. <span>Gurugram</span></div>
-                    </div>
-                </div>
-                <div class="testimonial-card reveal" style="transition-delay:240ms;">
-                    <div class="testimonial-media">
-                        <div class="testimonial-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4z"></path></svg></div>
-                    </div>
-                    <div class="testimonial-body">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <p class="testimonial-quote">"The showroom team helped us choose the right firmness. Sova feels balanced and supportive without being over the top."</p>
-                        <div class="testimonial-name">Meera R. <span>Bengaluru</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="categories-section">
-        <div class="categories-grid" data-categories-grid>
-            <a class="category-card" href="https://www.foamicomattress.com/products/ultimaclassic" style="transition-delay:0ms;">
-                <video class="category-video" src="video/ultima.mp4" autoplay loop muted playsinline></video>
-                <div class="category-overlay"></div>
-                <h2 class="category-name">firm</h2>
-                <span class="category-shop-btn">shop firm</span>
-            </a>
-            <a class="category-card" href="https://www.foamicomattress.com/products/restoclassic" style="transition-delay:150ms;">
-                <video class="category-video" src="video/resto.mp4" autoplay loop muted playsinline></video>
-                <div class="category-overlay"></div>
-                <h2 class="category-name">medium</h2>
-                <span class="category-shop-btn">shop medium</span>
-            </a>
-            <a class="category-card" href="https://www.foamicomattress.com/products/riva1000" style="transition-delay:300ms;">
-                <video class="category-video" src="video/riva.mp4" autoplay loop muted playsinline></video>
-                <div class="category-overlay"></div>
-                <h2 class="category-name">plush</h2>
-                <span class="category-shop-btn">shop plush</span>
-            </a>
-        </div>
-    </section>
-
-    <section class="founder-section">
-        <div class="wrap">
-            <div class="founder-top reveal">
-                <h2 class="founder-heading">A Promise<br>of Comfort</h2>
-                <div class="founder-photo-sm" aria-hidden="true">Founder Photo<br>— replace with real image —</div>
-            </div>
-            <div class="founder-quote-banner reveal" style="transition-delay:100ms;">
-                <span class="founder-quote-mark" aria-hidden="true">&ldquo;</span>
-                <p class="founder-quote-text">We build German-engineered comfort so every Indian sleeps, sits and rests better.</p>
-                <div class="founder-attribution">Founder Name &amp; Co-Founder Name <span>|</span> The Founders</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--paper">
-        <div class="wrap cert-grid">
-            <div class="reveal">
-                <span class="eyebrow">Trust &amp; quality</span>
-                <h2 style="margin:14px 0 24px;">Built on Certified Standards</h2>
-                <ul class="cert-list">
-                    <li>Precision-engineered layers, tested for support and durability.</li>
-                    <li>Reinforced seams and stitching, built to hold shape for decades.</li>
-                    <li>25-year warranty backing every mattress we make.</li>
-                    <li>Trusted since the 1960s — three generations of expertise.</li>
-                    <li>Made with quality-tested materials, manufactured in India.</li>
-                </ul>
-            </div>
-            <div class="cert-badge reveal" style="transition-delay:150ms;">
-                <strong>25</strong>
-                <span>Year Warranty on Premium Ranges</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="stores">
-        <div class="wrap">
-            <div class="section-head reveal">
-                <span class="eyebrow">Visit us</span>
-                <h2>Find a Showroom Near You</h2>
-                <p>Talk to a sleep expert, compare mattress feels, and choose the Foamico range that fits your body and budget.</p>
-            </div>
-            <div class="showroom-grid">
-                <div class="showroom-card reveal" style="transition-delay:0ms;">
-                    <div class="showroom-map">Map placeholder — Delhi NCR</div>
-                    <div class="showroom-info">
-                        <h3>Foamico Store — Delhi NCR</h3>
-                        <p>Address placeholder &middot; Open daily 10am – 8pm</p>
-                    </div>
-                </div>
-                <div class="showroom-card reveal" style="transition-delay:150ms;">
-                    <div class="showroom-map">Map placeholder — Bengaluru</div>
-                    <div class="showroom-info">
-                        <h3>Foamico Store — Bengaluru</h3>
-                        <p>Address placeholder &middot; Open daily 10am – 8pm</p>
-                    </div>
-                </div>
-            </div>
-            <div class="city-tags reveal" aria-label="Cities with Foamico showrooms">
-                <span>Mumbai</span><span>Hyderabad</span><span>Chennai</span><span>Pune</span><span>Ahmedabad</span><span>Kolkata</span><span>Jaipur</span><span>Lucknow</span><span>Chandigarh</span><span>Indore</span>
-            </div>
-        </div>
-    </section>
-
+    <!-- FOOTER -->
     <footer id="footer">
         <div class="wrap footer-newsletter">
             <h2>Subscribe to our emails</h2>
@@ -1665,14 +1471,14 @@
                     <li><a href="products.html">Sova</a></li>
                     <li><a href="products.html">Ultima</a></li>
                     <li><a href="products.html">Luma</a></li>
-                    <li><a href="#compare">Compare</a></li>
+                    <li><a href="hero-concept.html#compare">Compare</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Company</h4>
                 <ul>
                     <li><a href="https://www.foamicomattress.com/about">About</a></li>
-                    <li><a href="#stores">Showroom</a></li>
+                    <li><a href="hero-concept.html#stores">Showroom</a></li>
                     <li><a href="#footer">Contact</a></li>
                     <li><a href="https://forms.gle/YOUR_FORM_ID">Become a Dealer</a></li>
                 </ul>
@@ -1699,68 +1505,10 @@
     </a>
 
     <script>
-        (function() {
-            var hero = document.querySelector('[data-scroll-hero]');
-            if (!hero) return;
-            var frames = Array.prototype.slice.call(hero.querySelectorAll('[data-hero-frame]'));
-            var textStates = Array.prototype.slice.call(hero.querySelectorAll('[data-hero-text]'));
-            var video = hero.querySelector('video[data-hero-video]');
-            var cue = hero.querySelector('[data-hero-cue]');
+        (function () {
             var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-            if (reduceMotion) {
-                hero.classList.add('hero--static');
-                return;
-            }
-
-            function progress() {
-                var rect = hero.getBoundingClientRect();
-                var total = hero.offsetHeight - window.innerHeight;
-                if (total <= 0) return 1;
-                var scrolled = -rect.top;
-                return Math.min(1, Math.max(0, scrolled / total));
-            }
-
-            function setActive(list, p) {
-                var step = 1 / list.length;
-                list.forEach(function(el, i) {
-                    var active = (p >= i * step && p < (i + 1) * step) || (i === list.length - 1 && p >= 1);
-                    el.classList.toggle('is-active', active);
-                });
-            }
-
-            function update() {
-                var p = progress();
-                if (video && video.duration) {
-                    video.currentTime = p * video.duration;
-                } else if (frames.length) {
-                    setActive(frames, p);
-                }
-                if (textStates.length) setActive(textStates, p);
-                hero.style.setProperty('--hero-progress', p.toFixed(4));
-                if (cue) cue.style.opacity = p > 0.05 ? '0' : '1';
-            }
-
-            var ticking = false;
-            window.addEventListener('scroll', function() {
-                if (!ticking) {
-                    window.requestAnimationFrame(function() {
-                        update();
-                        ticking = false;
-                    });
-                    ticking = true;
-                }
-            }, {
-                passive: true
-            });
-            window.addEventListener('resize', update);
-            update();
-        })();
-
-        (function() {
-            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            var videos = document.querySelectorAll('.product-video, .category-video');
-            videos.forEach(function(v) {
+            var videos = document.querySelectorAll('.product-video');
+            videos.forEach(function (v) {
                 if (reduceMotion) {
                     v.removeAttribute('autoplay');
                     v.pause();
@@ -1769,37 +1517,19 @@
             });
         })();
 
-        (function() {
-            var grid = document.querySelector('[data-categories-grid]');
-            if (!grid) return;
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        grid.classList.add('is-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-            observer.observe(grid);
-        })();
-
-        (function() {
+        (function () {
             var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             var items = document.querySelectorAll('.reveal');
             if (reduceMotion || !items.length) return;
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
                         observer.unobserve(entry.target);
                     }
                 });
-            }, {
-                threshold: 0.15
-            });
-            items.forEach(function(el) {
+            }, { threshold: 0.15 });
+            items.forEach(function (el) {
                 observer.observe(el);
             });
         })();
