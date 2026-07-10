@@ -1350,7 +1350,7 @@
             }
             .category-card:hover,
             .matrix-card:hover,
-            .trust-stat:hover,
+            .surface-card:hover,
             .founder-photo-sm {
                 transform: none;
             }
@@ -1702,17 +1702,17 @@
         </div>
         <div class="categories-grid" data-categories-grid>
             <a class="category-card" href="https://www.foamicomattress.com/products/ultimaclassic" style="transition-delay:0ms;">
-                <video class="category-video" src="video/ultima.mp4" autoplay loop muted playsinline></video>
+                <video class="category-video" src="video/ultima.mp4" preload="auto" loop muted playsinline></video>
                 <div class="category-overlay"></div>
                 <h2 class="category-name">Firm</h2>
             </a>
             <a class="category-card" href="https://www.foamicomattress.com/products/restoclassic" style="transition-delay:150ms;">
-                <video class="category-video" src="video/resto.mp4" autoplay loop muted playsinline></video>
+                <video class="category-video" src="video/resto.mp4" preload="auto" loop muted playsinline></video>
                 <div class="category-overlay"></div>
                 <h2 class="category-name">Medium</h2>
             </a>
             <a class="category-card" href="https://www.foamicomattress.com/products/riva1000" style="transition-delay:300ms;">
-                <video class="category-video" src="video/riva.mp4" autoplay loop muted playsinline></video>
+                <video class="category-video" src="video/riva.mp4" preload="auto" loop muted playsinline></video>
                 <div class="category-overlay"></div>
                 <h2 class="category-name">Plush</h2>
             </a>
@@ -1935,6 +1935,53 @@
                     v.pause();
                     v.currentTime = 0;
                 }
+            });
+        })();
+
+        (function() {
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var videos = Array.prototype.slice.call(document.querySelectorAll('.product-video, .category-video'));
+            if (reduceMotion || videos.length < 2) return;
+
+            function whenReady(video) {
+                return new Promise(function(resolve) {
+                    if (video.readyState >= 3) {
+                        resolve();
+                        return;
+                    }
+                    video.addEventListener('canplay', resolve, { once: true });
+                    video.load();
+                });
+            }
+
+            Promise.all(videos.map(whenReady)).then(function() {
+                var master = videos[0];
+
+                videos.forEach(function(video) {
+                    video.pause();
+                    video.currentTime = 0;
+                    video.playbackRate = 1;
+                });
+
+                window.requestAnimationFrame(function() {
+                    videos.forEach(function(video) {
+                        var playPromise = video.play();
+                        if (playPromise && playPromise.catch) playPromise.catch(function() {});
+                    });
+                });
+
+                function keepInStep() {
+                    if (!document.hidden && !master.paused) {
+                        videos.slice(1).forEach(function(video) {
+                            if (Math.abs(video.currentTime - master.currentTime) > 0.06) {
+                                video.currentTime = master.currentTime;
+                            }
+                        });
+                    }
+                    window.requestAnimationFrame(keepInStep);
+                }
+
+                window.requestAnimationFrame(keepInStep);
             });
         })();
 

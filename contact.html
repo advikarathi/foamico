@@ -24,11 +24,18 @@
             --ms-line: #DDDDDD;
             --ms-sand: #9D9E9E;
             --ms-star: #95C12B;
+            --ms-ink: #101907;
             --ms-font-head: "Montserrat", Arial, sans-serif;
             --ms-font-body: "Poppins", Arial, sans-serif;
+            --ms-radius-sm: 10px;
             --ms-radius-pill: 41px;
             --ms-radius-card: 14px;
+            --ms-radius-shell: 24px;
             --ms-shadow-card: 0 14px 32px rgba(26, 26, 26, .08);
+            --ms-shadow-lift: 0 24px 54px rgba(26, 26, 26, .18);
+            --ms-border-soft: 1px solid rgba(26, 26, 26, .08);
+            --ms-ease: cubic-bezier(.22, 1, .36, 1);
+            --ms-dur: .25s;
         }
 
         * {
@@ -149,6 +156,52 @@
             letter-spacing: .18em;
             text-transform: uppercase;
             color: var(--ms-teal-deep);
+        }
+        /* SECTION SHELL + SURFACE CARD (shared design system) */
+
+        .section-shell {
+            border-radius: var(--ms-radius-shell);
+            padding: 56px 48px;
+        }
+
+        .section-shell--paper {
+            background: var(--ms-paper);
+            border: var(--ms-border-soft);
+        }
+
+        .section-shell--dark {
+            background: var(--ms-ink);
+        }
+
+        .section-shell--dark .eyebrow {
+            color: var(--ms-teal);
+        }
+
+        .section-shell--dark h2 {
+            color: var(--ms-white);
+        }
+
+        .section-shell--dark .section-head p {
+            color: rgba(255, 255, 255, .66);
+        }
+
+        @media(max-width:700px) {
+            .section-shell {
+                padding: 40px 22px;
+            }
+        }
+
+        .surface-card {
+            background: var(--ms-white);
+            border: var(--ms-border-soft);
+            border-radius: var(--ms-radius-card);
+            box-shadow: var(--ms-shadow-card);
+            transition: transform var(--ms-dur) var(--ms-ease), box-shadow var(--ms-dur) var(--ms-ease), background var(--ms-dur) var(--ms-ease);
+        }
+
+        .surface-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--ms-shadow-lift);
         }
         /* REVEAL ON SCROLL */
 
@@ -1253,9 +1306,6 @@
         }
 
         .contact-card {
-            background: var(--ms-white);
-            border-radius: var(--ms-radius-card);
-            box-shadow: var(--ms-shadow-card);
             padding: 36px 34px;
             display: flex;
             flex-direction: column;
@@ -1771,15 +1821,16 @@
     </div>
 
     
-    <section class="section section--paper" id="contact">
+    <section class="section" id="contact">
         <div class="wrap">
-            <div class="section-head reveal">
-                <span class="eyebrow">Get in touch</span>
-                <h2>Contact Us</h2>
-                <p>We'd love to hear from you.</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-card reveal" style="transition-delay:0ms;">
+            <div class="section-shell section-shell--paper">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Get in touch</span>
+                    <h2>Contact Us</h2>
+                    <p>We'd love to hear from you.</p>
+                </div>
+                <div class="contact-grid">
+                <div class="contact-card surface-card reveal" style="transition-delay:0ms;">
                     <h3>Foamico Head Office</h3>
                     <div class="contact-row">
                         <span class="contact-icon" aria-hidden="true">
@@ -1818,11 +1869,12 @@
                 <div class="contact-map reveal" style="transition-delay:120ms;">
                     <iframe src="https://www.google.com/maps/embed?origin=mfe&amp;pb=!1m13!1m8!1m3!1d14026.531206225845!2d77.1458!3d28.4906!3m2!1i1024!2i768!4f13.1!2m1!1s28.4906,77.1458!5e0!6i15!3m1!1sen-GB!5m1!1sen-GB" title="Foamico Head Office location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
                 </div>
+                </div>
             </div>
         </div>
     </section>
 
-<footer id="footer">
+    <footer id="footer">
         <div class="wrap footer-newsletter">
             <h2>Subscribe to our emails</h2>
             <p>Sleep tips, new ranges, and offers — straight to your inbox.</p>
@@ -1861,7 +1913,7 @@
             </div>
             <div class="footer-col">
                 <h4>Foamico</h4>
-                <p style="font-size:13.5px;color:rgba(255,255,255,.75);max-width:26ch;">German-<span class="kiwi-word">engineered</span> mattresses crafted for Indian homes. Made in India since the 1960s.</p>
+                <p style="font-size:13.5px;color:rgba(255,255,255,.75);max-width:26ch;">Premium sleep, thoughtfully engineered.</p>
             </div>
         </div>
         <div class="footer-base">© 2026 FOAMICO · From the house of LPPL. All rights reserved.</div>
