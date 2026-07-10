@@ -197,13 +197,13 @@
             box-shadow: var(--ms-shadow-card);
             padding: 28px 32px;
         }
-
+        
         @media(max-width:768px) {
             .metric-row {
                 grid-template-columns: 1fr;
             }
         }
-
+        
         .metric-card {
             display: flex;
             align-items: center;
@@ -407,7 +407,7 @@
             top: calc(100% + 14px);
             left: 50%;
             transform: translateX(-50%);
-            min-width: 200px;
+            min-width: 210px;
             background: var(--ms-white);
             border-radius: var(--ms-radius-card);
             padding: 14px;
@@ -422,6 +422,26 @@
         .has-drop:focus-within .header-drop {
             opacity: 1;
             visibility: visible;
+        }
+        
+        .header-drop-label {
+            font-family: var(--ms-font-head);
+            font-size: 10.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: var(--ms-sand);
+            padding: 10px 12px 2px;
+        }
+        
+        .header-drop-label:first-child {
+            padding-top: 4px;
+        }
+        
+        .header-drop-label:not(:first-child) {
+            margin-top: 6px;
+            padding-top: 12px;
+            border-top: var(--ms-border-soft);
         }
         
         .header-drop a {
@@ -490,18 +510,18 @@
             transition: opacity 1s linear;
             filter: saturate(.85) brightness(1.05);
         }
-
+        
         .hero-video.is-live {
             opacity: 1;
         }
-
+        
         .hero-overlay {
             position: absolute;
             inset: 0;
             background: linear-gradient(to right, rgba(24, 30, 20, .72) 0%, rgba(24, 30, 20, .45) 40%, rgba(24, 30, 20, 0) 70%);
             z-index: 2;
         }
-
+        
         @media(max-width:700px) {
             .hero-overlay {
                 background: linear-gradient(to top, rgba(24, 30, 20, .78) 0%, rgba(24, 30, 20, 0) 75%);
@@ -515,16 +535,16 @@
             padding: 0 max(24px, calc((100vw - 1180px) / 2));
             color: var(--ms-white);
         }
-
+        
         .hero-copy-inner {
             max-width: 600px;
         }
-
+        
         .hero-text .eyebrow {
             color: var(--ms-teal);
             margin-bottom: 16px;
         }
-
+        
         .hero-text h1 {
             color: var(--ms-white);
             font-size: clamp(34px, 5.2vw, 62px);
@@ -532,7 +552,7 @@
             margin-bottom: 18px;
             max-width: 13ch;
         }
-
+        
         .hero-text p {
             font-size: 17px;
             color: rgba(255, 255, 255, .85);
@@ -599,7 +619,6 @@
             color: var(--ms-navy-soft);
             line-height: 1.55;
         }
-        
         /* SECTION HEAD */
         
         .section {
@@ -796,7 +815,7 @@
             letter-spacing: .04em;
             margin: 18px 0 4px;
         }
-
+        
         .matrix-row-label:first-of-type {
             margin-top: 0;
         }
@@ -806,23 +825,23 @@
             text-transform: none;
             letter-spacing: 0;
         }
-
+        
         .cooling-bar {
             display: flex;
             gap: 4px;
         }
-
+        
         .cooling-bar .seg {
             flex: 1;
             height: 8px;
             border-radius: 4px;
             background: var(--ms-line);
         }
-
+        
         .cooling-bar .seg.is-filled {
             background: var(--ms-teal);
         }
-
+        
         .matrix-warranty {
             font-size: 13px;
             color: var(--ms-navy-soft);
@@ -1673,11 +1692,15 @@
                     <li class="has-drop">
                         <a href="#products">Products</a>
                         <ul class="header-drop">
+                            <li class="header-drop-label">Mattress</li>
                             <li><a href="https://www.foamicomattress.com/products/sovaclassic">Sova</a></li>
                             <li><a href="https://www.foamicomattress.com/products/ultimaclassic">Ultima</a></li>
-                            <li><a href="https://www.foamicomattress.com/products/lumaclassic">Luma</a></li>
-                            <li><a href="https://www.foamicomattress.com/products/restoclassic">Resto</a></li>
                             <li><a href="https://www.foamicomattress.com/products/riva1000">Riva</a></li>
+                            <li class="header-drop-label">Pillows</li>
+                            <li><a href="#">Pillows</a></li>
+                            <li class="header-drop-label">Accessories</li>
+                            <li><a href="#">Sofa Cum Bed</a></li>
+                            <li><a href="#">Mattress Protector</a></li>
                         </ul>
                     </li>
                     <li><a href="https://www.foamicomattress.com/blog">The Sleepy Times</a></li>
@@ -1813,7 +1836,9 @@
                                 </div>
                                 <div class="matrix-row-label">Cooling Effect</div>
                                 <div class="cooling-bar">
-                                    <span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span>
+                                    <span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg"></span><span class="seg"></span>
+                                    <span
+                                        class="seg"></span>
                                 </div>
                                 <div class="matrix-warranty"><strong>15-Year</strong> Warranty</div>
                             </div>
@@ -1836,7 +1861,9 @@
                                 </div>
                                 <div class="matrix-row-label">Cooling Effect</div>
                                 <div class="cooling-bar">
-                                    <span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg"></span><span class="seg"></span>
+                                    <span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span>
+                                    <span
+                                        class="seg"></span><span class="seg"></span>
                                 </div>
                                 <div class="matrix-warranty"><strong>25-Year</strong> Warranty</div>
                             </div>
@@ -1859,7 +1886,9 @@
                                 </div>
                                 <div class="matrix-row-label">Cooling Effect</div>
                                 <div class="cooling-bar">
-                                    <span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg"></span>
+                                    <span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span><span class="seg is-filled"></span>
+                                    <span
+                                        class="seg is-filled"></span><span class="seg"></span>
                                 </div>
                                 <div class="matrix-warranty"><strong>30-Year</strong> Warranty</div>
                             </div>

@@ -407,7 +407,7 @@
             top: calc(100% + 14px);
             left: 50%;
             transform: translateX(-50%);
-            min-width: 200px;
+            min-width: 210px;
             background: var(--ms-white);
             border-radius: var(--ms-radius-card);
             padding: 14px;
@@ -417,13 +417,33 @@
             visibility: hidden;
             transition: all .2s;
         }
-        
+
         .has-drop:hover .header-drop,
         .has-drop:focus-within .header-drop {
             opacity: 1;
             visibility: visible;
         }
-        
+
+        .header-drop-label {
+            font-family: var(--ms-font-head);
+            font-size: 10.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: var(--ms-sand);
+            padding: 10px 12px 2px;
+        }
+
+        .header-drop-label:first-child {
+            padding-top: 4px;
+        }
+
+        .header-drop-label:not(:first-child) {
+            margin-top: 6px;
+            padding-top: 12px;
+            border-top: var(--ms-border-soft);
+        }
+
         .header-drop a {
             display: block;
             padding: 8px 12px;
@@ -432,7 +452,7 @@
             color: var(--ms-navy);
             font-weight: 500;
         }
-        
+
         .header-drop a:hover {
             background: var(--ms-teal-pale);
         }
@@ -1756,11 +1776,15 @@
                     <li class="has-drop">
                         <a href="index.html#products">Products</a>
                         <ul class="header-drop">
+                            <li class="header-drop-label">Mattress</li>
                             <li><a href="https://www.foamicomattress.com/products/sovaclassic">Sova</a></li>
                             <li><a href="https://www.foamicomattress.com/products/ultimaclassic">Ultima</a></li>
-                            <li><a href="https://www.foamicomattress.com/products/lumaclassic">Luma</a></li>
-                            <li><a href="https://www.foamicomattress.com/products/restoclassic">Resto</a></li>
                             <li><a href="https://www.foamicomattress.com/products/riva1000">Riva</a></li>
+                            <li class="header-drop-label">Pillows</li>
+                            <li><a href="#">Pillows</a></li>
+                            <li class="header-drop-label">Accessories</li>
+                            <li><a href="#">Sofa Cum Bed</a></li>
+                            <li><a href="#">Mattress Protector</a></li>
                         </ul>
                     </li>
                     <li><a href="https://www.foamicomattress.com/blog">The Sleepy Times</a></li>
