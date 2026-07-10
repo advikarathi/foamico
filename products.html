@@ -269,11 +269,11 @@
             top: calc(100% + 14px);
             left: 50%;
             transform: translateX(-50%);
-            min-width: 210px;
+            display: flex;
+            gap: 36px;
             background: var(--ms-white);
-            border-radius: var(--ms-radius-card);
-            padding: 14px;
-            list-style: none;
+            border-radius: 24px;
+            padding: 28px 32px;
             box-shadow: var(--ms-shadow-card);
             opacity: 0;
             visibility: hidden;
@@ -286,37 +286,31 @@
             visibility: visible;
         }
 
-        .header-drop-label {
+        .header-drop-col {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-width: 110px;
+        }
+
+        .header-drop-title {
             font-family: var(--ms-font-head);
-            font-size: 10.5px;
-            font-weight: 700;
+            font-weight: 800;
+            font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: .08em;
-            color: var(--ms-sand);
-            padding: 10px 12px 2px;
+            letter-spacing: .04em;
+            color: var(--ms-teal-deep);
+            margin-bottom: 2px;
         }
 
-        .header-drop-label:first-child {
-            padding-top: 4px;
-        }
-
-        .header-drop-label:not(:first-child) {
-            margin-top: 6px;
-            padding-top: 12px;
-            border-top: 1px solid var(--ms-line);
-        }
-
-        .header-drop a {
-            display: block;
-            padding: 8px 12px;
-            border-radius: 8px;
+        .header-drop-col a {
             font-size: 14px;
             color: var(--ms-navy);
             font-weight: 500;
         }
 
-        .header-drop a:hover {
-            background: var(--ms-teal-pale);
+        .header-drop-col a:hover {
+            color: var(--ms-teal-deep);
         }
         
         @media(max-width:900px) {
