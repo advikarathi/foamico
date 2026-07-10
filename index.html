@@ -106,7 +106,7 @@
         }
 
         .header-row>.pill-btn {
-            transform: translateX(96px);
+            flex-shrink: 0;
         }
 
         .pill-btn:hover {
@@ -256,7 +256,6 @@
             list-style: none;
             margin-left: auto;
             margin-right: 24px;
-            transform: translateX(96px);
         }
 
         .header-nav>li {
@@ -277,11 +276,7 @@
 
         @media(max-width:1100px) {
             .header-nav {
-                transform: none;
                 margin-right: 24px;
-            }
-            .header-row>.pill-btn {
-                transform: none;
             }
         }
 
@@ -526,6 +521,68 @@
         .trust-stat span {
             font-size: 12.5px;
             color: var(--ms-navy-soft);
+        }
+        /* FEATURE GRID */
+
+        .feature-strip {
+            background: var(--ms-white);
+            padding: 48px 0 24px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        @media(max-width:768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+
+        .feature-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 26px 24px;
+            background: var(--ms-paper);
+            border-radius: var(--ms-radius-card);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--ms-shadow-card);
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--ms-teal-deep);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--ms-white);
+        }
+
+        .feature-card h3 {
+            font-size: 15.5px;
+            margin-bottom: 4px;
+        }
+
+        .feature-card p {
+            font-size: 13.5px;
+            color: var(--ms-navy-soft);
+            line-height: 1.55;
         }
         /* SECTION HEAD */
 
@@ -878,7 +935,6 @@
         .categories-section {
             background: var(--ms-white);
             color: var(--ms-white);
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -1103,66 +1159,6 @@
         .founder-attribution span {
             color: var(--ms-teal-deep);
             margin: 0 6px;
-        }
-        /* CERTIFICATIONS */
-
-        .cert-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 56px;
-            align-items: center;
-        }
-
-        @media(max-width:900px) {
-            .cert-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-        }
-
-        .cert-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .cert-list li {
-            display: flex;
-            gap: 12px;
-            font-size: 15px;
-            color: var(--ms-charcoal);
-        }
-
-        .cert-list li::before {
-            content: '';
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: var(--ms-teal);
-            flex-shrink: 0;
-            margin-top: 3px;
-        }
-
-        .cert-badge {
-            background: var(--ms-white);
-            border: 1px solid var(--ms-line);
-            border-radius: var(--ms-radius-card);
-            padding: 32px;
-            text-align: center;
-            box-shadow: var(--ms-shadow-card);
-        }
-
-        .cert-badge strong {
-            display: block;
-            font-family: var(--ms-font-head);
-            font-size: 40px;
-            color: var(--ms-teal-deep);
-        }
-
-        .cert-badge span {
-            font-size: 13px;
-            color: var(--ms-navy-soft);
         }
         /* SHOWROOM */
 
@@ -1718,6 +1714,40 @@
         </div>
     </section>
 
+    <section class="feature-strip">
+        <div class="wrap">
+            <div class="feature-grid">
+                <div class="feature-card reveal" style="transition-delay:0ms;">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L12 16.9 6.4 20l1.4-6.2-4.8-4.3 6.4-.6L12 3z"></path></svg>
+                    </div>
+                    <div>
+                        <h3>Perfected by Legacy</h3>
+                        <p>Six decades of craft, passed down and refined.</p>
+                    </div>
+                </div>
+                <div class="feature-card reveal" style="transition-delay:80ms;">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+                    </div>
+                    <div>
+                        <h3>Science in Every Layer</h3>
+                        <p>European precision manufacturing, in every mattress.</p>
+                    </div>
+                </div>
+                <div class="feature-card reveal" style="transition-delay:160ms;">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="4.5" rx="1.2"></rect><rect x="4" y="10.5" width="16" height="4.5" rx="1.2"></rect><rect x="4" y="17" width="16" height="3" rx="1.2"></rect></svg>
+                    </div>
+                    <div>
+                        <h3>Engineered for Every Sleeper</h3>
+                        <p>Researched and tested to fit every body type.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="categories-section" id="products">
         <div class="categories-head reveal">
             <span class="eyebrow">Explore Products</span>
@@ -1863,33 +1893,13 @@
     <section class="founder-section">
         <div class="wrap">
             <div class="founder-top reveal">
-                <h2 class="founder-heading">About Us</h2>
+                <h2 class="founder-heading">Meet the Founders</h2>
                 <div class="founder-photo-sm" aria-hidden="true"><strong>40</strong>years of mattress experience</div>
             </div>
             <div class="founder-quote-banner reveal" style="transition-delay:100ms;">
                 <span class="founder-quote-mark" aria-hidden="true">&ldquo;</span>
                         <p class="founder-quote-text">We build German-<span class="kiwi-word">engineered</span> comfort so every Indian sleeps, sits and rests better.</p>
                 <div class="founder-attribution">Founder Name &amp; Co-Founder Name <span>|</span> The Founders</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--paper">
-        <div class="wrap cert-grid">
-            <div class="reveal">
-                <span class="eyebrow">Trust &amp; quality</span>
-                <h2 style="margin:14px 0 24px;">Built on Certified Standards</h2>
-                <ul class="cert-list">
-                    <li>Precision-<span class="kiwi-word">engineered</span> layers, tested for support and durability.</li>
-                    <li>Reinforced seams and stitching, built to hold shape for decades.</li>
-                    <li>25-year warranty backing every mattress we make.</li>
-                    <li>Trusted since the 1960s — three generations of expertise.</li>
-                    <li>Made with quality-tested materials, manufactured in India.</li>
-                </ul>
-            </div>
-            <div class="cert-badge reveal" style="transition-delay:150ms;">
-                <strong>25</strong>
-                <span>Year Warranty on Premium Ranges</span>
             </div>
         </div>
     </section>
