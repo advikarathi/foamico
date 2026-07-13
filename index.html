@@ -539,17 +539,28 @@
         }
 
         .why-quote-text {
-            font-size: clamp(24px, 4vw, 40px);
-            font-weight: 500;
+            font-size: clamp(28px, 4.6vw, 46px);
+            font-weight: 700;
             color: var(--ms-charcoal);
-            line-height: 1.35;
+            line-height: 1.3;
+            letter-spacing: -.01em;
             margin-top: 18px;
         }
 
         .why-quote-text em {
             font-style: italic;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--ms-teal-deep);
+        }
+
+        .why-highlight {
+            color: inherit;
+            background-color: transparent;
+            background-image: linear-gradient(to bottom, transparent 58%, var(--ms-teal-pale) 58%);
+            background-repeat: no-repeat;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+            padding: 0 6px;
         }
 
         .why-carousel {
@@ -1223,13 +1234,7 @@
             overflow: hidden;
             box-shadow: var(--ms-shadow-card);
             background: var(--ms-navy);
-            aspect-ratio: 4/5;
-        }
-
-        @media(min-width:900px) {
-            .motion-video-frame {
-                aspect-ratio: 3/4;
-            }
+            aspect-ratio: 16/9;
         }
 
         .motion-video {
@@ -1986,7 +1991,7 @@
         </div>
     </section>
 
-    <section class="section" id="motion-isolation">
+    <section class="section" id="sleep-position-test">
         <div class="wrap">
             <div class="motion-grid">
                 <div class="motion-media reveal">
@@ -1994,24 +1999,24 @@
                         <video
                             class="motion-video"
                             data-motion-video
-                            aria-label="Slow-motion demonstration of a yo-yo bouncing at full force on one side of a Foamico mattress while a full glass of water rests undisturbed on the other side, showing zero motion transfer"
-                            poster="assets/yo-yo-test-poster.jpg"
+                            aria-label="Unedited footage of a woman testing five sleep positions on a Foamico mattress — shoulder, back, other shoulder, stomach, and other stomach — 15 seconds each, on camera"
+                            poster="assets/sleep-position-test-poster.jpg"
                             preload="none"
                             autoplay
                             muted
                             loop
                             playsinline>
-                            <source src="assets/yo-yo-test-web.webm" type="video/webm">
-                            <source src="assets/yo-yo-test-web.mp4" type="video/mp4">
+                            <source src="assets/sleep-position-test-web.webm" type="video/webm">
+                            <source src="assets/sleep-position-test-web.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <p class="motion-badge"><span class="motion-badge-dot" aria-hidden="true"></span>Unedited footage — zero motion transfer</p>
+                    <p class="motion-badge"><span class="motion-badge-dot" aria-hidden="true"></span>Unedited footage — every position, no cuts</p>
                 </div>
                 <div class="motion-copy reveal" style="transition-delay:120ms;">
-                    <span class="eyebrow">Zero Motion Transfer</span>
-                    <h2>The Yo-Yo Test</h2>
-                    <p>Drop a yo-yo bouncing at full force on one side of a Foamico mattress, and a full glass of water won't spill a drop on the other. That's motion isolation you can actually see.</p>
-                    <p>It means your partner can toss, turn, and hop out of bed at 2am — and your side won't notice a thing. No shaking, no waking. Just foam that keeps the peace.</p>
+                    <span class="eyebrow">Every Sleep Position</span>
+                    <h2>The Sleep Position Test</h2>
+                    <p>Back, shoulder, other shoulder, stomach, other stomach — 15 seconds each, camera rolling the whole time. No cuts, no staged angles. Just one mattress, put through every way you actually sleep.</p>
+                    <p>Most mattresses are built for one position and hope you don't move. Foamico is contoured to hold its shape and support you through all of them, so switching sides at 2am doesn't mean starting over.</p>
                 </div>
             </div>
         </div>
