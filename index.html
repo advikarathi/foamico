@@ -1201,6 +1201,78 @@
         .category-card:hover .category-name {
             transform: rotate(180deg) translateX(8px);
         }
+        /* MOTION ISOLATION */
+
+        .motion-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media(min-width:900px) {
+            .motion-grid {
+                grid-template-columns: 1.05fr 1fr;
+                gap: 64px;
+            }
+        }
+
+        .motion-video-frame {
+            position: relative;
+            border-radius: var(--ms-radius-shell);
+            overflow: hidden;
+            box-shadow: var(--ms-shadow-card);
+            background: var(--ms-navy);
+            aspect-ratio: 4/5;
+        }
+
+        @media(min-width:900px) {
+            .motion-video-frame {
+                aspect-ratio: 3/4;
+            }
+        }
+
+        .motion-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .motion-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ms-navy-soft);
+        }
+
+        .motion-badge-dot {
+            width: 7px;
+            height: 7px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: var(--ms-teal);
+            box-shadow: 0 0 0 4px var(--ms-teal-pale);
+        }
+
+        .motion-copy h2 {
+            font-size: clamp(28px, 3.6vw, 40px);
+            margin: 14px 0 18px;
+        }
+
+        .motion-copy p {
+            font-size: 16px;
+            color: var(--ms-navy-soft);
+            max-width: 480px;
+            margin-bottom: 14px;
+        }
+
+        .motion-copy p:last-of-type {
+            margin-bottom: 0;
+        }
         /* FOUNDER STORY */
         
         .founder-top {
@@ -1864,12 +1936,11 @@
     <section class="section" id="why">
         <div class="wrap">
             <div class="section-head reveal">
-                <span class="eyebrow">Made for better sleep, built with real depth.</span>
                 <h2>Why Us</h2>
             </div>
             <div class="why-quote reveal">
                 <span class="why-quote-mark" aria-hidden="true">&ldquo;</span>
-                <p class="why-quote-text">Obsessed with mattresses, so you can be <em>obsessed</em> with sleep.</p>
+                <p class="why-quote-text"><mark class="why-highlight">Obsessed with mattresses, so you can be <em>obsessed</em> with sleep.</mark></p>
             </div>
         </div>
         <div class="why-carousel reveal" style="transition-delay:120ms;">
@@ -1912,6 +1983,37 @@
                 <div class="category-overlay"></div>
                 <h2 class="category-name">Plush</h2>
             </a>
+        </div>
+    </section>
+
+    <section class="section" id="motion-isolation">
+        <div class="wrap">
+            <div class="motion-grid">
+                <div class="motion-media reveal">
+                    <div class="motion-video-frame">
+                        <video
+                            class="motion-video"
+                            data-motion-video
+                            aria-label="Slow-motion demonstration of a yo-yo bouncing at full force on one side of a Foamico mattress while a full glass of water rests undisturbed on the other side, showing zero motion transfer"
+                            poster="assets/yo-yo-test-poster.jpg"
+                            preload="none"
+                            autoplay
+                            muted
+                            loop
+                            playsinline>
+                            <source src="assets/yo-yo-test-web.webm" type="video/webm">
+                            <source src="assets/yo-yo-test-web.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <p class="motion-badge"><span class="motion-badge-dot" aria-hidden="true"></span>Unedited footage — zero motion transfer</p>
+                </div>
+                <div class="motion-copy reveal" style="transition-delay:120ms;">
+                    <span class="eyebrow">Zero Motion Transfer</span>
+                    <h2>The Yo-Yo Test</h2>
+                    <p>Drop a yo-yo bouncing at full force on one side of a Foamico mattress, and a full glass of water won't spill a drop on the other. That's motion isolation you can actually see.</p>
+                    <p>It means your partner can toss, turn, and hop out of bed at 2am — and your side won't notice a thing. No shaking, no waking. Just foam that keeps the peace.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -2192,7 +2294,7 @@
 
         (function() {
             var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            var videos = document.querySelectorAll('.product-video, .category-video, .hero-video');
+            var videos = document.querySelectorAll('.product-video, .category-video, .hero-video, .motion-video');
             videos.forEach(function(v) {
                 if (reduceMotion) {
                     v.removeAttribute('autoplay');
@@ -2310,6 +2412,25 @@
                 threshold: 0.1
             });
             observer.observe(grid);
+        })();
+
+        (function() {
+            var video = document.querySelector('[data-motion-video]');
+            if (!video) return;
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduceMotion) return;
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var playPromise = video.play();
+                        if (playPromise && playPromise.catch) playPromise.catch(function() {});
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.35
+            });
+            observer.observe(video);
         })();
 
         (function() {
