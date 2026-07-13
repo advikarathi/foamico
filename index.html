@@ -187,49 +187,6 @@
             box-shadow: var(--ms-shadow-lift);
         }
         
-        .metric-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            background: var(--ms-white);
-            border: var(--ms-border-soft);
-            border-radius: var(--ms-radius-card);
-            box-shadow: var(--ms-shadow-card);
-            padding: 28px 32px;
-        }
-        
-        @media(max-width:768px) {
-            .metric-row {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .metric-card {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            justify-content: center;
-        }
-        
-        .metric-card svg {
-            width: 26px;
-            height: 26px;
-            stroke: var(--ms-teal-deep);
-            flex-shrink: 0;
-        }
-        
-        .metric-card strong {
-            display: block;
-            font-family: var(--ms-font-head);
-            font-size: 15px;
-            color: var(--ms-charcoal);
-        }
-        
-        .metric-card span {
-            font-size: 12.5px;
-            color: var(--ms-navy-soft);
-        }
-        
         .firmness-track {
             display: flex;
             align-items: center;
@@ -566,52 +523,112 @@
             flex-wrap: wrap;
         }
         /* WHY FOAMICO */
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
+
+        .why-quote {
+            max-width: 780px;
+            margin: 0 auto 52px;
+            text-align: center;
         }
-        
-        @media(max-width:768px) {
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
+
+        .why-quote-mark {
+            display: block;
+            font-family: var(--ms-font-head);
+            font-size: 58px;
+            line-height: .5;
+            color: var(--ms-teal);
         }
-        
-        .feature-card {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            padding: 26px 24px;
+
+        .why-quote-text {
+            font-size: clamp(24px, 4vw, 40px);
+            font-weight: 500;
+            color: var(--ms-charcoal);
+            line-height: 1.35;
+            margin-top: 18px;
         }
-        
-        .feature-icon {
-            flex-shrink: 0;
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            background: var(--ms-teal);
+
+        .why-quote-text em {
+            font-style: italic;
+            font-weight: 700;
+            color: var(--ms-teal-deep);
+        }
+
+        .why-carousel {
+            width: 100%;
+            overflow: hidden;
+            padding: 6px 0 4px;
+            -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%);
+        }
+
+        .why-carousel-track {
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 18px;
+            width: max-content;
+            perspective: 1400px;
+            animation: why-scroll 28s linear infinite;
         }
-        
-        .feature-icon svg {
-            width: 20px;
-            height: 20px;
-            stroke: var(--ms-white);
+
+        .why-carousel:hover .why-carousel-track {
+            animation-play-state: paused;
         }
-        
-        .feature-card h3 {
-            font-size: 15.5px;
-            margin-bottom: 4px;
+
+        @keyframes why-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
         }
-        
-        .feature-card p {
-            font-size: 13.5px;
-            color: var(--ms-navy-soft);
-            line-height: 1.55;
+
+        .why-pill {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 10px;
+            flex-shrink: 0;
+            background: var(--ms-white);
+            border: var(--ms-border-soft);
+            border-radius: var(--ms-radius-pill);
+            padding: 14px 26px;
+            box-shadow: var(--ms-shadow-card);
+            transform-style: preserve-3d;
+            transition: transform var(--ms-dur) var(--ms-ease), box-shadow var(--ms-dur) var(--ms-ease), border-color var(--ms-dur) var(--ms-ease);
+        }
+
+        .why-pill:hover {
+            transform: translateY(-6px) rotateX(6deg) rotateY(-5deg);
+            box-shadow: var(--ms-shadow-lift);
+            border-color: var(--ms-teal);
+        }
+
+        .why-pill strong {
+            font-family: var(--ms-font-head);
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--ms-teal-deep);
+            transform: translateZ(16px);
+        }
+
+        .why-pill span {
+            font-family: var(--ms-font-head);
+            font-weight: 700;
+            font-size: 12.5px;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            color: var(--ms-charcoal);
+            white-space: nowrap;
+        }
+
+        @media (max-width:640px) {
+            .why-pill {
+                padding: 12px 20px;
+            }
+            .why-pill strong {
+                font-size: 17px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .why-carousel-track {
+                animation: none;
+            }
         }
         /* SECTION HEAD */
         
@@ -864,77 +881,177 @@
             filter: brightness(1.1);
         }
         /* TESTIMONIALS */
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+        .testimonial-carousel {
+            position: relative;
+        }
+
+        .testimonial-track {
+            display: flex;
             gap: 22px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 4px 4px 12px;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
-        
-        @media(max-width:900px) {
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-            }
+
+        .testimonial-track::-webkit-scrollbar {
+            display: none;
         }
-        
+
         .testimonial-card {
+            flex: 0 0 min(320px, 78vw);
+            scroll-snap-align: start;
             overflow: hidden;
         }
-        
+
         .testimonial-media {
-            aspect-ratio: 16/10;
+            aspect-ratio: 9/16;
             background: linear-gradient(150deg, var(--ms-teal-pale), var(--ms-paper));
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
         }
-        
+
+        .testimonial-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            background: #000;
+        }
+
         .testimonial-play {
-            width: 48px;
-            height: 48px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 52px;
+            height: 52px;
+            border: none;
             border-radius: 50%;
-            background: rgba(255, 255, 255, .9);
+            background: rgba(255, 255, 255, .92);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 20px rgba(26, 26, 26, .18);
+            box-shadow: 0 10px 26px rgba(26, 26, 26, .28);
+            cursor: pointer;
+            transition: transform var(--ms-dur) var(--ms-ease), background var(--ms-dur) var(--ms-ease), opacity var(--ms-dur) var(--ms-ease);
         }
-        
+
+        .testimonial-play:hover {
+            transform: translate(-50%, -50%) scale(1.08);
+            background: var(--ms-white);
+        }
+
         .testimonial-play svg {
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             fill: var(--ms-navy);
             margin-left: 2px;
         }
-        
+
+        .testimonial-media.is-playing .testimonial-play {
+            opacity: 0;
+            pointer-events: none;
+        }
+
         .testimonial-body {
             padding: 18px 20px 22px;
         }
-        
-        .testimonial-stars {
-            color: var(--ms-star);
-            font-size: 13px;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-        
+
         .testimonial-quote {
             font-size: 14px;
             color: var(--ms-charcoal);
             margin-bottom: 14px;
             line-height: 1.65;
+            min-height: 1.65em;
         }
-        
+
         .testimonial-name {
             font-size: 12.5px;
             font-weight: 700;
             color: var(--ms-navy);
         }
-        
+
         .testimonial-name span {
             font-weight: 500;
             color: var(--ms-navy-soft);
+        }
+
+        .testimonial-nav {
+            position: absolute;
+            top: calc(50% - 20px);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: var(--ms-border-soft);
+            background: var(--ms-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--ms-shadow-card);
+            transition: transform var(--ms-dur) var(--ms-ease), box-shadow var(--ms-dur) var(--ms-ease);
+            z-index: 2;
+        }
+
+        .testimonial-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--ms-shadow-lift);
+        }
+
+        .testimonial-nav--prev {
+            left: -20px;
+        }
+
+        .testimonial-nav--next {
+            right: -20px;
+        }
+
+        .testimonial-nav svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--ms-charcoal);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .testimonial-nav[hidden],
+        .testimonial-dots[hidden] {
+            display: none;
+        }
+
+        @media(max-width:900px) {
+            .testimonial-nav {
+                display: none;
+            }
+        }
+
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 22px;
+        }
+
+        .testimonial-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--ms-line);
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: background var(--ms-dur) var(--ms-ease), transform var(--ms-dur) var(--ms-ease);
+        }
+
+        .testimonial-dot.is-active {
+            background: var(--ms-teal);
+            transform: scale(1.3);
         }
         /* CATEGORIES */
         
@@ -1750,48 +1867,25 @@
                 <span class="eyebrow">Made for better sleep, built with real depth.</span>
                 <h2>Why Us</h2>
             </div>
-            <div class="feature-grid reveal">
-                <div class="feature-card surface-card" style="transition-delay:0ms;">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L12 16.9 6.4 20l1.4-6.2-4.8-4.3 6.4-.6L12 3z"></path></svg>
-                    </div>
-                    <div>
-                        <h3>Perfected by Legacy</h3>
-                        <p>Six decades of craft, passed down and refined.</p>
-                    </div>
-                </div>
-                <div class="feature-card surface-card" style="transition-delay:80ms;">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
-                    </div>
-                    <div>
-                        <h3>Science in Every Layer</h3>
-                        <p>European precision manufacturing, in every mattress.</p>
-                    </div>
-                </div>
-                <div class="feature-card surface-card" style="transition-delay:160ms;">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="4.5" rx="1.2"></rect><rect x="4" y="10.5" width="16" height="4.5" rx="1.2"></rect><rect x="4" y="17" width="16" height="3" rx="1.2"></rect></svg>
-                    </div>
-                    <div>
-                        <h3>Engineered for Every Sleeper</h3>
-                        <p>Researched and tested to fit every body type.</p>
-                    </div>
-                </div>
+            <div class="why-quote reveal">
+                <span class="why-quote-mark" aria-hidden="true">&ldquo;</span>
+                <p class="why-quote-text">Obsessed with mattresses, so you can be <em>obsessed</em> with sleep.</p>
             </div>
-            <div class="metric-row reveal">
-                <div class="metric-card">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3.2v4.6c0 5-3 9.4-7 10.7-4-1.3-7-5.7-7-10.7V6.2L12 3z"></path></svg>
-                    <div><strong>Up to 30-Year Warranty</strong><span>Free replacement up to 5 years</span></div>
-                </div>
-                <div class="metric-card">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-7h14l2 7"></path><path d="M5 12h14v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6z"></path></svg>
-                    <div><strong>15 Cities, 300+ Stores</strong><span>Try before you buy</span></div>
-                </div>
-                <div class="metric-card">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L12 16.9 6.4 20l1.4-6.2-4.8-4.3 6.4-.6L12 3z"></path></svg>
-                    <div><strong>50,000+ Happy Customers</strong><span>Chosen on repeat</span></div>
-                </div>
+        </div>
+        <div class="why-carousel reveal" style="transition-delay:120ms;">
+            <div class="why-carousel-track">
+                <div class="why-pill"><strong>50,000+</strong><span>Happy Customers</span></div>
+                <div class="why-pill"><strong>6</strong><span>Decades Of Craft</span></div>
+                <div class="why-pill"><strong>100%</strong><span>European Precision</span></div>
+                <div class="why-pill"><strong>30</strong><span>Year Warranty</span></div>
+                <div class="why-pill"><strong>300+</strong><span>Stores Nationwide</span></div>
+                <div class="why-pill"><strong>15</strong><span>Cities Reached</span></div>
+                <div class="why-pill" aria-hidden="true"><strong>50,000+</strong><span>Happy Customers</span></div>
+                <div class="why-pill" aria-hidden="true"><strong>6</strong><span>Decades Of Craft</span></div>
+                <div class="why-pill" aria-hidden="true"><strong>100%</strong><span>European Precision</span></div>
+                <div class="why-pill" aria-hidden="true"><strong>30</strong><span>Year Warranty</span></div>
+                <div class="why-pill" aria-hidden="true"><strong>300+</strong><span>Stores Nationwide</span></div>
+                <div class="why-pill" aria-hidden="true"><strong>15</strong><span>Cities Reached</span></div>
             </div>
         </div>
     </section>
@@ -1917,37 +2011,30 @@
                 <h2>Loved by Sleepers Everywhere</h2>
                 <p>Real comfort stories from people who tried Foamico at home and in-store.</p>
             </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card surface-card reveal" style="transition-delay:0ms;">
-                    <div class="testimonial-media">
-                        <div class="testimonial-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4z"></path></svg></div>
-                    </div>
-                    <div class="testimonial-body">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <p class="testimonial-quote">"I wanted firm support without the mattress feeling hard. Ultima has that hotel-like feel, and my lower back feels much better."</p>
-                        <div class="testimonial-name">Priya S. <span>Delhi</span></div>
-                    </div>
-                </div>
-                <div class="testimonial-card surface-card reveal" style="transition-delay:120ms;">
-                    <div class="testimonial-media">
-                        <div class="testimonial-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4z"></path></svg></div>
-                    </div>
-                    <div class="testimonial-body">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <p class="testimonial-quote">"We visited the showroom, compared three models, and picked Luma. It stays cooler than our old mattress."</p>
-                        <div class="testimonial-name">Arjun M. <span>Gurugram</span></div>
+            <div class="testimonial-carousel reveal">
+                <div class="testimonial-track" data-testimonial-track>
+                    <div class="testimonial-card surface-card">
+                        <div class="testimonial-media" data-testimonial-media>
+                            <video class="testimonial-video" data-testimonial-video poster="testimonials/raghav_k_delhi_poster.jpg" preload="none" playsinline>
+                                <source src="testimonials/raghav_k_delhi.mp4" type="video/mp4">
+                            </video>
+                            <button class="testimonial-play" type="button" data-testimonial-play aria-label="Play video testimonial from Raghav K.">
+                                <svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4z"></path></svg>
+                            </button>
+                        </div>
+                        <div class="testimonial-body">
+                            <p class="testimonial-quote"></p>
+                            <div class="testimonial-name">Raghav K. <span>Delhi</span></div>
+                        </div>
                     </div>
                 </div>
-                <div class="testimonial-card surface-card reveal" style="transition-delay:240ms;">
-                    <div class="testimonial-media">
-                        <div class="testimonial-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4z"></path></svg></div>
-                    </div>
-                    <div class="testimonial-body">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <p class="testimonial-quote">"The showroom team helped us choose the right firmness. Sova feels balanced and supportive without being over the top."</p>
-                        <div class="testimonial-name">Meera R. <span>Bengaluru</span></div>
-                    </div>
-                </div>
+                <button class="testimonial-nav testimonial-nav--prev" type="button" data-testimonial-prev aria-label="Previous testimonial">
+                    <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"></path></svg>
+                </button>
+                <button class="testimonial-nav testimonial-nav--next" type="button" data-testimonial-next aria-label="Next testimonial">
+                    <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"></path></svg>
+                </button>
+                <div class="testimonial-dots" data-testimonial-dots></div>
             </div>
         </div>
     </section>
@@ -2242,6 +2329,118 @@
             items.forEach(function(el) {
                 observer.observe(el);
             });
+        })();
+
+        (function() {
+            var track = document.querySelector('[data-testimonial-track]');
+            if (!track) return;
+            var cards = Array.prototype.slice.call(track.children);
+            var prevBtn = document.querySelector('[data-testimonial-prev]');
+            var nextBtn = document.querySelector('[data-testimonial-next]');
+            var dotsWrap = document.querySelector('[data-testimonial-dots]');
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var current = 0;
+            var isPlaying = false;
+            var autoTimer = null;
+
+            cards.forEach(function(card) {
+                var media = card.querySelector('[data-testimonial-media]');
+                var video = card.querySelector('[data-testimonial-video]');
+                var playBtn = card.querySelector('[data-testimonial-play]');
+                if (!media || !video || !playBtn) return;
+
+                playBtn.addEventListener('click', function() {
+                    media.classList.add('is-playing');
+                    video.controls = true;
+                    video.play();
+                });
+                video.addEventListener('playing', function() {
+                    isPlaying = true;
+                    stopAuto();
+                });
+                video.addEventListener('pause', function() {
+                    isPlaying = false;
+                    startAuto();
+                });
+                video.addEventListener('ended', function() {
+                    isPlaying = false;
+                    video.controls = false;
+                    video.currentTime = 0;
+                    media.classList.remove('is-playing');
+                    startAuto();
+                });
+            });
+
+            if (cards.length <= 1) {
+                if (prevBtn) prevBtn.hidden = true;
+                if (nextBtn) nextBtn.hidden = true;
+                if (dotsWrap) dotsWrap.hidden = true;
+                return;
+            }
+
+            cards.forEach(function(card, i) {
+                var dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = 'testimonial-dot' + (i === 0 ? ' is-active' : '');
+                dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+                dot.addEventListener('click', function() {
+                    goTo(i);
+                });
+                dotsWrap.appendChild(dot);
+            });
+            var dots = Array.prototype.slice.call(dotsWrap.children);
+
+            function goTo(i) {
+                current = (i + cards.length) % cards.length;
+                cards[current].scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'nearest', inline: 'start' });
+                dots.forEach(function(d, di) {
+                    d.classList.toggle('is-active', di === current);
+                });
+            }
+
+            function startAuto() {
+                if (reduceMotion || isPlaying) return;
+                stopAuto();
+                autoTimer = window.setInterval(function() {
+                    goTo(current + 1);
+                }, 5000);
+            }
+
+            function stopAuto() {
+                if (autoTimer) {
+                    window.clearInterval(autoTimer);
+                    autoTimer = null;
+                }
+            }
+
+            prevBtn.addEventListener('click', function() { goTo(current - 1); });
+            nextBtn.addEventListener('click', function() { goTo(current + 1); });
+            track.addEventListener('mouseenter', stopAuto);
+            track.addEventListener('mouseleave', startAuto);
+            track.addEventListener('touchstart', stopAuto, { passive: true });
+
+            var scrollTimer = null;
+            track.addEventListener('scroll', function() {
+                if (scrollTimer) window.clearTimeout(scrollTimer);
+                scrollTimer = window.setTimeout(function() {
+                    var mid = track.scrollLeft + track.clientWidth / 2;
+                    var closest = 0;
+                    var closestDist = Infinity;
+                    cards.forEach(function(card, i) {
+                        var dist = Math.abs((card.offsetLeft + card.offsetWidth / 2) - mid);
+                        if (dist < closestDist) {
+                            closestDist = dist;
+                            closest = i;
+                        }
+                    });
+                    current = closest;
+                    dots.forEach(function(d, di) {
+                        d.classList.toggle('is-active', di === current);
+                    });
+                }, 120);
+            }, { passive: true });
+
+            startAuto();
         })();
 
         (function() {
