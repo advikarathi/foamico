@@ -1259,6 +1259,33 @@
         .motion-copy p:last-of-type {
             margin-bottom: 0;
         }
+
+        .motion-copy ul {
+            list-style: none;
+            max-width: 480px;
+            margin: 0 0 14px;
+            display: grid;
+            gap: 8px;
+        }
+
+        .motion-copy ul li {
+            position: relative;
+            padding-left: 22px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--ms-charcoal);
+        }
+
+        .motion-copy ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--ms-kiwi);
+        }
         /* FOUNDER STORY */
         
         .founder-top {
@@ -1965,7 +1992,7 @@
                                 <span class="header-drop-title">Mattress</span>
                                 <a href="sova.html">Sova</a>
                                 <a href="ultima.html">Ultima</a>
-                                <a href="https://www.foamicomattress.com/products/riva1000">Riva</a>
+                                <a href="riva.html">Riva</a>
                             </div>
                             <div class="header-drop-col">
                                 <span class="header-drop-title">Pillows</span>
@@ -2049,15 +2076,15 @@
                 <div class="category-overlay"></div>
                 <h2 class="category-name">Firm</h2>
             </a>
-            <a class="category-card" href="https://www.foamicomattress.com/products/restoclassic" style="transition-delay:150ms;">
+            <a class="category-card" href="resto.html" style="transition-delay:150ms;">
                 <video class="category-video" src="video/resto.mp4" preload="auto" loop muted playsinline></video>
                 <div class="category-overlay"></div>
                 <h2 class="category-name">Medium</h2>
             </a>
-            <a class="category-card" href="https://www.foamicomattress.com/products/riva1000" style="transition-delay:300ms;">
+            <a class="category-card" href="riva.html" style="transition-delay:300ms;">
                 <video class="category-video" src="video/riva.mp4" preload="auto" loop muted playsinline></video>
                 <div class="category-overlay"></div>
-                <h2 class="category-name">Plush</h2>
+                <h2 class="category-name">Soft</h2>
             </a>
         </div>
     </section>
@@ -2085,9 +2112,17 @@
                 <div class="motion-copy reveal" style="transition-delay:120ms;">
                     <span class="eyebrow">Zero Guesswork</span>
                     <h2>The Yo-Yo Test</h2>
-                    <p>Nobody sleeps in one position all night. You shift, you turn, you roll — so a 10-second sit on a showroom bed tells you nothing.</p>
-                    <p>The Yo-Yo Test is simple: spend 15 seconds in each of the four sleeping positions — left side, right side, belly, and back. Notice how your shoulders, hips, and lower back feel as you move. The right mattress supports you in every position, not just your favourite one.</p>
-                    <p>45 seconds. Four positions. Zero guesswork.</p>
+                    <p>No one sleeps in just one position all night. You turn, shift, stretch, and roll over constantly—which means spending 10 seconds on a mattress in a showroom tells you very little.</p>
+                    <p>That's where the Yo-Yo Test comes in.</p>
+                    <p>Spend just 15 seconds in each of these four positions:</p>
+                    <ul>
+                        <li>Left side</li>
+                        <li>Right side</li>
+                        <li>Back</li>
+                        <li>Stomach</li>
+                    </ul>
+                    <p>As you switch positions, pay attention to how your shoulders, hips, and lower back feel. A good mattress should provide consistent support and comfort no matter how you sleep—not just in your preferred position.</p>
+                    <p>45 seconds. Four positions. One confident decision.</p>
                 </div>
             </div>
         </div>
@@ -2174,7 +2209,7 @@
                                 </div>
                                 <div class="matrix-warranty"><strong>30-Year</strong> Warranty</div>
                             </div>
-                            <a class="matrix-cta" href="https://www.foamicomattress.com/products/riva1000">Explore Riva</a>
+                            <a class="matrix-cta" href="riva.html">Explore Riva</a>
                         </div>
                     </div>
                 </div>
@@ -2290,7 +2325,9 @@
                 <ul>
                     <li><a href="sova.html">Sova</a></li>
                     <li><a href="ultima.html">Ultima</a></li>
-                    <li><a href="products.html">Luma</a></li>
+                    <li><a href="luma.html">Luma</a></li>
+                    <li><a href="resto.html">Resto</a></li>
+                    <li><a href="riva.html">Riva</a></li>
                     <li><a href="#compare">Compare</a></li>
                 </ul>
             </div>
@@ -2737,7 +2774,7 @@
                     options: optionSets.followup
                 },
                 fitSide: {
-                    bot: 'Luma is built for side sleepers who want a cooler night’s sleep. <a href="' + link('products.html') + '">View Luma</a>',
+                    bot: 'Luma is built for side sleepers who want a cooler night’s sleep. <a href="luma.html">View Luma</a>',
                     options: optionSets.followup
                 },
                 fitPain: {
@@ -2745,7 +2782,7 @@
                     options: optionSets.followup
                 },
                 fitPlush: {
-                    bot: 'Riva is our plushest range with premium support — a cloud-like feel. <a href="' + link('products.html') + '">View Riva</a>',
+                    bot: 'Riva is our plushest range with premium support — a cloud-like feel. <a href="riva.html">View Riva</a>',
                     options: optionSets.followup
                 },
                 warranty: {

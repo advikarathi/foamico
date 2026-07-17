@@ -433,7 +433,7 @@
                                 <span class="header-drop-title">Mattress</span>
                                 <a href="sova.html">Sova</a>
                                 <a href="ultima.html">Ultima</a>
-                                <a href="https://www.foamicomattress.com/products/riva1000">Riva</a>
+                                <a href="riva.html">Riva</a>
                             </div>
                             <div class="header-drop-col">
                                 <span class="header-drop-title">Pillows</span>
@@ -509,7 +509,7 @@
                 </div>
                 <p class="emi-line">or <b>₹2,417/month</b> with no-cost EMI &middot; Inclusive of all taxes</p>
 
-                <button class="pill-btn pill-btn--block" id="addCart">Add to Cart</button>
+                <button class="pill-btn pill-btn--block" id="addCart">Inquire</button>
                 <p class="delivery-note">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="14" height="11" rx="2"/><path d="M15 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg>
                     Free delivery across Delhi-NCR in 3–5 days
@@ -778,7 +778,9 @@
                 <ul>
                     <li><a href="sova.html">Sova</a></li>
                     <li><a href="ultima.html">Ultima</a></li>
-                    <li><a href="products.html">Luma</a></li>
+                    <li><a href="luma.html">Luma</a></li>
+                    <li><a href="resto.html">Resto</a></li>
+                    <li><a href="riva.html">Riva</a></li>
                     <li><a href="index.html#compare">Compare</a></li>
                 </ul>
             </div>
@@ -847,7 +849,7 @@
                 <div class="sticky-meta" id="stickyMeta">Queen (78" × 60")</div>
             </div>
             <div class="sticky-price" id="stickyPrice">₹28,999</div>
-            <button class="pill-btn">Add to Cart</button>
+            <button class="pill-btn">Inquire</button>
         </div>
     </div>
 
@@ -980,12 +982,14 @@
         }, { threshold: 0 });
         heroObserver.observe(hero);
 
-        /* ---------- Add-to-cart placeholder ---------- */
+        /* ---------- Inquire -> WhatsApp ---------- */
         document.querySelectorAll('#addCart, .sticky-bar .pill-btn').forEach(function (b) {
             b.addEventListener('click', function () {
-                var original = b.textContent;
-                b.textContent = 'Added ✓';
-                setTimeout(function () { b.textContent = original; }, 1600);
+                var productName = document.querySelector('h1').textContent.trim();
+                var activeChip = document.querySelector('#sizeChips .chip[aria-pressed="true"]');
+                var size = activeChip ? activeChip.dataset.size.replace(/&quot;/g, '"') : '';
+                var message = 'Hi Foamico, I want to inquire about the ' + productName + (size ? ' (' + size + ')' : '') + '.';
+                window.open('https://wa.me/917496982886?text=' + encodeURIComponent(message), '_blank');
             });
         });
 
@@ -1031,9 +1035,9 @@
                     ]
                 },
                 fitBack: { bot: 'Sova is a great everyday pick for back sleepers, with balanced comfort. <a href="' + link('products.html') + '">View Sova</a>', options: optionSets.followup },
-                fitSide: { bot: 'Luma is built for side sleepers who want a cooler night’s sleep. <a href="' + link('products.html') + '">View Luma</a>', options: optionSets.followup },
+                fitSide: { bot: 'Luma is built for side sleepers who want a cooler night’s sleep. <a href="luma.html">View Luma</a>', options: optionSets.followup },
                 fitPain: { bot: 'Ultima gives targeted, supportive comfort and is our top pick for back pain relief. <a href="' + link('products.html') + '">View Ultima</a>', options: optionSets.followup },
-                fitPlush: { bot: 'Riva is our plushest range with premium support — a cloud-like feel. <a href="' + link('products.html') + '">View Riva</a>', options: optionSets.followup },
+                fitPlush: { bot: 'Riva is our plushest range with premium support — a cloud-like feel. <a href="riva.html">View Riva</a>', options: optionSets.followup },
                 warranty: { bot: 'Warranty varies by range: Sova — 15 years, Ultima — 25 years, Riva — 30 years. <a href="' + link('#compare') + '">See the full comparison</a>', options: optionSets.followup },
                 delivery: { bot: 'We deliver across India through our network of 300+ stores. For exact delivery timelines and return details in your city, our team can help directly.', options: optionSets.followupWa, showWa: true },
                 financing: { bot: 'We offer easy EMI options through our stores. Our team can share current plans and eligibility for your city.', options: optionSets.followupWa, showWa: true },
