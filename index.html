@@ -437,6 +437,7 @@
         </div>
     </div>
 
+    <script src="js/price-bot.js"></script>
     <script>
         (function() {
             var toggle = document.querySelector('[data-nav-toggle]');
@@ -873,6 +874,9 @@
                         label: 'Which mattress is right for me?',
                         next: 'fit'
                     }, {
+                        label: 'Get a customised price quote',
+                        next: 'priceQuote'
+                    }, {
                         label: "What's the warranty?",
                         next: 'warranty'
                     }, {
@@ -888,6 +892,15 @@
                         label: 'Talk to a human',
                         next: 'human'
                     }]
+                },
+                priceQuote: {
+                    bot: 'Sure — pick a model, size, and thickness below and I\'ll price it out for you instantly.',
+                    mount: function (el) {
+                        var host = document.createElement('div');
+                        el.appendChild(host);
+                        if (window.FoamicoPriceBot) window.FoamicoPriceBot.mount(host);
+                    },
+                    options: optionSets.followup
                 },
                 fit: {
                     bot: 'Tell me a bit about how you sleep:',
@@ -955,6 +968,7 @@
                 el.innerHTML = text;
                 body.appendChild(el);
                 body.scrollTop = body.scrollHeight;
+                return el;
             }
 
             function addWaButton() {
@@ -998,8 +1012,9 @@
                 if (userLabel) addMessage(userLabel, 'user');
 
                 setTimeout(function() {
-                    addMessage(node.bot, 'bot');
+                    var msgEl = addMessage(node.bot, 'bot');
                     if (node.showWa) addWaButton();
+                    if (node.mount) node.mount(msgEl);
                     setTimeout(function() {
                         renderOptions(node.options);
                     }, 250);
