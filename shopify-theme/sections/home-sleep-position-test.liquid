@@ -1,0 +1,41 @@
+<section class="section" id="sleep-position-test">
+    <div class="wrap">
+        <div class="motion-grid">
+            <div class="motion-media reveal">
+                <div class="motion-video-frame">
+                    <video
+                        class="motion-video"
+                        data-motion-video
+                        aria-label="Unedited footage of a woman testing five sleep positions on a Foamico mattress — shoulder, back, other shoulder, stomach, and other stomach — 15 seconds each, on camera"
+                        poster="{{ 'sleep-position-test-poster.jpg' | asset_url }}"
+                        preload="none"
+                        autoplay
+                        muted
+                        loop
+                        playsinline>
+                        <source src="{{ 'sleep-position-test-web.webm' | asset_url }}" type="video/webm">
+                        <source src="{{ 'sleep-position-test-web.mp4' | asset_url }}" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="motion-copy reveal" style="transition-delay:120ms;">
+                <h2>The Yo-Yo Test</h2>
+                <p>No one sleeps in just one position all night. You turn, shift, stretch, and roll over constantly—which means spending 10 seconds on a mattress in a showroom tells you very little.</p>
+                <p>That's where the Yo-Yo Test comes in.</p>
+                <p>Spend just 15 seconds in each of these four positions:</p>
+                <ul>
+                    <li>Left side</li>
+                    <li>Right side</li>
+                    <li>Back</li>
+                    <li>Stomach</li>
+                </ul>
+                <p>As you switch positions, pay attention to how your shoulders, hips, and lower back feel. A good mattress should provide consistent support and comfort no matter how you sleep—not just in your preferred position.</p>
+                <p>45 seconds. Four positions. One confident decision.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{ "name": "Sleep position test", "settings": [] }
+{% endschema %}

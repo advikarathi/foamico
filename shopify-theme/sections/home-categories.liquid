@@ -1,0 +1,39 @@
+<section class="categories-section" id="products">
+    <div class="categories-head reveal">
+        <h2>Explore by Firmness</h2>
+        <p>Choose the feel that matches how you sleep.</p>
+    </div>
+    <div class="categories-grid" data-categories-grid>
+        {% for block in section.blocks %}
+            <a class="category-card" href="{{ block.settings.url }}" style="transition-delay:{{ forloop.index0 | times: 150 }}ms;">
+                <video class="category-video" data-category-video data-src="{{ block.settings.video | default: 'product-sova-video.mp4' | asset_url }}" preload="none" loop muted playsinline></video>
+                <div class="category-overlay"></div>
+                <h2 class="category-name">{{ block.settings.label }}</h2>
+            </a>
+        {% endfor %}
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Explore by firmness",
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label" },
+        { "type": "url", "id": "url", "label": "Link" },
+        { "type": "text", "id": "video", "label": "Video asset filename (in assets/)" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "category", "settings": { "label": "Firm", "url": "/products/ultima-luxury-mattress", "video": "product-ultima-video.mp4" } },
+      { "type": "category", "settings": { "label": "Medium", "url": "/products/resto-classic-mattress", "video": "product-resto-video.mp4" } },
+      { "type": "category", "settings": { "label": "Soft", "url": "/products/riva-1000-mattress", "video": "product-riva-video.mp4" } }
+    ]
+  }
+}
+{% endschema %}

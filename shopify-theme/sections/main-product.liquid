@@ -1,0 +1,251 @@
+{% liquid
+  assign product_content_snippet = 'product-content-' | append: product.handle
+  if product.type == 'Mattress'
+    assign title_words = product.title | split: ' '
+    assign line = title_words[0] | downcase
+    if line == 'riva'
+      assign angle_count = 3
+    else
+      assign angle_count = 4
+    endif
+    case line
+      when 'sova'
+        assign warranty_years = 15
+      when 'resto'
+        assign warranty_years = 10
+      when 'luma'
+        assign warranty_years = 7
+      when 'ultima'
+        assign warranty_years = 25
+      when 'riva'
+        assign warranty_years = 30
+      else
+        assign warranty_years = 15
+    endcase
+  endif
+%}
+
+{% case product.type %}
+
+{% when 'Mattress' %}
+    <div class="wrap">
+        <div class="crumb"><a href="{{ routes.root_url }}">Home</a> &nbsp;/&nbsp; <a href="{{ pages.mattresses.url | default: '/pages/mattresses' }}">Products</a> &nbsp;/&nbsp; {{ line | capitalize }}</div>
+
+        <section class="hero" id="buy">
+            <div>
+                <div class="gallery-main">
+                    <img id="mainImage" src="{{ 'lifestyle-' | append: line | append: '.jpg' | asset_url }}" alt="{{ product.title }} — lifestyle in a bedroom setting">
+                </div>
+                <div class="thumbs" role="tablist" aria-label="Product photos">
+                    <button class="thumb" role="tab" aria-selected="true" data-src="{{ 'lifestyle-' | append: line | append: '.jpg' | asset_url }}" data-alt="{{ product.title }} — lifestyle in a bedroom setting"><img src="{{ 'lifestyle-' | append: line | append: '.jpg' | asset_url }}" alt=""></button>
+                    <button class="thumb" role="tab" aria-selected="false" data-src="{{ 'product-' | append: line | append: '-main.jpg' | asset_url }}" data-alt="{{ product.title }} — main view"><img src="{{ 'product-' | append: line | append: '-main.jpg' | asset_url }}" alt=""></button>
+                    {% for i in (1..angle_count) %}
+                        {% assign angle_asset = 'product-' | append: line | append: '-angle' | append: i | append: '.jpg' | asset_url %}
+                        <button class="thumb" role="tab" aria-selected="false" data-src="{{ angle_asset }}" data-alt="{{ product.title }} — angle view"><img src="{{ angle_asset }}" alt=""></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="buy-panel">
+                <h1>{{ product.title | remove: ' Mattress' }}</h1>
+                <p class="buy-sub">{{ product.description | strip_html }}</p>
+                <div class="rating-line">
+                    <span class="stars" aria-hidden="true">★★★★★</span>
+                    <span>4.8</span><a href="#faq">120+ reviews</a>
+                </div>
+
+                <span class="opt-label">Product Type</span>
+                {% render 'tier-tabs', line: line, current_product: product %}
+
+                <span class="opt-label">Size</span>
+                {% form 'product', product, id: 'productForm' %}
+                    <input type="hidden" name="return_to" value="{{ routes.cart_url }}">
+                    <div class="chip-row" id="sizeChips">
+                        {% for variant in product.variants %}
+                            {% assign size_label = variant.title | split: ' (' | first %}
+                            <button type="button" class="chip{% unless variant.available %} sold-out{% endunless %}" aria-pressed="{% if variant == product.selected_or_first_available_variant %}true{% else %}false{% endif %}"
+                                data-variant-id="{{ variant.id }}"
+                                data-size="{{ variant.title }}"
+                                data-price="{{ variant.price | money }}"
+                                data-compare-price="{{ variant.compare_at_price | money }}"
+                                {% unless variant.available %}disabled{% endunless %}>{{ size_label }}</button>
+                        {% endfor %}
+                    </div>
+
+                    {% render product_content_snippet, part: 'spec' %}
+
+                    <div class="price-block">
+                        <span class="price" id="priceEl">{{ product.selected_or_first_available_variant.price | money }}</span>
+                        <span class="price-strike" id="strikeEl">{{ product.selected_or_first_available_variant.compare_at_price | money }}</span>
+                        <span class="save-tag">Limited offer</span>
+                    </div>
+                    <p class="emi-line">or <b>{{ product.selected_or_first_available_variant.price | divided_by: 12 | money }}/month</b> with no-cost EMI &middot; Inclusive of all taxes</p>
+
+                    <input type="hidden" name="id" id="selectedVariantId" value="{{ product.selected_or_first_available_variant.id }}">
+                    <button type="submit" class="pill-btn pill-btn--block" id="addCart">{{ 'products.product.add_to_cart' | t }}</button>
+                {% endform %}
+                <p class="delivery-note">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="14" height="11" rx="2"/><path d="M15 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg>
+                    Free delivery across Delhi-NCR in 3–5 days
+                </p>
+            </div>
+        </section>
+    </div>
+
+    {% render 'trust-strip', line: line %}
+    {% render product_content_snippet, part: 'body', product: product %}
+
+    <section class="final-cta section--dark">
+        <h2>Your best sleep is one decision away.</h2>
+        <p>Free delivery &middot; {{ warranty_years }}-year warranty &middot; 5-year full replacement*</p>
+        <button type="submit" form="productForm" class="pill-btn">Shop {{ product.title | remove: ' Mattress' }}</button>
+    </section>
+
+    <div class="sticky-bar" id="stickyBar" aria-hidden="true">
+        <div class="wrap">
+            <div>
+                <div class="sticky-name">{{ product.title | remove: ' Mattress' }}</div>
+                <div class="sticky-meta" id="stickyMeta">{{ product.selected_or_first_available_variant.title }}</div>
+            </div>
+            <div class="sticky-price" id="stickyPrice">{{ product.selected_or_first_available_variant.price | money }}</div>
+            <button type="submit" form="productForm" class="pill-btn">{{ 'products.product.add_to_cart' | t }}</button>
+        </div>
+    </div>
+
+{% when 'Sofa Bed' %}
+    <div class="wrap">
+        <div class="crumb"><a href="{{ routes.root_url }}">Home</a> &nbsp;/&nbsp; <a href="{{ pages.mattresses.url | default: '/pages/mattresses' }}">Products</a> &nbsp;/&nbsp; Sofa Cum Bed</div>
+
+        <section class="hero" id="buy">
+            <div>
+                <div class="gallery-main">
+                    <img id="mainImage" src="{{ 'sofa-cum-bed-chair-main.jpg' | asset_url }}" alt="Foamico Sofa Cum Bed folded as a single-seater chair">
+                </div>
+                <div class="thumbs" role="tablist" aria-label="Product photos">
+                    <button class="thumb" role="tab" aria-selected="true" data-src="{{ 'sofa-cum-bed-chair-main.jpg' | asset_url }}" data-alt="Foamico Sofa Cum Bed folded as a single-seater chair"><img src="{{ 'sofa-cum-bed-chair-main.jpg' | asset_url }}" alt=""></button>
+                    <button class="thumb" role="tab" aria-selected="false" data-src="{{ 'sofa-cum-bed-chair-angle.jpg' | asset_url }}" data-alt="Foamico Sofa Cum Bed in chair mode, angle view"><img src="{{ 'sofa-cum-bed-chair-angle.jpg' | asset_url }}" alt=""></button>
+                    <button class="thumb" role="tab" aria-selected="false" data-src="{{ 'sofa-cum-bed-flat-main.jpg' | asset_url }}" data-alt="Foamico Sofa Cum Bed unfolded flat into a single bed"><img src="{{ 'sofa-cum-bed-flat-main.jpg' | asset_url }}" alt=""></button>
+                    <button class="thumb" role="tab" aria-selected="false" data-src="{{ 'sofa-cum-bed-flat-angle.jpg' | asset_url }}" data-alt="Foamico Sofa Cum Bed unfolded flat, angle view"><img src="{{ 'sofa-cum-bed-flat-angle.jpg' | asset_url }}" alt=""></button>
+                    <button class="thumb" role="tab" aria-selected="false" data-src="{{ 'sofa-cum-bed-lounger-main.jpg' | asset_url }}" data-alt="Foamico Sofa Cum Bed in reclined lounger mode with a cushion"><img src="{{ 'sofa-cum-bed-lounger-main.jpg' | asset_url }}" alt=""></button>
+                    <button class="thumb" role="tab" aria-selected="false" data-src="{{ 'sofa-cum-bed-lounger-angle.jpg' | asset_url }}" data-alt="Foamico Sofa Cum Bed in reclined lounger mode, angle view"><img src="{{ 'sofa-cum-bed-lounger-angle.jpg' | asset_url }}" alt=""></button>
+                </div>
+            </div>
+
+            <div class="buy-panel">
+                <h1>{{ product.title }}</h1>
+                <p class="buy-sub">{{ product.description | strip_html }}</p>
+
+                <span class="opt-label">Fold Modes</span>
+                <div class="variant-tabs">
+                    <span class="vtab current" aria-current="page">Chair</span>
+                    <span class="vtab">Lounger</span>
+                    <span class="vtab">Flat Bed</span>
+                </div>
+
+                <div class="spec-mini">
+                    <div><b>Folded</b>Single-seater chair</div>
+                    <div><b>Unfolded</b>Single bed</div>
+                    <div><b>Cover</b>Removable &amp; zippered</div>
+                </div>
+
+                {% form 'product', product, id: 'productForm' %}
+                    <input type="hidden" name="return_to" value="{{ routes.cart_url }}">
+                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                    <div class="price-block">
+                        <span class="price">{{ product.selected_or_first_available_variant.price | money }}</span>
+                    </div>
+                    <p class="emi-line">or <b>{{ product.selected_or_first_available_variant.price | divided_by: 12 | money }}/month</b> with no-cost EMI &middot; Inclusive of all taxes</p>
+                    <button type="submit" class="pill-btn pill-btn--block">{{ 'products.product.add_to_cart' | t }}</button>
+                {% endform %}
+                <p class="delivery-note">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="14" height="11" rx="2"/><path d="M15 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg>
+                    Free delivery across Delhi-NCR in 3–5 days
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <div class="trust-strip">
+        <div class="wrap trust-strip-inner">
+            <div class="trust-stat reveal" style="transition-delay:0ms;">
+                <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+                <div><strong>High-Density Foam</strong><span>Holds its shape</span></div>
+            </div>
+            <div class="trust-stat reveal" style="transition-delay:80ms;">
+                <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>
+                <div><strong>Removable Cover</strong><span>Zippered &amp; washable</span></div>
+            </div>
+            <div class="trust-stat reveal" style="transition-delay:160ms;">
+                <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="14" height="11" rx="2"/><path d="M15 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg>
+                <div><strong>Free Delivery</strong><span>No hidden fees</span></div>
+            </div>
+            <div class="trust-stat reveal" style="transition-delay:240ms;">
+                <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-8h6v8"/></svg>
+                <div><strong>Try In Store</strong><span>Feel it in person</span></div>
+            </div>
+        </div>
+    </div>
+
+    {% render 'product-content-sofa-cum-bed' %}
+
+    <section class="final-cta section--dark">
+        <h2>Seating by day. A bed by night.</h2>
+        <p>Free delivery &middot; removable washable cover &middot; no assembly required</p>
+        <button type="submit" form="productForm" class="pill-btn">{{ 'products.product.add_to_cart' | t }}</button>
+    </section>
+
+    <div class="sticky-bar" id="stickyBar" aria-hidden="true">
+        <div class="wrap">
+            <div>
+                <div class="sticky-name">{{ product.title }}</div>
+            </div>
+            <div class="sticky-price" id="stickyPrice">{{ product.selected_or_first_available_variant.price | money }}</div>
+            <button type="submit" form="productForm" class="pill-btn">{{ 'products.product.add_to_cart' | t }}</button>
+        </div>
+    </div>
+
+{% else %}
+    <div class="wrap">
+        <div class="crumb"><a href="{{ routes.root_url }}">Home</a> &nbsp;/&nbsp; <a href="/collections/pillows">Pillows</a> &nbsp;/&nbsp; {{ product.title }}</div>
+        <section class="hero" id="buy">
+            <div>
+                <div class="gallery-main">
+                    {% if product.featured_image %}
+                        <img id="mainImage" src="{{ product.featured_image | image_url: width: 900 }}" alt="{{ product.featured_image.alt | default: product.title }}">
+                    {% endif %}
+                </div>
+                <div class="thumbs" role="tablist" aria-label="Product photos">
+                    {% for image in product.images %}
+                        <button class="thumb" role="tab" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" data-src="{{ image | image_url: width: 900 }}" data-alt="{{ image.alt | default: product.title }}"><img src="{{ image | image_url: width: 200 }}" alt=""></button>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="buy-panel">
+                <h1>{{ product.title }}</h1>
+                {% if product.metafields.foamico.feel_tag != blank %}<p class="buy-sub">{{ product.metafields.foamico.feel_tag }}</p>{% endif %}
+                <div class="rating-line">
+                    <span class="stars" aria-hidden="true">★★★★★</span>
+                    {% if product.metafields.foamico.rating != blank %}<span>{{ product.metafields.foamico.rating }}</span>{% endif %}
+                    {% if product.metafields.foamico.review_count != blank %}<span>({{ product.metafields.foamico.review_count }} reviews)</span>{% endif %}
+                </div>
+                <p class="buy-sub">{{ product.description }}</p>
+
+                {% form 'product', product, id: 'productForm' %}
+                    <input type="hidden" name="return_to" value="{{ routes.cart_url }}">
+                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                    <div class="price-block">
+                        <span class="price">{{ product.selected_or_first_available_variant.price | money }}</span>
+                        {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+                            <span class="price-strike">{{ product.selected_or_first_available_variant.compare_at_price | money }}</span>
+                        {% endif %}
+                    </div>
+                    <button type="submit" class="pill-btn pill-btn--block">{{ 'products.product.add_to_cart' | t }}</button>
+                {% endform %}
+            </div>
+        </section>
+    </div>
+{% endcase %}
+
+{% schema %}
+{ "name": "Product", "settings": [] }
+{% endschema %}

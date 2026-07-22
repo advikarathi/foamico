@@ -1,0 +1,45 @@
+{% liquid
+  assign word_count = article.content | strip_html | split: ' ' | size
+  assign read_minutes = word_count | divided_by: 200 | plus: 1
+%}
+<section class="article-hero">
+    <div class="wrap reveal">
+        <div class="crumb-row"><a href="{{ routes.root_url }}">Home</a> &nbsp;/&nbsp; <a href="{{ blog.url }}">{{ blog.title }}</a> &nbsp;/&nbsp; {{ article.title }}</div>
+        {% if article.tags.size > 0 %}<span class="article-category-badge">{{ article.tags.first }}</span>{% endif %}
+        <h1>{{ article.title }}</h1>
+        <div class="article-meta">
+            <span>{{ article.published_at | date: '%B %-d, %Y' }}</span>
+            <span>{{ article.author | default: 'Foamico Sleep Experts' }}</span>
+            <span>{{ read_minutes }} min read</span>
+        </div>
+    </div>
+</section>
+
+<div class="article-body-wrap">
+    {{ article.content }}
+
+    <div class="article-cta">
+        <h3>Want product-specific advice?</h3>
+        <p>Tell us which Foamico mattress you own (or are considering) and we'll point you in the right direction.</p>
+        <a class="pill-btn" href="https://wa.me/{{ settings.whatsapp_number }}?text=Hi%20Foamico%2C%20I%20read%20{{ article.title | url_param_escape }}%20and%20have%20a%20question" target="_blank" rel="noopener">Ask us on WhatsApp</a>
+    </div>
+</div>
+
+<section class="more-articles">
+    <div class="wrap">
+        <h2>More from {{ blog.title }}</h2>
+        <div class="article-grid">
+            {% assign shown = 0 %}
+            {% for related in blog.articles %}
+                {% if related.id != article.id and shown < 3 %}
+                    {% render 'article-card', article: related %}
+                    {% assign shown = shown | plus: 1 %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{ "name": "Article", "settings": [] }
+{% endschema %}

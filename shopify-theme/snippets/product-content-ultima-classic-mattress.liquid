@@ -1,0 +1,189 @@
+{% comment %} Bespoke content for the Ultima Classic Mattress product — layer diagram, comfort
+   scale, feature cards, comparison table, testimonial, size guide, FAQ. Ported verbatim
+   from ultima-classic.html. Rendered by sections/main-product.liquid via two parts: 'spec'
+   (inside the buy panel) and 'body' (the "Inside the Ultima" section onward). {% endcomment %}
+
+{% case part %}
+
+{% when 'spec' %}
+    <div class="spec-mini">
+        <div><b>Thickness</b>6"</div>
+        <div><b>Comfort Scale</b>Firm</div>
+        <div><b>Best for</b>Back sleepers, firm support seekers</div>
+    </div>
+
+{% when 'body' %}
+    <section class="story section--dark">
+        <blockquote>Obsessed with mattresses, <em>so you can be obsessed with sleep.</em></blockquote>
+        <p>Every Ultima Classic fuses traditional craftsmanship with dependable foam technology — certified foams, precision quilting, and a layer stack we've refined year after year, backed by a 25-year warranty.</p>
+    </section>
+
+    <section class="section" id="inside">
+        <div class="wrap">
+            <div class="section-head reveal" style="margin-bottom:0;text-align:left;max-width:620px;margin-left:0;">
+                <h2>Five layers of performance-driven comfort</h2>
+                <p>Tap a layer to see what it does. Ultima Classic keeps the comfort stack simple — Cloud Sense Foam above the same trusted Zero G Latex support core used across the whole Ultima range.</p>
+            </div>
+
+            <div class="layers-grid">
+                <svg class="layer-svg" viewBox="0 0 520 320" role="img" aria-label="Cross-section of the Ultima Classic mattress showing five layers">
+                    <g id="slabA" class="slab" data-layer="A">
+                        <path d="M30 44 Q30 22 66 22 L454 22 Q490 22 490 44 L490 58 L30 58 Z" fill="#F6F8F1" stroke="#95C12B" stroke-width="2"/>
+                        <path d="M56 36 q13 -6 26 0 M102 36 q13 -6 26 0 M148 36 q13 -6 26 0 M194 36 q13 -6 26 0 M240 36 q13 -6 26 0 M286 36 q13 -6 26 0 M332 36 q13 -6 26 0 M378 36 q13 -6 26 0 M424 36 q13 -6 26 0" stroke="#95C12B" stroke-width="1.3" fill="none" opacity=".6"/>
+                        <text x="12" y="46">A</text>
+                    </g>
+                    <g id="slabB" class="slab" data-layer="B">
+                        <rect x="30" y="62" width="460" height="40" fill="#E4F2C5" stroke="#95C12B" stroke-width="2"/>
+                        <path d="M50 82 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12" stroke="#95C12B" stroke-width="1.2" fill="none" opacity=".6"/>
+                        <text x="12" y="88">B</text>
+                    </g>
+                    <g id="slabC" class="slab" data-layer="C">
+                        <rect x="30" y="106" width="460" height="46" fill="#E4F2C5" stroke="#3F5E12" stroke-width="2"/>
+                        <text x="12" y="135">C</text>
+                    </g>
+                    <g id="slabD" class="slab" data-layer="D">
+                        <rect x="30" y="156" width="460" height="76" fill="#3F5E12" stroke="#1A1A1A" stroke-width="2"/>
+                        <g stroke="#95C12B" stroke-width="1.6" fill="none" opacity=".8">
+                            <path d="M70 168 q-9 13 0 26 q9 13 0 26 M140 168 q-9 13 0 26 q9 13 0 26 M210 168 q-9 13 0 26 q9 13 0 26 M280 168 q-9 13 0 26 q9 13 0 26 M350 168 q-9 13 0 26 q9 13 0 26 M420 168 q-9 13 0 26 q9 13 0 26"/>
+                        </g>
+                        <text x="12" y="200" fill="#FEFEFE">D</text>
+                    </g>
+                    <g id="slabE" class="slab" data-layer="E">
+                        <path d="M30 236 L490 236 L490 260 Q490 284 450 284 L70 284 Q30 284 30 260 Z" fill="#F6F8F1" stroke="#95C12B" stroke-width="2"/>
+                        <path d="M60 262 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10" stroke="#95C12B" stroke-width="1.1" fill="none" opacity=".6"/>
+                        <text x="12" y="266">E</text>
+                    </g>
+                </svg>
+
+                <div id="layerList">
+                    <div class="layer-item active" data-layer="A" tabindex="0" role="button">
+                        <h3><span class="letter">A.</span> Super Plush Luxeknit Fabric</h3>
+                        <p>Premium stretch-knit fabric offering breathability, durability, and a luxurious soft touch.</p>
+                    </div>
+                    <div class="layer-item" data-layer="B" tabindex="0" role="button">
+                        <h3><span class="letter">B.</span> Aeroflex Foam Quilting</h3>
+                        <p>Breathable quilted comfort layer offering enhanced softness and airflow.</p>
+                    </div>
+                    <div class="layer-item" data-layer="C" tabindex="0" role="button">
+                        <h3><span class="letter">C.</span> Cloud Sense Foam</h3>
+                        <p>Plush, adaptive layer for a cloud-like feel that cushions every pressure point.</p>
+                    </div>
+                    <div class="layer-item" data-layer="D" tabindex="0" role="button">
+                        <h3><span class="letter">D.</span> Zero G Latex Foam</h3>
+                        <p>Firm, supportive latex core delivering orthopedic support and superior durability.</p>
+                    </div>
+                    <div class="layer-item" data-layer="E" tabindex="0" role="button">
+                        <h3><span class="letter">E.</span> Soft Foam with Quilting</h3>
+                        <p>Cushioned quilting at the base for additional softness and pressure relief.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="firmness">
+                <h3>Where the Ultima Classic sits on our comfort scale</h3>
+                <div class="scale"><div class="scale-marker" style="left:75%;" title="Firm"></div></div>
+                <div class="scale-labels"><span>Ultra plush</span><b>Ultima Classic — firm</b><span>Extra firm</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--paper">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <h2>Durability with comfort — by design</h2>
+            </div>
+            <div class="feature-cards">
+                <article class="fcard reveal" style="transition-delay:0ms;">
+                    <div class="fcard-media"><img src="{{ 'product-ultima-angle4.jpg' | asset_url }}" alt="Close-up of the Ultima's Luxnit fabric and tufting" loading="lazy"></div>
+                    <div class="fcard-body">
+                        <h3>Luxnit Breathability</h3>
+                        <p>A precision-tufted stretch-knit cover that circulates air all night — made for Indian summers, not against them.</p>
+                    </div>
+                </article>
+                <article class="fcard reveal" style="transition-delay:80ms;">
+                    <div class="fcard-media"><img src="{{ 'product-ultima-angle2.jpg' | asset_url }}" alt="Side profile of the Ultima Classic showing its layered construction" loading="lazy"></div>
+                    <div class="fcard-body">
+                        <h3>Zero G Latex Support</h3>
+                        <p>A firm, high-density latex core beneath the plush layers keeps your spine aligned in every sleeping position.</p>
+                    </div>
+                </article>
+                <article class="fcard reveal" style="transition-delay:160ms;">
+                    <div class="fcard-media"><img src="{{ 'product-ultima-angle3.jpg' | asset_url }}" alt="Front view of the Ultima Classic mattress with plush pillow top" loading="lazy"></div>
+                    <div class="fcard-body">
+                        <h3>Cloud Sense Comfort</h3>
+                        <p>A single Cloud Sense Foam layer keeps the everyday Ultima simple — reliable cushioning without unnecessary extras.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="compare">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <h2>Which Ultima is yours?</h2>
+            </div>
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr><th>Feature</th><th class="hl">Classic</th><th>Premium</th><th>Luxury</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th>Top Fabric</th><td class="hl">Super Plush Luxeknit Fabric</td><td>Super Plush Luxeknit Fabric</td><td>Luxnit Premium Fabric</td></tr>
+                        <tr><th>Comfort Layer</th><td class="hl">Aeroflex Foam Quilting</td><td>Aeroflex Foam Quilting</td><td>Aeroflex Quilting</td></tr>
+                        <tr><th>Body Support Layer</th><td class="hl">Cloud Sense Foam</td><td>Cosmic Byte Foam + Cloud Sense Foam</td><td>Memorest Foam + Cosmic Byte Foam + Cloud Sense Foam</td></tr>
+                        <tr><th>Main Support</th><td class="hl">Zero G Latex Foam</td><td>Zero G Latex Foam</td><td>Zero G Latex Foam</td></tr>
+                        <tr><th>Bottom Layer</th><td class="hl">Soft Foam with Quilting</td><td>Soft Foam with Quilting</td><td>Soft Foam Quilting</td></tr>
+                        <tr><th>Thickness</th><td class="hl">6"</td><td>6.5"</td><td>7"</td></tr>
+                        <tr><th>Comfort Scale</th><td class="hl">Firm</td><td>Medium Firm</td><td>Medium</td></tr>
+                        <tr><th>Warranty</th><td class="hl">25 Years + 5 Years Full Replacement*</td><td>25 Years + 5 Years Full Replacement*</td><td>25 Years + 5 Years Full Replacement*</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="compare-note">*As per Foamico warranty terms. Not sure which one to pick? <a href="{{ pages.mattresses.url | default: '/pages/mattresses' }}#compare">Use our comparison tool</a> or visit our store to try them in person.</p>
+        </div>
+    </section>
+
+    <section class="section section--paper">
+        <div class="wrap" style="text-align:center;">
+            <span class="stars reveal" aria-hidden="true">★★★★★</span>
+            <div class="quote-banner reveal" style="margin-top:16px;">
+                <blockquote>"I wanted something firm and no-nonsense for my back — the Ultima Classic nailed it. Three years in, it still feels as supportive as day one, and that 25-year warranty is real peace of mind."</blockquote>
+                <cite>— Verified buyer, Gurugram</cite>
+            </div>
+        </div>
+    </section>
+
+    {% render 'size-guide', product: product %}
+
+    <section class="section section--paper" id="faq">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <h2>Mattress FAQs</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">What makes the Classic different from the Premium and Luxury?<span class="plus">+</span></button>
+                    <div class="faq-a"><p>All three share the Zero G Latex support core and Aeroflex quilting. The Classic keeps a single Cloud Sense comfort layer, while Premium adds Cosmic Byte Foam and Luxury adds both Cosmic Byte and Memorest foams for a deeper comfort zone.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">Is the Ultima Classic too firm for side sleepers?<span class="plus">+</span></button>
+                    <div class="faq-a"><p>Ultima Classic's Firm scale is aimed mainly at back sleepers. If you sleep mostly on your side, our Ultima Premium or Luxury tiers — or the Luma range — are a gentler fit.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">Will it sleep hot?<span class="plus">+</span></button>
+                    <div class="faq-a"><p>The Luxnit stretch fabric and quilted comfort layers are chosen for breathability, so air keeps moving through the sleep surface all night.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">What does the warranty cover?<span class="plus">+</span></button>
+                    <div class="faq-a"><p>Every Ultima comes with a 25-year warranty, including 5 years of full replacement*, covering manufacturing defects under normal use. Full terms are available from our team.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">Can I try it before buying?<span class="plus">+</span></button>
+                    <div class="faq-a"><p>Yes — visit our store in Ghitorni, New Delhi to try the full Ultima range in person, or call us at +91 74969 82886 (Mon–Sat, 9 AM–6 PM) and our sleep experts will help you choose.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endcase %}

@@ -1,0 +1,16 @@
+<div class="chat-widget" data-chat-widget>
+    <div class="chat-panel" data-chat-panel role="dialog" aria-label="Foamico chat assistant">
+        <div class="chat-header">
+            <div class="chat-header-brand">
+                {{ settings.logo | image_url: width: 240 | image_tag: width: 240, height: 240, alt: '', loading: 'lazy' }}
+                <div><strong>Foamico Assistant</strong><span>Typically replies instantly</span></div>
+            </div>
+            <button class="chat-close-btn" type="button" data-chat-close aria-label="Close chat">&times;</button>
+        </div>
+        <div class="chat-body" data-chat-body></div>
+    </div>
+    <button class="chat-toggle" type="button" data-chat-toggle aria-label="Chat with Foamico" aria-expanded="false">
+        <svg class="chat-icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-4-1L3 20l1-5.5A8.5 8.5 0 1 1 21 11.5z"></path></svg>
+        <svg class="chat-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="5" x2="19" y2="19"></line><line x1="19" y1="5" x2="5" y2="19"></line></svg>
+    </button>
+</div>

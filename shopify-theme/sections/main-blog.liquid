@@ -1,0 +1,20 @@
+<section class="blog-hero">
+    <div class="wrap reveal">
+        <h1>{{ blog.title | default: 'The Sleepy Times' }}</h1>
+        <p>Sleep science, mattress buying guides, and care tips from the Foamico team — updated regularly.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+        <div class="article-grid">
+            {% for article in blog.articles %}
+                {% render 'article-card', article: article, delay: forloop.index0 | times: 60 %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{ "name": "Blog", "settings": [] }
+{% endschema %}

@@ -1,0 +1,26 @@
+/* FOAMICO — Contact page styles (address/hours card + Google Maps embed).
+   Extracted from contact.html's inline <style> block. Loaded only on
+   templates/page.contact.json. */
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 28px; align-items: stretch; }
+@media(max-width:900px) { .contact-grid { grid-template-columns: 1fr; } }
+
+.contact-card { padding: 36px 34px; display: flex; flex-direction: column; }
+.contact-card h3 { font-size: 19px; margin-bottom: 22px; }
+
+.contact-row { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
+.contact-row p { font-size: 14.5px; color: var(--ms-charcoal); line-height: 1.55; }
+.contact-row a { font-weight: 600; }
+
+.contact-icon { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: var(--ms-teal-pale); display: flex; align-items: center; justify-content: center; }
+.contact-icon svg { width: 16px; height: 16px; stroke: var(--ms-teal-deep); }
+
+.contact-divider { height: 1px; background: var(--ms-line); margin: 8px 0 22px; }
+
+.contact-cta strong { display: block; font-family: var(--ms-font-head); font-size: 16px; margin-bottom: 4px; }
+.contact-cta span { font-size: 13.5px; color: var(--ms-navy-soft); }
+
+.contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+
+.contact-map { border-radius: var(--ms-radius-card); overflow: hidden; box-shadow: var(--ms-shadow-card); min-height: 320px; }
+.contact-map iframe { width: 100%; height: 100%; min-height: 320px; border: 0; display: block; }

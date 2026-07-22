@@ -1,0 +1,73 @@
+<section class="section" id="compare">
+    <div class="wrap">
+        <div class="section-shell section-shell--paper">
+            <div class="section-head reveal">
+                <h2>{{ section.settings.heading | default: 'Compare Mattresses' }}</h2>
+                <p>{{ section.settings.subheading | default: "Not sure where to start? Here's how all five Foamico ranges stack up." }}</p>
+            </div>
+            <div class="matrix-grid">
+                {% for block in section.blocks %}
+                    {% assign line = block.settings.line %}
+                    <a class="matrix-card surface-card reveal" href="{{ block.settings.url }}" style="transition-delay:{{ forloop.index0 | times: 80 }}ms;">
+                        <div class="matrix-media"><img src="{{ 'compare-' | append: line | append: '.jpg' | asset_url }}" alt="{{ block.settings.name }} mattress" width="800" loading="lazy" decoding="async"></div>
+                        <div class="matrix-body">
+                            <h3 class="matrix-name">{{ block.settings.name }}</h3>
+                            <p class="matrix-desc">{{ block.settings.description }}</p>
+                            <div class="matrix-specs">
+                                <div class="matrix-row-label">Firmness: <strong>{{ block.settings.firmness_label }}</strong></div>
+                                <div class="firmness-track">
+                                    <span class="firmness-end">Soft</span>
+                                    <div class="firmness-line">
+                                        <div class="firmness-node" style="left:{{ block.settings.firmness_value | times: 10 }}%;">{{ block.settings.firmness_value }}</div>
+                                    </div>
+                                    <span class="firmness-end">Firm</span>
+                                </div>
+                                <div class="matrix-row-label">Cooling Effect</div>
+                                <div class="cooling-bar">
+                                    {% for i in (1..8) %}
+                                        <span class="seg{% if i <= block.settings.cooling_filled %} is-filled{% endif %}"></span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <span class="matrix-cta">Explore {{ block.settings.name }}</span>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Mattress matrix",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Compare Mattresses" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Not sure where to start? Here's how all five Foamico ranges stack up." }
+  ],
+  "blocks": [
+    {
+      "type": "line",
+      "name": "Mattress line",
+      "settings": [
+        { "type": "text", "id": "line", "label": "Line slug (matches assets/compare-<line>.jpg)" },
+        { "type": "text", "id": "name", "label": "Name" },
+        { "type": "text", "id": "description", "label": "Description" },
+        { "type": "url", "id": "url", "label": "Link" },
+        { "type": "range", "id": "firmness_value", "label": "Firmness (1-10)", "min": 1, "max": 10, "default": 6 },
+        { "type": "text", "id": "firmness_label", "label": "Firmness label", "default": "Medium" },
+        { "type": "range", "id": "cooling_filled", "label": "Cooling segments filled (of 8)", "min": 0, "max": 8, "default": 5 }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "line", "settings": { "line": "sova", "name": "Sova", "description": "Firm, supportive feel built for everyday comfort.", "url": "/products/sova-luxury-mattress", "firmness_value": 8, "firmness_label": "Firm", "cooling_filled": 5 } },
+      { "type": "line", "settings": { "line": "resto", "name": "Resto", "description": "Firm, dependable support built for everyday recovery.", "url": "/products/resto-classic-mattress", "firmness_value": 7, "firmness_label": "Firm", "cooling_filled": 4 } },
+      { "type": "line", "settings": { "line": "luma", "name": "Luma", "description": "Cooler, breathable comfort tuned for side sleepers.", "url": "/products/luma-classic-mattress", "firmness_value": 6, "firmness_label": "Medium", "cooling_filled": 7 } },
+      { "type": "line", "settings": { "line": "ultima", "name": "Ultima", "description": "Balanced medium support for back-pain relief.", "url": "/products/ultima-luxury-mattress", "firmness_value": 6, "firmness_label": "Medium", "cooling_filled": 6 } },
+      { "type": "line", "settings": { "line": "riva", "name": "Riva", "description": "Medium-soft plush comfort, cloud-like feel.", "url": "/products/riva-1000-mattress", "firmness_value": 5, "firmness_label": "Medium-Soft", "cooling_filled": 7 } }
+    ]
+  }
+}
+{% endschema %}

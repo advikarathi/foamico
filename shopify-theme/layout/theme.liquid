@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }}{% unless page_title contains shop.name %} | {{ shop.name }}{% endunless %}</title>
+    {% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {% if template.name == 'product' %}{{ 'product.css' | asset_url | stylesheet_tag }}{% endif %}
+    {% if template.name == 'collection' and template.suffix == 'pillows' %}{{ 'collection-pillows.css' | asset_url | stylesheet_tag }}{% endif %}
+    {% if template.name == 'blog' or template.name == 'article' %}{{ 'blog-article.css' | asset_url | stylesheet_tag }}{% endif %}
+    {% if template.suffix == 'about' %}{{ 'about.css' | asset_url | stylesheet_tag }}{% endif %}
+    {% if template.suffix == 'contact' %}{{ 'contact.css' | asset_url | stylesheet_tag }}{% endif %}
+    {% if template.suffix == 'products' %}{{ 'page-products.css' | asset_url | stylesheet_tag }}{% endif %}
+
+    {{ content_for_header }}
+</head>
+
+<body>
+    {% section 'header-group' %}
+
+    {{ content_for_layout }}
+
+    {% section 'footer' %}
+
+    <script>
+        window.FoamicoRoutes = {
+            root: {{ routes.root_url | json }},
+            mattresses: {{ pages.mattresses.url | default: '/pages/mattresses' | json }},
+            contact: {{ pages.contact.url | default: '/pages/contact' | json }},
+            sova: '/products/sova-luxury-mattress',
+            luma: '/products/luma-classic-mattress',
+            ultima: '/products/ultima-luxury-mattress',
+            riva: '/products/riva-1000-mattress',
+            whatsapp: {{ settings.whatsapp_number | json }},
+            isHome: {{ template.name | json }} === 'index'
+        };
+    </script>
+    {{ 'price-bot.js' | asset_url | script_tag }}
+    {{ 'site.js' | asset_url | script_tag }}
+    {% if template.name == 'index' %}{{ 'homepage.js' | asset_url | script_tag }}{% endif %}
+    {% if template.name == 'product' %}{{ 'product.js' | asset_url | script_tag }}{% endif %}
+    {% if template.name == 'collection' and template.suffix == 'pillows' %}{{ 'collection-pillows.js' | asset_url | script_tag }}{% endif %}
+    {% if template.suffix == 'products' %}{{ 'page-products.js' | asset_url | script_tag }}{% endif %}
+</body>
+
+</html>

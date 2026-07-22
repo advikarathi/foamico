@@ -1,0 +1,44 @@
+/* FOAMICO — blog listing + article page styles. Extracted from the identical inline
+   <style> block duplicated across blog.html and all 13 blog-*.html articles.
+   Loaded only on templates/blog.json and templates/article.json. */
+
+.blog-hero, .article-hero { background: var(--ms-paper); padding: 64px 0 48px; border-bottom: 1px solid var(--ms-line); }
+.blog-hero h1 { font-size: clamp(32px, 5vw, 52px); margin-bottom: 14px; }
+.blog-hero p { max-width: 60ch; font-size: 16px; }
+
+.crumb-row { font-size: 13px; color: var(--ms-sand); margin-bottom: 20px; }
+.crumb-row a:hover { color: var(--ms-teal-deep); }
+.article-category-badge { display: inline-block; background: var(--ms-teal-deep); color: var(--ms-white); font-family: var(--ms-font-head); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; padding: 6px 14px; border-radius: 999px; margin-bottom: 18px; }
+.article-hero { padding: 48px 0 40px; }
+.article-hero h1 { font-size: clamp(28px, 4.2vw, 44px); max-width: 22ch; margin-bottom: 14px; }
+.article-meta { font-size: 13.5px; color: var(--ms-navy-soft); }
+.article-meta span + span::before { content: '·'; margin: 0 8px; }
+
+.article-body-wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 24px; }
+.article-body-wrap h2 { font-size: clamp(20px, 2.6vw, 26px); margin: 40px 0 14px; }
+.article-body-wrap h2:first-child { margin-top: 0; }
+.article-body-wrap p { font-size: 16px; line-height: 1.75; margin-bottom: 18px; color: var(--ms-navy-soft); }
+.article-body-wrap ul, .article-body-wrap ol { margin: 0 0 18px 22px; color: var(--ms-navy-soft); font-size: 16px; line-height: 1.7; }
+.article-body-wrap li { margin-bottom: 8px; }
+.article-body-wrap strong { color: var(--ms-charcoal); }
+.article-body-wrap a.inline-link { color: var(--ms-teal-deep); text-decoration: underline; }
+.article-cta { background: var(--ms-paper); border: 1px solid var(--ms-line); border-radius: var(--ms-radius-card); padding: 28px; text-align: center; margin-top: 32px; }
+.article-cta h3 { margin-bottom: 8px; }
+.article-cta p { margin-bottom: 18px; }
+
+/* ARTICLE GRID (blog listing + "more articles") */
+.more-articles { padding: 24px 0 88px; }
+.more-articles h2 { text-align: center; font-size: clamp(22px, 3vw, 28px); margin-bottom: 32px; }
+.article-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+.article-card { background: var(--ms-white); border-radius: var(--ms-radius-card); overflow: hidden; box-shadow: var(--ms-shadow-card); transition: transform .3s ease, box-shadow .3s ease; display: flex; flex-direction: column; }
+@media (hover: hover) { .article-card:hover { transform: translateY(-5px); box-shadow: 0 18px 38px rgba(26, 26, 26, .14); } }
+.article-media { position: relative; aspect-ratio: 16/9; background: var(--ms-teal-pale); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.article-media img { width: 100%; height: 100%; object-fit: cover; }
+.article-media svg { width: 32px; height: 32px; stroke: var(--ms-teal-deep); }
+.article-category { position: absolute; top: 13px; left: 13px; background: rgba(63, 94, 18, .92); color: var(--ms-white); font-family: var(--ms-font-head); font-weight: 700; font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; }
+.article-body { padding: 20px 22px 24px; display: flex; flex-direction: column; flex: 1; }
+.article-date { font-size: 12px; font-weight: 700; color: var(--ms-teal-deep); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
+.article-name { font-size: 17px; margin-bottom: 8px; line-height: 1.3; }
+.article-desc { font-size: 13.5px; color: var(--ms-navy-soft); margin-bottom: 16px; }
+.article-link { margin-top: auto; display: inline-flex; align-items: center; gap: 6px; font-family: var(--ms-font-head); font-weight: 700; font-size: 13.5px; color: var(--ms-teal-deep); }
+.article-link:hover { color: var(--ms-charcoal); }

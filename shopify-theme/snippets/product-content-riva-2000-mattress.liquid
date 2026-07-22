@@ -1,0 +1,195 @@
+{% comment %} Bespoke content for the Riva 2000 Mattress product — layer diagram, comfort
+   scale, feature cards, comparison table, testimonial, size guide, FAQ. Ported verbatim
+   from riva-2000.html. Rendered by sections/main-product.liquid via two parts: 'spec' (inside
+   the buy panel) and 'body' (the "Inside the Riva" section onward). {% endcomment %}
+
+{% case part %}
+
+{% when 'spec' %}
+    <div class="spec-mini">
+        <div><b>Thickness</b>9"</div>
+        <div><b>Comfort Scale</b>Medium Soft</div>
+        <div><b>Best for</b>Side sleepers, pressure relief</div>
+    </div>
+
+{% when 'body' %}
+    <section class="story section--dark">
+        <blockquote>Obsessed with mattresses, <em>so you can be obsessed with sleep.</em></blockquote>
+        <p>Every Riva 2000 fuses traditional craftsmanship with innovative foam technology — certified foams, precision quilting, and a layer stack we've refined year after year, backed by a 30-year warranty.</p>
+    </section>
+
+    <section class="section" id="inside">
+        <div class="wrap">
+            <div class="section-head reveal" style="margin-bottom:0;text-align:left;max-width:620px;margin-left:0;">
+                <h2>Six layers of engineered comfort</h2>
+                <p>Tap a layer to see what it does. Riva 2000 adds SetaComforto above the NubeSoave and Struttura Forte layers — a softer transition over the same FondoCore Italia base.</p>
+            </div>
+
+            <div class="layers-grid">
+                <svg class="layer-svg" viewBox="0 0 520 384" role="img" aria-label="Cross-section of the Riva 2000 mattress showing six layers">
+                    <g id="slabA" class="slab" data-layer="A">
+                        <path d="M30 44 Q30 22 66 22 L454 22 Q490 22 490 44 L490 58 L30 58 Z" fill="#F6F8F1" stroke="#95C12B" stroke-width="2"/>
+                        <path d="M56 36 q13 -6 26 0 M102 36 q13 -6 26 0 M148 36 q13 -6 26 0 M194 36 q13 -6 26 0 M240 36 q13 -6 26 0 M286 36 q13 -6 26 0 M332 36 q13 -6 26 0 M378 36 q13 -6 26 0 M424 36 q13 -6 26 0" stroke="#95C12B" stroke-width="1.3" fill="none" opacity=".6"/>
+                        <text x="12" y="46">A</text>
+                    </g>
+                    <g id="slabB" class="slab" data-layer="B">
+                        <rect x="30" y="62" width="460" height="40" fill="#E4F2C5" stroke="#95C12B" stroke-width="2"/>
+                        <path d="M50 82 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12" stroke="#95C12B" stroke-width="1.2" fill="none" opacity=".6"/>
+                        <text x="12" y="88">B</text>
+                    </g>
+                    <g id="slabC" class="slab" data-layer="C">
+                        <rect x="30" y="106" width="460" height="46" fill="#E4F2C5" stroke="#3F5E12" stroke-width="2"/>
+                        <text x="12" y="135">C</text>
+                    </g>
+                    <g id="slabD" class="slab" data-layer="D">
+                        <rect x="30" y="156" width="460" height="40" fill="#F2F4EC" stroke="#3F5E12" stroke-width="2"/>
+                        <text x="12" y="181">D</text>
+                    </g>
+                    <g id="slabE" class="slab" data-layer="E">
+                        <rect x="30" y="200" width="460" height="96" fill="#3F5E12" stroke="#1A1A1A" stroke-width="2"/>
+                        <g stroke="#95C12B" stroke-width="1.6" fill="none" opacity=".8">
+                            <path d="M70 216 q-9 13 0 26 q9 13 0 26 q-9 13 0 26 M140 216 q-9 13 0 26 q9 13 0 26 q-9 13 0 26 M210 216 q-9 13 0 26 q9 13 0 26 q-9 13 0 26 M280 216 q-9 13 0 26 q9 13 0 26 q-9 13 0 26 M350 216 q-9 13 0 26 q9 13 0 26 q-9 13 0 26 M420 216 q-9 13 0 26 q9 13 0 26 q-9 13 0 26"/>
+                        </g>
+                        <text x="12" y="238" fill="#FEFEFE">E</text>
+                    </g>
+                    <g id="slabF" class="slab" data-layer="F">
+                        <path d="M30 300 L490 300 L490 324 Q490 348 450 348 L70 348 Q30 348 30 324 Z" fill="#F6F8F1" stroke="#95C12B" stroke-width="2"/>
+                        <path d="M60 326 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10" stroke="#95C12B" stroke-width="1.1" fill="none" opacity=".6"/>
+                        <text x="12" y="330">F</text>
+                    </g>
+                </svg>
+
+                <div id="layerList">
+                    <div class="layer-item active" data-layer="A" tabindex="0" role="button">
+                        <h3><span class="letter">A.</span> UltraLuxe Adaptive Knit Fabric</h3>
+                        <p>High-performance fabric engineered for superior breathability and an indulgently soft, skin-friendly feel that enhances overall sleep comfort.</p>
+                    </div>
+                    <div class="layer-item" data-layer="B" tabindex="0" role="button">
+                        <h3><span class="letter">B.</span> SetaComforto&trade;</h3>
+                        <p>Transition foam balancing softness with responsive support — the 2000-exclusive upgrade.</p>
+                    </div>
+                    <div class="layer-item" data-layer="C" tabindex="0" role="button">
+                        <h3><span class="letter">C.</span> NubeSoave&trade;</h3>
+                        <p>Advanced adaptive foam that gently cradles the body, reducing pressure points and enhancing relaxation.</p>
+                    </div>
+                    <div class="layer-item" data-layer="D" tabindex="0" role="button">
+                        <h3><span class="letter">D.</span> Struttura Forte&trade;</h3>
+                        <p>Firm support layer ensuring stability, spinal alignment, and long-term mattress durability.</p>
+                    </div>
+                    <div class="layer-item" data-layer="E" tabindex="0" role="button">
+                        <h3><span class="letter">E.</span> FondoCore Italia&trade;</h3>
+                        <p>Robust base foam delivering foundational strength, motion control, and extended mattress life as the main support core.</p>
+                    </div>
+                    <div class="layer-item" data-layer="F" tabindex="0" role="button">
+                        <h3><span class="letter">F.</span> Soft Foam with Quilting</h3>
+                        <p>Additional cushioning for enhanced comfort and a cozy sleeping experience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="firmness">
+                <h3>Where the Riva 2000 sits on our comfort scale</h3>
+                <div class="scale"><div class="scale-marker" style="left:30%;" title="Medium-soft"></div></div>
+                <div class="scale-labels"><span>Ultra plush</span><b>Riva 2000 — medium-soft</b><span>Extra firm</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--paper">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <h2>Deep, undisturbed sleep — by design</h2>
+            </div>
+            <div class="feature-cards">
+                <article class="fcard reveal" style="transition-delay:0ms;">
+                    <div class="fcard-media"><img src="{{ 'product-riva-angle1.jpg' | asset_url }}" alt="Close-up of the Riva's UltraLuxe Adaptive Knit cover fabric" loading="lazy"></div>
+                    <div class="fcard-body">
+                        <h3>UltraLuxe Adaptive Knit</h3>
+                        <p>A high-performance stretch fabric engineered for a skin-friendly, breathable feel that elevates every night's sleep.</p>
+                    </div>
+                </article>
+                <article class="fcard reveal" style="transition-delay:80ms;">
+                    <div class="fcard-media"><img src="{{ 'product-riva-angle2.jpg' | asset_url }}" alt="Side profile of the Riva 2000 showing its layered construction" loading="lazy"></div>
+                    <div class="fcard-body">
+                        <h3>FondoCore Italia Base</h3>
+                        <p>A robust foundation foam delivering long-term structural strength and motion control.</p>
+                    </div>
+                </article>
+                <article class="fcard reveal" style="transition-delay:160ms;">
+                    <div class="fcard-media"><img src="{{ 'product-riva-angle3.jpg' | asset_url }}" alt="Front view of the Riva 2000 mattress" loading="lazy"></div>
+                    <div class="fcard-body">
+                        <h3>SetaComforto Comfort Zone</h3>
+                        <p>SetaComforto and NubeSoave foams stack into a softer, plusher feel than the Riva 1000, without losing structure underneath.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="compare">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <h2>Which Riva is yours?</h2>
+            </div>
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr><th>Feature</th><th>Riva 1000</th><th class="hl">Riva 2000</th><th>Riva 3000</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th>Top Fabric</th><td>UltraLuxe Adaptive Knit Fabric</td><td class="hl">UltraLuxe Adaptive Knit Fabric</td><td>UltraLuxe Adaptive Knit Fabric</td></tr>
+                        <tr><th>Comfort Layer</th><td>NubeSoave&trade;</td><td class="hl">SetaComfort&trade;</td><td>SetaComfort&trade;</td></tr>
+                        <tr><th>Body Support Layer</th><td>Struttura Forte&trade;</td><td class="hl">NubeSoave&trade; + Struttura Forte&trade;</td><td>LussoMorbido&trade; + NubeSoave&trade; + Struttura Forte&trade;</td></tr>
+                        <tr><th>Main Support</th><td>FondoCore Italia&trade;</td><td class="hl">FondoCore Italia&trade;</td><td>FondoCore Italia&trade;</td></tr>
+                        <tr><th>Bottom Layer</th><td>Soft Foam with Quilting</td><td class="hl">Soft Foam with Quilting</td><td>Soft Foam with Quilting</td></tr>
+                        <tr><th>Warranty</th><td>30 Years + 5 Years Full Replacement*</td><td class="hl">30 Years + 5 Years Full Replacement*</td><td>30 Years + 5 Years Full Replacement*</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="compare-note">*As per Foamico warranty terms. Not sure which one to pick? <a href="{{ pages.mattresses.url | default: '/pages/mattresses' }}#compare">Use our comparison tool</a> or visit our store to try them in person.</p>
+        </div>
+    </section>
+
+    <section class="section section--paper">
+        <div class="wrap" style="text-align:center;">
+            <span class="stars reveal" aria-hidden="true">★★★★★</span>
+            <div class="quote-banner reveal" style="margin-top:16px;">
+                <blockquote>"The Riva 2000 feels like a five-star hotel bed every single night. Worth every rupee for how well I'm sleeping now."</blockquote>
+                <cite>— Verified buyer, New Delhi</cite>
+            </div>
+        </div>
+    </section>
+
+    {% render 'size-guide', product: product %}
+
+    <section class="section section--paper" id="faq">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <h2>Mattress FAQs</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">What makes Riva our most premium range?<span class="plus">+</span></button>
+                    <div class="faq-a"><p>Riva pairs the UltraLuxe Adaptive Knit cover with NubeSoave foam and a Struttura Forte support layer over the FondoCore Italia base — engineered for a plush-yet-stable feel backed by our longest warranty.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">What's the difference between Riva 1000, 2000, and 3000?<span class="plus">+</span></button>
+                    <div class="faq-a"><p>All three share the same UltraLuxe cover and FondoCore Italia base. 2000 adds a SetaComfort layer for extra softness, and 3000 layers in LussoMorbido foam on top of that for the plushest feel in the range.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">Does Riva sleep hot?<span class="plus">+</span></button>
+                    <div class="faq-a"><p>The UltraLuxe Adaptive Knit fabric is engineered for breathability, so heat doesn't build up under the plush comfort layers.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">What does the warranty cover?<span class="plus">+</span></button>
+                    <div class="faq-a"><p>Every Riva comes with a 30-year warranty, including 5 years of full replacement*, covering manufacturing defects under normal use. Full terms are available from our team.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">Can I try it before buying?<span class="plus">+</span></button>
+                    <div class="faq-a"><p>Yes — visit our store in Ghitorni, New Delhi to try the full Riva range in person, or call us at +91 74969 82886 (Mon–Sat, 9 AM–6 PM) and our sleep experts will help you choose.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endcase %}
