@@ -163,6 +163,23 @@
                 transition: none !important;
             }
         }
+        /* SMOOTH IMAGE LOAD-IN */
+
+        img[loading="lazy"] {
+            opacity: 0;
+            transition: opacity .5s ease;
+        }
+
+        img[loading="lazy"].is-loaded {
+            opacity: 1;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            img[loading="lazy"] {
+                opacity: 1;
+                transition: none;
+            }
+        }
         /* UTILITY BAR */
         
         .utility-bar {
@@ -551,22 +568,55 @@
             font-size: 16px;
             color: var(--ms-navy-soft);
         }
+        /* SORT BAR */
+
+        .sort-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 36px;
+        }
+
+        .sort-btn {
+            padding: 9px 18px;
+            border-radius: 999px;
+            border: 1.5px solid var(--ms-line);
+            background: var(--ms-white);
+            color: var(--ms-navy-soft);
+            font-family: var(--ms-font-head);
+            font-weight: 600;
+            font-size: 13px;
+            transition: background .15s ease, border-color .15s ease, color .15s ease;
+        }
+
+        .sort-btn:hover {
+            border-color: var(--ms-teal);
+        }
+
+        .sort-btn[aria-pressed="true"] {
+            background: var(--ms-teal-deep);
+            border-color: var(--ms-teal-deep);
+            color: var(--ms-white);
+        }
         /* PRODUCT GRID */
-        
+
         .product-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 26px;
         }
-        
+
         .product-card {
+            display: block;
             flex: 1 1 300px;
             max-width: 360px;
             background: var(--ms-white);
             border-radius: var(--ms-radius-card);
             overflow: hidden;
             box-shadow: var(--ms-shadow-card);
+            cursor: pointer;
             transition: transform .35s ease, box-shadow .35s ease;
         }
         
@@ -647,6 +697,17 @@
             border-radius: 999px;
         }
         
+        .product-price-row {
+            margin-bottom: 16px;
+        }
+
+        .product-price {
+            font-family: var(--ms-font-head);
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--ms-charcoal);
+        }
+
         .product-link {
             font-size: 14px;
             font-weight: 700;
@@ -1741,62 +1802,73 @@
                 <h2>Every Foamico Mattress</h2>
                 <p>Five ranges, five different feels — choose the one that matches how you sleep.</p>
             </div>
-            <div class="product-grid">
-                <div class="product-card reveal" style="transition-delay:0ms;">
+            <div class="sort-bar reveal" role="group" aria-label="Sort mattresses">
+                <button type="button" class="sort-btn" data-sort="default" aria-pressed="true">Featured</button>
+                <button type="button" class="sort-btn" data-sort="price-asc" aria-pressed="false">Price: Low to High</button>
+                <button type="button" class="sort-btn" data-sort="price-desc" aria-pressed="false">Price: High to Low</button>
+                <button type="button" class="sort-btn" data-sort="new" aria-pressed="false">Newest First</button>
+            </div>
+            <div class="product-grid" id="mattressGrid">
+                <a class="product-card reveal" href="sova.html" style="transition-delay:0ms;" data-price="18999" data-launched="2021">
                     <div class="product-media">
-                        <video class="product-video" src="video/sova.mp4" poster="lifestyle/sova.png" preload="auto" muted loop playsinline aria-label="Sova mattress, 3D rotating view"></video>
+                        <video class="product-video" data-src="video/sova.mp4" poster="lifestyle/sova.jpg" preload="none" muted loop playsinline aria-label="Sova mattress, 3D rotating view"></video>
                         <span class="media-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"></path><path d="M21 3v5h-5"></path></svg>3D View</span>
                     </div>
                     <div class="product-body">
                         <h3 class="product-name">Sova</h3>
                         <div class="product-tags"><span>Back Sleepers</span><span>Everyday Comfort</span></div>
-                        <a class="product-link" href="sova.html">Learn more →</a>
+                        <div class="product-price-row"><span class="product-price">From ₹18,999</span></div>
+                        <span class="product-link">Learn more →</span>
                     </div>
-                </div>
-                <div class="product-card reveal" style="transition-delay:80ms;">
+                </a>
+                <a class="product-card reveal" href="resto.html" style="transition-delay:80ms;" data-price="14999" data-launched="2022">
                     <div class="product-media">
-                        <video class="product-video" src="video/ultima.mp4" poster="lifestyle/ultima.png" preload="auto" muted loop playsinline aria-label="Ultima mattress, 3D rotating view"></video>
-                        <span class="media-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"></path><path d="M21 3v5h-5"></path></svg>3D View</span>
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name">Ultima</h3>
-                        <div class="product-tags"><span>Back Pain Relief</span><span>Firm Support</span></div>
-                        <a class="product-link" href="ultima.html">Learn more →</a>
-                    </div>
-                </div>
-                <div class="product-card reveal" style="transition-delay:160ms;">
-                    <div class="product-media">
-                        <video class="product-video" src="video/luma.mp4" poster="lifestyle/luma.png" preload="auto" muted loop playsinline aria-label="Luma mattress, 3D rotating view"></video>
-                        <span class="media-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"></path><path d="M21 3v5h-5"></path></svg>3D View</span>
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name">Luma</h3>
-                        <div class="product-tags"><span>Side Sleepers</span><span>Cooler Sleep</span></div>
-                        <a class="product-link" href="luma.html">Learn more →</a>
-                    </div>
-                </div>
-                <div class="product-card reveal" style="transition-delay:240ms;">
-                    <div class="product-media">
-                        <video class="product-video" src="video/resto.mp4" poster="lifestyle/resto.png" preload="auto" muted loop playsinline aria-label="Resto mattress, 3D rotating view"></video>
+                        <video class="product-video" data-src="video/resto.mp4" poster="lifestyle/resto.jpg" preload="none" muted loop playsinline aria-label="Resto mattress, 3D rotating view"></video>
                         <span class="media-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"></path><path d="M21 3v5h-5"></path></svg>3D View</span>
                     </div>
                     <div class="product-body">
                         <h3 class="product-name">Resto</h3>
                         <div class="product-tags"><span>Balanced Comfort</span><span>Daily Recovery</span></div>
-                        <a class="product-link" href="resto.html">Learn more →</a>
+                        <div class="product-price-row"><span class="product-price">From ₹14,999</span></div>
+                        <span class="product-link">Learn more →</span>
                     </div>
-                </div>
-                <div class="product-card reveal" style="transition-delay:320ms;">
+                </a>
+                <a class="product-card reveal" href="luma.html" style="transition-delay:160ms;" data-price="15999" data-launched="2023">
                     <div class="product-media">
-                        <video class="product-video" src="video/riva.mp4" poster="lifestyle/riva.png" preload="auto" muted loop playsinline aria-label="Riva mattress, 3D rotating view"></video>
+                        <video class="product-video" data-src="video/luma.mp4" poster="lifestyle/luma.jpg" preload="none" muted loop playsinline aria-label="Luma mattress, 3D rotating view"></video>
+                        <span class="media-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"></path><path d="M21 3v5h-5"></path></svg>3D View</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Luma</h3>
+                        <div class="product-tags"><span>Side Sleepers</span><span>Cooler Sleep</span></div>
+                        <div class="product-price-row"><span class="product-price">From ₹15,999</span></div>
+                        <span class="product-link">Learn more →</span>
+                    </div>
+                </a>
+                <a class="product-card reveal" href="ultima.html" style="transition-delay:240ms;" data-price="19999" data-launched="2024">
+                    <div class="product-media">
+                        <video class="product-video" data-src="video/ultima.mp4" poster="lifestyle/ultima.jpg" preload="none" muted loop playsinline aria-label="Ultima mattress, 3D rotating view"></video>
+                        <span class="media-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"></path><path d="M21 3v5h-5"></path></svg>3D View</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Ultima</h3>
+                        <div class="product-tags"><span>Back Pain Relief</span><span>Firm Support</span></div>
+                        <div class="product-price-row"><span class="product-price">From ₹19,999</span></div>
+                        <span class="product-link">Learn more →</span>
+                    </div>
+                </a>
+                <a class="product-card reveal" href="riva.html" style="transition-delay:320ms;" data-price="22999" data-launched="2026">
+                    <div class="product-media">
+                        <video class="product-video" data-src="video/riva.mp4" poster="lifestyle/riva.jpg" preload="none" muted loop playsinline aria-label="Riva mattress, 3D rotating view"></video>
                         <span class="media-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"></path><path d="M21 3v5h-5"></path></svg>3D View</span>
                     </div>
                     <div class="product-body">
                         <h3 class="product-name">Riva</h3>
                         <div class="product-tags"><span>Premium Support</span><span>Plush Comfort</span></div>
-                        <a class="product-link" href="riva.html">Learn more →</a>
+                        <div class="product-price-row"><span class="product-price">From ₹22,999</span></div>
+                        <span class="product-link">Learn more →</span>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -1921,61 +1993,64 @@
         })();
 
         (function () {
+            // Product 3D-view videos aren't fetched until their card is about to
+            // scroll into view, so the initial page load isn't competing for
+            // bandwidth across all five clips at once.
             var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            var videos = document.querySelectorAll('.product-video');
-            videos.forEach(function (v) {
-                if (reduceMotion) {
-                    v.removeAttribute('autoplay');
-                    v.pause();
-                    v.currentTime = 0;
-                }
+            var videos = Array.prototype.slice.call(document.querySelectorAll('.product-video[data-src]'));
+            if (!videos.length) return;
+
+            function loadAndPlay(video) {
+                video.src = video.dataset.src;
+                video.load();
+                if (reduceMotion) return;
+                video.addEventListener('canplay', function () {
+                    var p = video.play();
+                    if (p && p.catch) p.catch(function () {});
+                }, { once: true });
+            }
+
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        loadAndPlay(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '200px 0px' });
+
+            videos.forEach(function (video) {
+                observer.observe(video);
             });
         })();
 
         (function () {
-            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            var videos = Array.prototype.slice.call(document.querySelectorAll('.product-video, .category-video'));
-            if (reduceMotion || videos.length < 2) return;
+            var grid = document.getElementById('mattressGrid');
+            if (!grid) return;
+            var buttons = Array.prototype.slice.call(document.querySelectorAll('.sort-btn'));
+            var originalOrder = Array.prototype.slice.call(grid.children);
 
-            function whenReady(video) {
-                return new Promise(function (resolve) {
-                    if (video.readyState >= 3) {
-                        resolve();
-                        return;
-                    }
-                    video.addEventListener('canplay', resolve, { once: true });
-                    video.load();
-                });
+            function sortBy(mode) {
+                var cards = Array.prototype.slice.call(grid.children);
+                var sorted;
+                if (mode === 'price-asc') {
+                    sorted = cards.sort(function (a, b) { return Number(a.dataset.price) - Number(b.dataset.price); });
+                } else if (mode === 'price-desc') {
+                    sorted = cards.sort(function (a, b) { return Number(b.dataset.price) - Number(a.dataset.price); });
+                } else if (mode === 'new') {
+                    sorted = cards.sort(function (a, b) { return Number(b.dataset.launched) - Number(a.dataset.launched); });
+                } else {
+                    sorted = originalOrder;
+                }
+                sorted.forEach(function (card) { grid.appendChild(card); });
             }
 
-            Promise.all(videos.map(whenReady)).then(function () {
-                var master = videos[0];
-
-                videos.forEach(function (video) {
-                    video.pause();
-                    video.currentTime = 0;
-                    video.playbackRate = 1;
+            buttons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    buttons.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+                    btn.setAttribute('aria-pressed', 'true');
+                    sortBy(btn.dataset.sort);
                 });
-
-                window.requestAnimationFrame(function () {
-                    videos.forEach(function (video) {
-                        var playPromise = video.play();
-                        if (playPromise && playPromise.catch) playPromise.catch(function () {});
-                    });
-                });
-
-                function keepInStep() {
-                    if (!document.hidden && !master.paused) {
-                        videos.slice(1).forEach(function (video) {
-                            if (Math.abs(video.currentTime - master.currentTime) > 0.06) {
-                                video.currentTime = master.currentTime;
-                            }
-                        });
-                    }
-                    window.requestAnimationFrame(keepInStep);
-                }
-
-                window.requestAnimationFrame(keepInStep);
             });
         })();
 
@@ -1993,6 +2068,19 @@
             }, { threshold: 0.15 });
             items.forEach(function (el) {
                 observer.observe(el);
+            });
+        })();
+
+        (function () {
+            var images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(function (img) {
+                if (img.complete && img.naturalWidth > 0) {
+                    img.classList.add('is-loaded');
+                    return;
+                }
+                img.addEventListener('load', function () {
+                    img.classList.add('is-loaded');
+                }, { once: true });
             });
         })();
 

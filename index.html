@@ -791,6 +791,21 @@
         })();
 
         (function() {
+            // Fade lazy images in once they've actually loaded instead of
+            // letting them pop in abruptly mid-scroll.
+            var images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(function(img) {
+                if (img.complete && img.naturalWidth > 0) {
+                    img.classList.add('is-loaded');
+                    return;
+                }
+                img.addEventListener('load', function() {
+                    img.classList.add('is-loaded');
+                }, { once: true });
+            });
+        })();
+
+        (function() {
             var track = document.querySelector('[data-testimonial-track]');
             if (!track) return;
             var cards = Array.prototype.slice.call(track.children);
@@ -1107,6 +1122,79 @@
             closeBtn.addEventListener('click', closeChat);
             document.addEventListener('click', function(e) {
                 if (widget.classList.contains('is-open') && e.composedPath().indexOf(widget) === -1) closeChat();
+            });
+        })();
+
+        (function() {
+            var overlay = document.querySelector('[data-newsletter-overlay]');
+            if (!overlay) return;
+            var closeBtn = overlay.querySelector('[data-newsletter-close]');
+            var form = overlay.querySelector('[data-newsletter-form]');
+            var bodyEl = overlay.querySelector('[data-newsletter-body]');
+            var errorEl = overlay.querySelector('[data-newsletter-error]');
+            var STORAGE_KEY = 'foamicoNewsletterDismissedAt';
+            var SNOOZE_DAYS = 7;
+
+            function shouldShow() {
+                try {
+                    var last = localStorage.getItem(STORAGE_KEY);
+                    if (!last) return true;
+                    return Date.now() - parseInt(last, 10) > SNOOZE_DAYS * 24 * 60 * 60 * 1000;
+                } catch (e) {
+                    return true;
+                }
+            }
+
+            function remember() {
+                try { localStorage.setItem(STORAGE_KEY, Date.now().toString()); } catch (e) {}
+            }
+
+            function dismiss() {
+                overlay.classList.remove('is-open');
+                document.body.style.overflow = '';
+                remember();
+            }
+
+            function open() {
+                overlay.classList.add('is-open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            if (shouldShow()) window.setTimeout(open, 4000);
+
+            closeBtn.addEventListener('click', dismiss);
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) dismiss();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && overlay.classList.contains('is-open')) dismiss();
+            });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                errorEl.hidden = true;
+                var submitBtn = form.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending…';
+
+                fetch('https://formsubmit.co/ajax/advikarathi2@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    body: new FormData(form)
+                }).then(function(res) {
+                    if (!res.ok) throw new Error('Request failed');
+                    return res.json();
+                }).then(function() {
+                    bodyEl.innerHTML = '<h3>You’re on the list!</h3><p>Thanks for subscribing — keep an eye on your inbox.</p>';
+                    remember();
+                    window.setTimeout(dismiss, 2200);
+                }).catch(function() {
+                    errorEl.hidden = false;
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Subscribe';
+                });
             });
         })();
     </script>

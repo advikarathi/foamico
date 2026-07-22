@@ -141,6 +141,23 @@
                 transition: none !important;
             }
         }
+        /* SMOOTH IMAGE LOAD-IN */
+
+        img[loading="lazy"] {
+            opacity: 0;
+            transition: opacity .5s ease;
+        }
+
+        img[loading="lazy"].is-loaded {
+            opacity: 1;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            img[loading="lazy"] {
+                opacity: 1;
+                transition: none;
+            }
+        }
         /* UTILITY BAR */
 
         .utility-bar {
@@ -341,7 +358,15 @@
             margin-top: 26px;
         }
 
-        .pillow-tags button {
+        .pillow-sort {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .pillow-tags button,
+        .pillow-sort button {
             padding: 9px 16px;
             border-radius: 999px;
             background: var(--ms-white);
@@ -354,11 +379,13 @@
             transition: background .15s ease, border-color .15s ease, color .15s ease;
         }
 
-        .pillow-tags button:hover {
+        .pillow-tags button:hover,
+        .pillow-sort button:hover {
             border-color: var(--ms-teal);
         }
 
-        .pillow-tags button[aria-pressed="true"] {
+        .pillow-tags button[aria-pressed="true"],
+        .pillow-sort button[aria-pressed="true"] {
             background: var(--ms-teal-deep);
             border-color: var(--ms-teal-deep);
             color: var(--ms-white);
@@ -844,6 +871,12 @@
                 <button type="button" data-filter="cooling" aria-pressed="false">Cooling</button>
                 <button type="button" data-filter="cervical-support" aria-pressed="false">Cervical Support</button>
             </div>
+            <div class="pillow-sort" id="pillowSort" role="group" aria-label="Sort pillows">
+                <button type="button" data-sort="default" aria-pressed="true">Featured</button>
+                <button type="button" data-sort="price-asc" aria-pressed="false">Price: Low to High</button>
+                <button type="button" data-sort="price-desc" aria-pressed="false">Price: High to Low</button>
+                <button type="button" data-sort="new" aria-pressed="false">Newest First</button>
+            </div>
         </div>
     </section>
 
@@ -852,9 +885,9 @@
         <div class="wrap">
             <div class="product-grid" id="pillowGrid">
 
-                <div class="product-card reveal" data-categories="microfibre" style="transition-delay:0ms;">
+                <div class="product-card reveal" data-categories="microfibre" style="transition-delay:0ms;" data-price="1299" data-launched="2019">
                     <div class="product-media">
-                        <img src="pillows/Cloud-Microfibre-Pillow.png" alt="Cloud Microfibre Pillow on a bed" loading="lazy">
+                        <img src="pillows/Cloud-Microfibre-Pillow.jpg" alt="Cloud Microfibre Pillow on a bed" loading="lazy">
                         <span class="media-badge">Bestseller</span>
                     </div>
                     <div class="product-body">
@@ -871,9 +904,9 @@
                     </div>
                 </div>
 
-                <div class="product-card reveal" data-categories="microfibre" style="transition-delay:60ms;">
+                <div class="product-card reveal" data-categories="microfibre" style="transition-delay:60ms;" data-price="1599" data-launched="2020">
                     <div class="product-media">
-                        <img src="pillows/CloudPro-Microfibre-Pillow.png" alt="CloudPro Microfibre Pillow on a bed" loading="lazy">
+                        <img src="pillows/CloudPro-Microfibre-Pillow.jpg" alt="CloudPro Microfibre Pillow on a bed" loading="lazy">
                     </div>
                     <div class="product-body">
                         <div class="product-feel">Medium Support</div>
@@ -889,9 +922,9 @@
                     </div>
                 </div>
 
-                <div class="product-card reveal" data-categories="memory-foam" style="transition-delay:120ms;">
+                <div class="product-card reveal" data-categories="memory-foam" style="transition-delay:120ms;" data-price="1899" data-launched="2021">
                     <div class="product-media">
-                        <img src="pillows/MemoTouch.png" alt="MemoTouch memory foam pillow on a bed" loading="lazy">
+                        <img src="pillows/MemoTouch.jpg" alt="MemoTouch memory foam pillow on a bed" loading="lazy">
                         <span class="media-badge">Memory Foam</span>
                     </div>
                     <div class="product-body">
@@ -908,9 +941,9 @@
                     </div>
                 </div>
 
-                <div class="product-card reveal" data-categories="memory-foam cooling" style="transition-delay:180ms;">
+                <div class="product-card reveal" data-categories="memory-foam cooling" style="transition-delay:180ms;" data-price="2099" data-launched="2022">
                     <div class="product-media">
-                        <img src="pillows/ZeroGravity-Natural.png" alt="ZeroGravity Natural low-profile memory foam pillow on a bed" loading="lazy">
+                        <img src="pillows/ZeroGravity-Natural.jpg" alt="ZeroGravity Natural low-profile memory foam pillow on a bed" loading="lazy">
                     </div>
                     <div class="product-body">
                         <div class="product-feel">Low-Profile</div>
@@ -926,9 +959,9 @@
                     </div>
                 </div>
 
-                <div class="product-card reveal" data-categories="memory-foam contour cervical-support" style="transition-delay:240ms;">
+                <div class="product-card reveal" data-categories="memory-foam contour cervical-support" style="transition-delay:240ms;" data-price="2199" data-launched="2023">
                     <div class="product-media">
-                        <img src="pillows/Memorest-Contour.png" alt="Memorest Contour memory foam pillow on a bed" loading="lazy">
+                        <img src="pillows/Memorest-Contour.jpg" alt="Memorest Contour memory foam pillow on a bed" loading="lazy">
                         <span class="media-badge">Memory Foam</span>
                     </div>
                     <div class="product-body">
@@ -945,9 +978,9 @@
                     </div>
                 </div>
 
-                <div class="product-card reveal" data-categories="memory-foam contour cooling" style="transition-delay:300ms;">
+                <div class="product-card reveal" data-categories="memory-foam contour cooling" style="transition-delay:300ms;" data-price="2399" data-launched="2024">
                     <div class="product-media">
-                        <img src="pillows/ZeroGravity.png" alt="ZeroGravity bamboo contour memory foam pillow on a bed" loading="lazy">
+                        <img src="pillows/ZeroGravity.jpg" alt="ZeroGravity bamboo contour memory foam pillow on a bed" loading="lazy">
                         <span class="media-badge">Cooling</span>
                     </div>
                     <div class="product-body">
@@ -964,9 +997,9 @@
                     </div>
                 </div>
 
-                <div class="product-card reveal" data-categories="memory-foam contour cooling cervical-support" style="transition-delay:360ms;">
+                <div class="product-card reveal" data-categories="memory-foam contour cooling cervical-support" style="transition-delay:360ms;" data-price="2599" data-launched="2025">
                     <div class="product-media">
-                        <img src="pillows/ZeroGravity-Contour.png" alt="ZeroGravity Contour memory foam pillow on a bed" loading="lazy">
+                        <img src="pillows/ZeroGravity-Contour.jpg" alt="ZeroGravity Contour memory foam pillow on a bed" loading="lazy">
                         <span class="media-badge">Cooling</span>
                     </div>
                     <div class="product-body">
@@ -1129,6 +1162,19 @@
         })();
 
         (function () {
+            var images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(function (img) {
+                if (img.complete && img.naturalWidth > 0) {
+                    img.classList.add('is-loaded');
+                    return;
+                }
+                img.addEventListener('load', function () {
+                    img.classList.add('is-loaded');
+                }, { once: true });
+            });
+        })();
+
+        (function () {
             var filterBar = document.getElementById('pillowFilters');
             if (!filterBar) return;
             var buttons = filterBar.querySelectorAll('button');
@@ -1151,6 +1197,37 @@
                     buttons.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
                     btn.setAttribute('aria-pressed', 'true');
                     applyFilter(btn.dataset.filter);
+                });
+            });
+        })();
+
+        (function () {
+            var grid = document.getElementById('pillowGrid');
+            var sortBar = document.getElementById('pillowSort');
+            if (!grid || !sortBar) return;
+            var buttons = sortBar.querySelectorAll('button');
+            var originalOrder = Array.prototype.slice.call(grid.children);
+
+            function sortBy(mode) {
+                var cards = Array.prototype.slice.call(grid.children);
+                var sorted;
+                if (mode === 'price-asc') {
+                    sorted = cards.sort(function (a, b) { return Number(a.dataset.price) - Number(b.dataset.price); });
+                } else if (mode === 'price-desc') {
+                    sorted = cards.sort(function (a, b) { return Number(b.dataset.price) - Number(a.dataset.price); });
+                } else if (mode === 'new') {
+                    sorted = cards.sort(function (a, b) { return Number(b.dataset.launched) - Number(a.dataset.launched); });
+                } else {
+                    sorted = originalOrder;
+                }
+                sorted.forEach(function (card) { grid.appendChild(card); });
+            }
+
+            buttons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    buttons.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+                    btn.setAttribute('aria-pressed', 'true');
+                    sortBy(btn.dataset.sort);
                 });
             });
         })();
