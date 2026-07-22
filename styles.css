@@ -854,23 +854,31 @@
         /* COMPARISON MATRIX */
         
         .matrix-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 24px;
             perspective: 1200px;
         }
-        
+
+        .matrix-card {
+            flex: 1 1 320px;
+            max-width: 360px;
+        }
+
         @media(max-width:900px) {
-            .matrix-grid {
-                grid-template-columns: 1fr;
+            .matrix-card {
+                flex-basis: 100%;
+                max-width: 480px;
             }
         }
-        
+
         .matrix-card {
             overflow: hidden;
             transform-style: preserve-3d;
             display: flex;
             flex-direction: column;
+            cursor: pointer;
             transition: transform var(--ms-dur) var(--ms-ease), box-shadow var(--ms-dur) var(--ms-ease);
         }
         
@@ -949,16 +957,6 @@
         
         .cooling-bar .seg.is-filled {
             background: var(--ms-teal);
-        }
-        
-        .matrix-warranty {
-            font-size: 13px;
-            color: var(--ms-navy-soft);
-            margin-top: 18px;
-        }
-        
-        .matrix-warranty strong {
-            color: var(--ms-charcoal);
         }
         
         .matrix-cta {
