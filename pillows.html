@@ -360,13 +360,48 @@
 
         .pillow-sort {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 14px;
+            margin-top: 18px;
         }
 
-        .pillow-tags button,
-        .pillow-sort button {
+        .sort-select-wrap {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .sort-select-wrap::after {
+            content: '';
+            position: absolute;
+            right: 16px;
+            width: 8px;
+            height: 8px;
+            border-right: 1.5px solid var(--ms-navy-soft);
+            border-bottom: 1.5px solid var(--ms-navy-soft);
+            transform: rotate(45deg);
+            pointer-events: none;
+        }
+
+        .sort-select {
+            appearance: none;
+            -webkit-appearance: none;
+            padding: 11px 40px 11px 18px;
+            border-radius: 999px;
+            border: 1px solid var(--ms-line);
+            background: var(--ms-white);
+            color: var(--ms-navy);
+            font-family: var(--ms-font-body);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: border-color .15s ease;
+        }
+
+        .sort-select:hover,
+        .sort-select:focus-visible {
+            border-color: var(--ms-teal);
+        }
+
+        .pillow-tags button {
             padding: 9px 16px;
             border-radius: 999px;
             background: var(--ms-white);
@@ -379,13 +414,11 @@
             transition: background .15s ease, border-color .15s ease, color .15s ease;
         }
 
-        .pillow-tags button:hover,
-        .pillow-sort button:hover {
+        .pillow-tags button:hover {
             border-color: var(--ms-teal);
         }
 
-        .pillow-tags button[aria-pressed="true"],
-        .pillow-sort button[aria-pressed="true"] {
+        .pillow-tags button[aria-pressed="true"] {
             background: var(--ms-teal-deep);
             border-color: var(--ms-teal-deep);
             color: var(--ms-white);
@@ -871,11 +904,15 @@
                 <button type="button" data-filter="cooling" aria-pressed="false">Cooling</button>
                 <button type="button" data-filter="cervical-support" aria-pressed="false">Cervical Support</button>
             </div>
-            <div class="pillow-sort" id="pillowSort" role="group" aria-label="Sort pillows">
-                <button type="button" data-sort="default" aria-pressed="true">Featured</button>
-                <button type="button" data-sort="price-asc" aria-pressed="false">Price: Low to High</button>
-                <button type="button" data-sort="price-desc" aria-pressed="false">Price: High to Low</button>
-                <button type="button" data-sort="new" aria-pressed="false">Newest First</button>
+            <div class="pillow-sort">
+                <div class="sort-select-wrap">
+                    <select class="sort-select" id="pillowSort" aria-label="Sort pillows">
+                        <option value="default">Sort: Featured</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="new">Newest First</option>
+                    </select>
+                </div>
             </div>
         </div>
     </section>
@@ -1203,9 +1240,8 @@
 
         (function () {
             var grid = document.getElementById('pillowGrid');
-            var sortBar = document.getElementById('pillowSort');
-            if (!grid || !sortBar) return;
-            var buttons = sortBar.querySelectorAll('button');
+            var select = document.getElementById('pillowSort');
+            if (!grid || !select) return;
             var originalOrder = Array.prototype.slice.call(grid.children);
 
             function sortBy(mode) {
@@ -1223,12 +1259,8 @@
                 sorted.forEach(function (card) { grid.appendChild(card); });
             }
 
-            buttons.forEach(function (btn) {
-                btn.addEventListener('click', function () {
-                    buttons.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
-                    btn.setAttribute('aria-pressed', 'true');
-                    sortBy(btn.dataset.sort);
-                });
+            select.addEventListener('change', function () {
+                sortBy(select.value);
             });
         })();
     </script>

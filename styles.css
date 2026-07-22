@@ -23,6 +23,7 @@
             --ms-border-soft: 1px solid var(--ms-line);
             --ms-ease: cubic-bezier(.22, 1, .36, 1);
             --ms-dur: .25s;
+            --cursor-mattress: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="34" height="30" viewBox="0 0 34 30"><rect x="4" y="4" width="10" height="9" rx="4" fill="%23FEFEFE" stroke="%231A1A1A" stroke-width="1.6"/><rect x="2" y="15" width="30" height="11" rx="4" fill="%23FEFEFE" stroke="%231A1A1A" stroke-width="1.6"/><rect x="2" y="22.5" width="30" height="3.5" rx="1.75" fill="%2395C12B" stroke="%231A1A1A" stroke-width="1.3"/><circle cx="20.5" cy="19.5" r="1.1" fill="%233F5E12"/><circle cx="25.5" cy="19.5" r="1.1" fill="%233F5E12"/><circle cx="30.5" cy="19.5" r="1.1" fill="%233F5E12"/></svg>') 6 6, auto;
         }
         
         * {
@@ -513,6 +514,12 @@
             height: calc(100vh - 118px);
             min-height: 640px;
             background: var(--ms-paper);
+            cursor: var(--cursor-mattress);
+        }
+
+        .scroll-hero a,
+        .scroll-hero button {
+            cursor: pointer;
         }
         
         @media(max-width:700px) {

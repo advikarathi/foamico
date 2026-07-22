@@ -572,32 +572,46 @@
 
         .sort-bar {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 36px;
+            justify-content: flex-end;
+            margin-bottom: 28px;
         }
 
-        .sort-btn {
-            padding: 9px 18px;
+        .sort-select-wrap {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .sort-select-wrap::after {
+            content: '';
+            position: absolute;
+            right: 16px;
+            width: 8px;
+            height: 8px;
+            border-right: 1.5px solid var(--ms-navy-soft);
+            border-bottom: 1.5px solid var(--ms-navy-soft);
+            transform: rotate(45deg);
+            pointer-events: none;
+        }
+
+        .sort-select {
+            appearance: none;
+            -webkit-appearance: none;
+            padding: 11px 40px 11px 18px;
             border-radius: 999px;
             border: 1.5px solid var(--ms-line);
             background: var(--ms-white);
-            color: var(--ms-navy-soft);
+            color: var(--ms-charcoal);
             font-family: var(--ms-font-head);
             font-weight: 600;
             font-size: 13px;
-            transition: background .15s ease, border-color .15s ease, color .15s ease;
+            cursor: pointer;
+            transition: border-color .15s ease;
         }
 
-        .sort-btn:hover {
+        .sort-select:hover,
+        .sort-select:focus-visible {
             border-color: var(--ms-teal);
-        }
-
-        .sort-btn[aria-pressed="true"] {
-            background: var(--ms-teal-deep);
-            border-color: var(--ms-teal-deep);
-            color: var(--ms-white);
         }
         /* PRODUCT GRID */
 
@@ -1802,11 +1816,15 @@
                 <h2>Every Foamico Mattress</h2>
                 <p>Five ranges, five different feels — choose the one that matches how you sleep.</p>
             </div>
-            <div class="sort-bar reveal" role="group" aria-label="Sort mattresses">
-                <button type="button" class="sort-btn" data-sort="default" aria-pressed="true">Featured</button>
-                <button type="button" class="sort-btn" data-sort="price-asc" aria-pressed="false">Price: Low to High</button>
-                <button type="button" class="sort-btn" data-sort="price-desc" aria-pressed="false">Price: High to Low</button>
-                <button type="button" class="sort-btn" data-sort="new" aria-pressed="false">Newest First</button>
+            <div class="sort-bar reveal">
+                <div class="sort-select-wrap">
+                    <select class="sort-select" id="mattressSort" aria-label="Sort mattresses">
+                        <option value="default">Sort: Featured</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="new">Newest First</option>
+                    </select>
+                </div>
             </div>
             <div class="product-grid" id="mattressGrid">
                 <a class="product-card reveal" href="sova.html" style="transition-delay:0ms;" data-price="18999" data-launched="2021">
@@ -2026,8 +2044,8 @@
 
         (function () {
             var grid = document.getElementById('mattressGrid');
-            if (!grid) return;
-            var buttons = Array.prototype.slice.call(document.querySelectorAll('.sort-btn'));
+            var select = document.getElementById('mattressSort');
+            if (!grid || !select) return;
             var originalOrder = Array.prototype.slice.call(grid.children);
 
             function sortBy(mode) {
@@ -2045,12 +2063,8 @@
                 sorted.forEach(function (card) { grid.appendChild(card); });
             }
 
-            buttons.forEach(function (btn) {
-                btn.addEventListener('click', function () {
-                    buttons.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
-                    btn.setAttribute('aria-pressed', 'true');
-                    sortBy(btn.dataset.sort);
-                });
+            select.addEventListener('change', function () {
+                sortBy(select.value);
             });
         })();
 
