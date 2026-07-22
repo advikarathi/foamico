@@ -438,6 +438,12 @@
             font-weight: 500;
         }
 
+        .header-drop-col a.header-drop-title {
+            font-size: 13px;
+            color: var(--ms-teal-deep);
+            font-weight: 800;
+        }
+
         .header-drop-col a:hover {
             color: var(--ms-teal-deep);
         }
