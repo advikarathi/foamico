@@ -1,0 +1,11 @@
+{% comment %}
+  Renders a flattened theme asset image by (line, role) instead of repeating
+  literal filenames across product-content snippets and the homepage matrix.
+  Usage: {% render 'responsive-image', line: 'sova', role: 'main', alt: '...', class: '...', width: 800 %}
+  Maps to assets/product-<line>-<role>.jpg (see the asset flattening scheme).
+{% endcomment %}
+{% liquid
+  assign filename = 'product-' | append: line | append: '-' | append: role | append: '.jpg'
+  assign img_width = width | default: 800
+%}
+<img src="{{ filename | asset_url }}" alt="{{ alt | escape }}" width="{{ img_width }}" {% if class %}class="{{ class }}"{% endif %} loading="{{ loading | default: 'lazy' }}" decoding="async">

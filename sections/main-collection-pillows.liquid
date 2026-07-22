@@ -1,0 +1,86 @@
+<section class="pillow-hero">
+    <div class="wrap reveal">
+        <h1>{{ collection.title | default: 'Pillows' }}</h1>
+        <p>{{ collection.description | default: "Tailored comfort for every head. From plush microfibre to contour memory foam, find the loft and firmness that matches how you sleep." }}</p>
+        <div class="pillow-tags" id="pillowFilters">
+            <button type="button" data-filter="all" aria-pressed="true">All Pillows</button>
+            <button type="button" data-filter="memory-foam" aria-pressed="false">Memory Foam</button>
+            <button type="button" data-filter="microfibre" aria-pressed="false">Microfibre</button>
+            <button type="button" data-filter="contour" aria-pressed="false">Contour</button>
+            <button type="button" data-filter="cooling" aria-pressed="false">Cooling</button>
+            <button type="button" data-filter="cervical-support" aria-pressed="false">Cervical Support</button>
+        </div>
+        <div class="pillow-sort">
+            <div class="sort-select-wrap">
+                <select class="sort-select" id="pillowSort" aria-label="Sort pillows">
+                    <option value="default">Sort: Featured</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                    <option value="new">Newest First</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+        <div class="product-grid" id="pillowGrid">
+            {% for product in collection.products %}
+                {% assign variant = product.selected_or_first_available_variant %}
+                <div class="product-card reveal" data-categories="{{ product.tags | join: ' ' | downcase }}" style="transition-delay:{{ forloop.index0 | times: 60 }}ms;" data-price="{{ variant.price }}" data-launched="{{ product.created_at | date: '%s' }}">
+                    <div class="product-media">
+                        {% if product.featured_image %}<img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.featured_image.alt | default: product.title }}" loading="lazy">{% endif %}
+                        {% if product.metafields.foamico.badge != blank %}<span class="media-badge">{{ product.metafields.foamico.badge }}</span>{% endif %}
+                    </div>
+                    <div class="product-body">
+                        {% if product.metafields.foamico.feel_tag != blank %}<div class="product-feel">{{ product.metafields.foamico.feel_tag }}</div>{% endif %}
+                        <h3 class="product-name">{{ product.title }}</h3>
+                        {% if product.metafields.foamico.rating != blank %}
+                            <div class="product-rating"><span class="stars">★★★★★</span> {{ product.metafields.foamico.rating }} ({{ product.metafields.foamico.review_count }} reviews)</div>
+                        {% endif %}
+                        <p class="product-desc">{{ product.description | strip_html | truncatewords: 24 }}</p>
+                        <div class="product-price-row">
+                            <span class="product-price">{{ variant.price | money }}</span>
+                            {% if variant.compare_at_price > variant.price %}
+                                <span class="product-price-strike">{{ variant.compare_at_price | money }}</span>
+                                {% assign discount = variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price %}
+                                <span class="product-discount">{{ discount }}% off</span>
+                            {% endif %}
+                        </div>
+                        {% form 'product', product %}
+                            <input type="hidden" name="id" value="{{ variant.id }}">
+                            <button type="submit" class="product-shop-btn">{{ 'products.product.add_to_cart' | t }}</button>
+                        {% endform %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <p class="pillow-empty-note" id="pillowEmptyNote" hidden>No pillows match that filter yet — check back soon or <a href="https://wa.me/{{ settings.whatsapp_number }}?text=Hi%20Foamico%2C%20I%27m%20looking%20for%20a%20specific%20type%20of%20pillow" target="_blank" rel="noopener">ask us on WhatsApp</a>.</p>
+    </div>
+</section>
+
+<section class="trust-strip">
+    <div class="wrap trust-strip-inner">
+        <div class="trust-stat reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2-6.3-4.5-6.3 4.5 2.3-7.2-6-4.6h7.6z"></path></svg>
+            <div><strong>1-Year Warranty</strong><span>On every pillow</span></div>
+        </div>
+        <div class="trust-stat reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+            <div><strong>Certified Foams</strong><span>OEKO-TEX &amp; CertiPUR tested</span></div>
+        </div>
+        <div class="trust-stat reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h18"></path></svg>
+            <div><strong>Breathable Covers</strong><span>Cool, washable fabrics</span></div>
+        </div>
+        <div class="trust-stat reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"></path><path d="M12 7v5l3 3"></path></svg>
+            <div><strong>300+ Stores</strong><span>Try before you buy</span></div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{ "name": "Pillows collection", "settings": [] }
+{% endschema %}

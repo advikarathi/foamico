@@ -1,0 +1,17 @@
+{% comment %} Usage: {% render 'article-card', article: article, delay: 0 %} {% endcomment %}
+<article class="article-card reveal" style="transition-delay:{{ delay | default: 0 }}ms;">
+    <div class="article-media">
+        {% if article.image %}
+            <img src="{{ article.image | image_url: width: 600 }}" alt="{{ article.image.alt | default: article.title }}" loading="lazy">
+        {% else %}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg>
+        {% endif %}
+        {% if article.tags.size > 0 %}<span class="article-category">{{ article.tags.first }}</span>{% endif %}
+    </div>
+    <div class="article-body">
+        <div class="article-date">{{ article.published_at | date: '%B %-d, %Y' }}</div>
+        <h3 class="article-name">{{ article.title }}</h3>
+        <p class="article-desc">{{ article.excerpt | default: article.content | strip_html | truncate: 110 }}</p>
+        <a class="article-link" href="{{ article.url }}">Read article →</a>
+    </div>
+</article>

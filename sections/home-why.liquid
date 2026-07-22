@@ -1,0 +1,47 @@
+<section class="section" id="why">
+    <div class="wrap">
+        <div class="section-head reveal">
+            <h2>Why Us</h2>
+        </div>
+        <div class="why-quote reveal">
+            <span class="why-quote-mark" aria-hidden="true">&ldquo;</span>
+            <p class="why-quote-text"><mark class="why-highlight">Obsessed with mattresses, so you can be <em>obsessed</em> with sleep.</mark></p>
+        </div>
+    </div>
+    <div class="why-carousel reveal" style="transition-delay:120ms;">
+        <div class="why-carousel-track">
+            {% for block in section.blocks %}
+                <div class="why-pill"><strong>{{ block.settings.stat }}</strong><span>{{ block.settings.label }}</span></div>
+            {% endfor %}
+            {% for block in section.blocks %}
+                <div class="why-pill" aria-hidden="true"><strong>{{ block.settings.stat }}</strong><span>{{ block.settings.label }}</span></div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Why Us stats",
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        { "type": "text", "id": "stat", "label": "Stat" },
+        { "type": "text", "id": "label", "label": "Label" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "stat", "settings": { "stat": "50,000+", "label": "Happy Customers" } },
+      { "type": "stat", "settings": { "stat": "6", "label": "Decades Of Craft" } },
+      { "type": "stat", "settings": { "stat": "100%", "label": "European Precision" } },
+      { "type": "stat", "settings": { "stat": "30", "label": "Year Warranty" } },
+      { "type": "stat", "settings": { "stat": "300+", "label": "Stores Nationwide" } },
+      { "type": "stat", "settings": { "stat": "15", "label": "Cities Reached" } }
+    ]
+  }
+}
+{% endschema %}

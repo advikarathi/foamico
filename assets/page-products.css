@@ -1,0 +1,10 @@
+/* FOAMICO — "Shop all mattresses" page (products.html equivalent). .product-grid/
+   .product-card/.product-tags/.product-link are already global (theme.css); this
+   only adds the sort bar + select, matching the pillows collection's sort control.
+   Loaded only on templates/page.products.json. */
+
+.sort-bar { display: flex; justify-content: flex-end; margin-bottom: 28px; }
+.sort-select-wrap { position: relative; display: inline-flex; align-items: center; }
+.sort-select-wrap::after { content: ''; position: absolute; right: 16px; width: 8px; height: 8px; border-right: 1.5px solid var(--ms-navy-soft); border-bottom: 1.5px solid var(--ms-navy-soft); transform: rotate(45deg); pointer-events: none; }
+.sort-select { appearance: none; -webkit-appearance: none; padding: 11px 40px 11px 18px; border-radius: 999px; border: 1px solid var(--ms-line); background: var(--ms-white); color: var(--ms-navy); font-family: var(--ms-font-body); font-size: 13px; font-weight: 600; cursor: pointer; transition: border-color .15s ease; }
+.sort-select:hover, .sort-select:focus-visible { border-color: var(--ms-teal); }

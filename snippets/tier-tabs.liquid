@@ -1,0 +1,22 @@
+{% comment %}
+  Usage: {% render 'tier-tabs', line: line, current_product: product %}
+  Renders the Classic/Premium/Luxury (or 1000/2000/3000 for Riva) cross-links between
+  sibling products on the same mattress line. Requires a manually-created Shopify
+  collection per line (handle = line slug: sova/resto/luma/ultima/riva), each holding
+  that line's 3 tier products sorted in tier order — see the theme handoff notes.
+{% endcomment %}
+{% assign tier_collection = collections[line] %}
+<div class="variant-tabs">
+    {% if tier_collection %}
+        {% for sibling in tier_collection.products %}
+            {% assign tab_label = sibling.title | remove: ' Mattress' %}
+            {% if sibling.id == current_product.id %}
+                <a class="vtab current" href="#" aria-current="page">{{ tab_label }}</a>
+            {% else %}
+                <a class="vtab" href="{{ sibling.url }}">{{ tab_label }}</a>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <a class="vtab current" href="#" aria-current="page">{{ current_product.title | remove: ' Mattress' }}</a>
+    {% endif %}
+</div>

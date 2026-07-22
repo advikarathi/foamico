@@ -1,0 +1,34 @@
+<section class="about-hero">
+    <video src="{{ 'about-drone.mp4' | asset_url }}" autoplay muted loop playsinline aria-hidden="true"></video>
+    <div class="about-hero-overlay">
+        <h1>{{ page.title | default: 'About Us' }}</h1>
+    </div>
+</section>
+
+<section class="about-body">
+    <p class="about-lede">Comfort, built from the inside out.</p>
+    <p>Foamico is a premium sleep brand built on a deep understanding of foam, thoughtful engineering and the belief that better products begin with product truth.</p>
+    <p>We create mattresses by looking beyond what feels comfortable for a moment, to understand how every material, layer and detail supports better sleep over time.</p>
+
+    <h2 class="about-section-title">Our Story</h2>
+    <p class="about-lede">It began with a quiet frustration.</p>
+    <p>Foamico was born from years of working closely with foam materials and manufacturing, and from seeing the mattress industry from the inside.</p>
+    <p>We understood the materials, the processes and the difference between what was being marketed and what was actually being made. In an industry often driven by campaigns and persuasive promises, we believed the product itself deserved to come first.</p>
+    <p>That belief brought two brothers together to create Foamico: a premium sleep brand grounded in foam expertise, honest communication and a commitment to lasting comfort.</p>
+    <p class="about-lede">Not built around a manufactured story. Built around product truth.</p>
+
+    <h2 class="about-section-title">What Makes Foamico Different</h2>
+    <p class="about-lede">What feels simple is carefully engineered.</p>
+    <p>A mattress may appear simple from the outside, but its performance depends on numerous decisions beneath the surface, from the materials and foam densities to the balance of pressure relief, support and recovery.</p>
+    <p>At Foamico, every layer is selected with a clear purpose. We combine manufacturing knowledge with human-centred thinking to create comfort that feels natural, balanced and dependable.</p>
+    <p class="about-lede">That is what we call Engineered Comfort.</p>
+
+    <div class="about-quote">
+        <p>&ldquo;We build German-<span class="kiwi-word">engineered</span> comfort so every Indian sleeps, sits and rests better.&rdquo;</p>
+        <span>Rahul Mukim &amp; Kunal Mukim &middot; The Founders</span>
+    </div>
+</section>
+
+{% schema %}
+{ "name": "About page", "settings": [] }
+{% endschema %}

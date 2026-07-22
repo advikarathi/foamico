@@ -1,0 +1,30 @@
+<section class="section">
+    <div class="wrap">
+        <div class="section-head">
+            <h1>{{ collection.title }}</h1>
+            {% if collection.description != blank %}<p>{{ collection.description }}</p>{% endif %}
+        </div>
+        <div class="product-grid">
+            {% for product in collection.products %}
+                <a class="product-card" href="{{ product.url }}">
+                    <div class="product-media">
+                        {% if product.featured_image %}{{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: product.title }}{% endif %}
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">{{ product.title }}</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">{{ product.price_min | money }}</span>
+                            {% if product.compare_at_price_max > product.price_max %}
+                                <span class="product-price-strike">{{ product.compare_at_price_max | money }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{ "name": "Collection", "settings": [] }
+{% endschema %}

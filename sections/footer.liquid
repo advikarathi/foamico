@@ -1,0 +1,58 @@
+<footer id="footer">
+    <div class="wrap footer-newsletter">
+        <h2>Subscribe to our emails</h2>
+        <p>Sleep tips, new ranges, and offers — straight to your inbox.</p>
+        <form class="footer-form" onsubmit="return false;">
+            <input type="email" placeholder="Your email" aria-label="Email address">
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+    <div class="wrap footer-grid">
+        <div class="footer-col">
+            <h4>Mattresses</h4>
+            <ul>
+                <li><a href="/products/sova-luxury-mattress">Sova</a></li>
+                <li><a href="/products/ultima-luxury-mattress">Ultima</a></li>
+                <li><a href="/products/luma-classic-mattress">Luma</a></li>
+                <li><a href="/products/resto-classic-mattress">Resto</a></li>
+                <li><a href="/products/riva-1000-mattress">Riva</a></li>
+                <li><a href="{{ pages.mattresses.url | default: '/pages/mattresses' }}#compare">Compare</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="{{ pages.about.url | default: '/pages/about' }}">About</a></li>
+                <li><a href="{{ routes.root_url }}#stores">Showroom</a></li>
+                <li><a href="{{ pages.contact.url | default: '/pages/contact' }}">Contact</a></li>
+                <li><a href="{{ routes.root_url }}#stores">Find a Store</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="#">Warranty</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Shipping</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Foamico</h4>
+            <p style="font-size:13.5px;color:rgba(255,255,255,.75);max-width:26ch;">Premium sleep, thoughtfully engineered.</p>
+        </div>
+    </div>
+    <div class="footer-base">© {{ 'now' | date: '%Y' }} FOAMICO · From the house of LPPL. All rights reserved.</div>
+</footer>
+
+{% render 'whatsapp-float' %}
+{% render 'chat-widget' %}
+{% render 'form-modal' %}
+{% render 'newsletter-modal' %}
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": []
+}
+{% endschema %}

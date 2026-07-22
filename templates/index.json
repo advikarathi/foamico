@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "hero": { "type": "home-hero" },
+    "why": { "type": "home-why" },
+    "categories": { "type": "home-categories" },
+    "sleep_position_test": { "type": "home-sleep-position-test" },
+    "matrix": { "type": "home-mattress-matrix" },
+    "testimonials": { "type": "home-testimonials" },
+    "founders": { "type": "home-founders" },
+    "showroom_cta": { "type": "home-showroom-cta" }
+  },
+  "order": ["hero", "why", "categories", "sleep_position_test", "matrix", "testimonials", "founders", "showroom_cta"]
+}

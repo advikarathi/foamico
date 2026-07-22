@@ -1,0 +1,59 @@
+<section class="section">
+    <div class="wrap">
+        <div class="section-head reveal">
+            <h2>Loved by Sleepers Everywhere</h2>
+            <p>Real comfort stories from people who tried Foamico at home and in-store.</p>
+        </div>
+        <div class="testimonial-carousel reveal">
+            <div class="testimonial-track" data-testimonial-track>
+                {% for block in section.blocks %}
+                    <div class="testimonial-card surface-card">
+                        <div class="testimonial-media" data-testimonial-media>
+                            <video class="testimonial-video" data-testimonial-video poster="{{ block.settings.poster | asset_url }}" preload="none" playsinline>
+                                <source src="{{ block.settings.video | asset_url }}" type="video/mp4">
+                            </video>
+                            <button class="testimonial-play" type="button" data-testimonial-play aria-label="Play video testimonial from {{ block.settings.name }}.">
+                                <svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4z"></path></svg>
+                            </button>
+                        </div>
+                        <div class="testimonial-body">
+                            <p class="testimonial-quote">{{ block.settings.quote }}</p>
+                            <div class="testimonial-name">{{ block.settings.name }} <span>{{ block.settings.city }}</span></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <button class="testimonial-nav testimonial-nav--prev" type="button" data-testimonial-prev aria-label="Previous testimonial">
+                <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"></path></svg>
+            </button>
+            <button class="testimonial-nav testimonial-nav--next" type="button" data-testimonial-next aria-label="Next testimonial">
+                <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"></path></svg>
+            </button>
+            <div class="testimonial-dots" data-testimonial-dots></div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Video testimonials",
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Name" },
+        { "type": "text", "id": "city", "label": "City" },
+        { "type": "textarea", "id": "quote", "label": "Quote (optional)" },
+        { "type": "text", "id": "video", "label": "Video asset filename (in assets/)" },
+        { "type": "text", "id": "poster", "label": "Poster image asset filename (in assets/)" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "testimonial", "settings": { "name": "Raghav K.", "city": "Delhi", "quote": "", "video": "testimonial-raghav-k-delhi.mp4", "poster": "testimonial-raghav-k-delhi-poster.jpg" } }
+    ]
+  }
+}
+{% endschema %}

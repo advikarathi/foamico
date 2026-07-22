@@ -1,0 +1,40 @@
+/* FOAMICO — pillows collection grid styles (hero, filter tags, sort select, product
+   cards). .product-grid/.product-card/.product-media/.product-body/.product-name are
+   already global (theme.css) — this only adds the pillow-grid-specific rules that
+   aren't part of the shared product-card look. Loaded only on the pillows collection. */
+
+.pillow-hero { background: var(--ms-paper); padding: 64px 0 48px; border-bottom: 1px solid var(--ms-line); }
+.pillow-hero h1 { font-size: clamp(32px, 5vw, 52px); margin-bottom: 14px; }
+.pillow-hero p { max-width: 60ch; font-size: 16px; }
+
+.pillow-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.pillow-sort { display: flex; margin-top: 18px; }
+
+.sort-select-wrap { position: relative; display: inline-flex; align-items: center; }
+.sort-select-wrap::after { content: ''; position: absolute; right: 16px; width: 8px; height: 8px; border-right: 1.5px solid var(--ms-navy-soft); border-bottom: 1.5px solid var(--ms-navy-soft); transform: rotate(45deg); pointer-events: none; }
+.sort-select { appearance: none; -webkit-appearance: none; padding: 11px 40px 11px 18px; border-radius: 999px; border: 1px solid var(--ms-line); background: var(--ms-white); color: var(--ms-navy); font-family: var(--ms-font-body); font-size: 13px; font-weight: 600; cursor: pointer; transition: border-color .15s ease; }
+.sort-select:hover, .sort-select:focus-visible { border-color: var(--ms-teal); }
+
+.pillow-tags button { padding: 9px 16px; border-radius: 999px; background: var(--ms-white); border: 1px solid var(--ms-line); font-family: var(--ms-font-body); font-size: 13px; font-weight: 600; color: var(--ms-navy); cursor: pointer; transition: background .15s ease, border-color .15s ease, color .15s ease; }
+.pillow-tags button:hover { border-color: var(--ms-teal); }
+.pillow-tags button[aria-pressed="true"] { background: var(--ms-teal-deep); border-color: var(--ms-teal-deep); color: var(--ms-white); }
+
+.product-card.is-hidden { display: none; }
+
+.media-badge { position: absolute; top: 14px; left: 14px; display: inline-flex; align-items: center; gap: 5px; background: rgba(63, 94, 18, .92); color: var(--ms-white); font-family: var(--ms-font-head); font-weight: 700; font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; padding: 6px 11px; border-radius: 999px; }
+
+.product-feel { font-size: 12px; font-weight: 700; color: var(--ms-teal-deep); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
+.product-rating { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--ms-navy-soft); margin-bottom: 10px; }
+.product-rating .stars { color: var(--ms-star); letter-spacing: 1px; font-size: 13px; }
+.product-desc { font-size: 13.5px; color: var(--ms-navy-soft); margin-bottom: 16px; }
+
+.product-price-row { display: flex; align-items: baseline; gap: 10px; margin-top: auto; margin-bottom: 14px; }
+.product-price { font-family: var(--ms-font-head); font-weight: 800; font-size: 1.25rem; color: var(--ms-charcoal); }
+.product-price-strike { color: var(--ms-sand); text-decoration: line-through; font-size: .85rem; }
+.product-discount { font-size: 12px; font-weight: 700; color: var(--ms-teal-deep); }
+
+.product-shop-btn { display: block; text-align: center; padding: 12px; border-radius: var(--ms-radius-pill); background: var(--ms-teal-deep); color: var(--ms-white); font-family: var(--ms-font-head); font-weight: 700; font-size: 13.5px; letter-spacing: .04em; text-transform: uppercase; transition: filter .2s; border: none; cursor: pointer; width: 100%; }
+.product-shop-btn:hover { filter: brightness(1.12); }
+
+.pillow-empty-note { text-align: center; padding: 40px 0 0; font-size: 14px; color: var(--ms-navy-soft); }
+.pillow-empty-note a { color: var(--ms-teal-deep); text-decoration: underline; }

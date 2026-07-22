@@ -1,0 +1,15 @@
+{% comment %} Usage: {% render 'size-guide', product: product %} — identical 4-size grid across all mattress products. {% endcomment %}
+<section class="section" id="sizes">
+    <div class="wrap">
+        <div class="section-head reveal">
+            <h2>Find your fit</h2>
+        </div>
+        <div class="size-cards">
+            <div class="scard reveal" style="transition-delay:0ms;"><div class="box" style="width:54px;height:96px"></div><h3>Single</h3><p>72" × 36"<br>Perfect for one</p></div>
+            <div class="scard reveal" style="transition-delay:80ms;"><div class="box" style="width:72px;height:96px"></div><h3>Double</h3><p>72" × 48"<br>Roomy for one, cosy for two</p></div>
+            <div class="scard reveal" style="transition-delay:160ms;"><div class="box" style="width:88px;height:102px"></div><h3>Queen</h3><p>78" × 60"<br>Our most popular size</p></div>
+            <div class="scard reveal" style="transition-delay:240ms;"><div class="box" style="width:104px;height:102px"></div><h3>King</h3><p>78" × 72"<br>Space for the whole family</p></div>
+        </div>
+        <p class="custom-note">Need a non-standard size? We make custom dimensions too — <a href="https://wa.me/{{ settings.whatsapp_number }}?text=Hi%20Foamico%2C%20I%27d%20like%20to%20learn%20about%20a%20customised%20{{ product.title | url_param_escape }}%20in%20a%20non-standard%20size." target="_blank" rel="noopener">talk to us</a>.</p>
+    </div>
+</section>

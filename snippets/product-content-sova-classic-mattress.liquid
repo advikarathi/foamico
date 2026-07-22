@@ -1,0 +1,192 @@
+{% comment %} Bespoke content for the Sova Classic Mattress product — layer diagram, comfort
+   scale, feature cards, comparison table, testimonial, size guide, FAQ. Ported verbatim
+   from sova-classic.html. Rendered by sections/main-product.liquid via two parts: 'spec' (inside
+   the buy panel) and 'body' (the "Inside the Sova" section onward). {% endcomment %}
+
+{% case part %}
+
+{% when 'spec' %}
+    <div class="spec-mini">
+        <div><b>Thickness</b>6"</div>
+        <div><b>Comfort Scale</b>Firm</div>
+        <div><b>Best for</b>Back &amp; combination sleepers</div>
+    </div>
+
+{% when 'body' %}
+    <section class="story section--dark">
+        <blockquote>Obsessed with mattresses, <em>so you can be obsessed with sleep.</em></blockquote>
+        <p>Every Sova Classic fuses traditional craftsmanship with dependable foam technology — certified foams, precision quilting, and a layer stack we've refined year after year, backed by a 15-year warranty.</p>
+    </section>
+
+    <section class="section" id="inside">
+        <div class="wrap">
+            <div class="section-head reveal" style="margin-bottom:0;text-align:left;max-width:620px;margin-left:0;">
+                <h2>Five layers of engineered comfort</h2>
+                <p>Tap a layer to see what it does. Sova Classic keeps the comfort stack simple — Plush Core Latex foam above the same trusted Posture Bond orthopedic core used across the whole Sova range.</p>
+            </div>
+
+            <div class="layers-grid">
+                <svg class="layer-svg" viewBox="0 0 520 424" role="img" aria-label="Cross-section of the Sova Classic mattress showing five layers">
+                    <g id="slabA" class="slab" data-layer="A">
+                        <path d="M30 44 Q30 22 66 22 L454 22 Q490 22 490 44 L490 58 L30 58 Z" fill="#F6F8F1" stroke="#95C12B" stroke-width="2"/>
+                        <path d="M56 36 q13 -6 26 0 M102 36 q13 -6 26 0 M148 36 q13 -6 26 0 M194 36 q13 -6 26 0 M240 36 q13 -6 26 0 M286 36 q13 -6 26 0 M332 36 q13 -6 26 0 M378 36 q13 -6 26 0 M424 36 q13 -6 26 0" stroke="#95C12B" stroke-width="1.3" fill="none" opacity=".6"/>
+                        <text x="12" y="46">A</text>
+                    </g>
+                    <g id="slabB" class="slab" data-layer="B">
+                        <rect x="30" y="62" width="460" height="40" fill="#E4F2C5" stroke="#95C12B" stroke-width="2"/>
+                        <path d="M50 82 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12 l20 -12 l20 12" stroke="#95C12B" stroke-width="1.2" fill="none" opacity=".6"/>
+                        <text x="12" y="88">B</text>
+                    </g>
+                    <g id="slabC" class="slab" data-layer="C">
+                        <rect x="30" y="106" width="460" height="50" fill="#F6F8F1" stroke="#9D9E9E" stroke-width="2"/>
+                        <g stroke="#6B6B6B" stroke-width="1.4" fill="none" opacity=".6">
+                            <circle cx="80" cy="131" r="9"/><circle cx="150" cy="131" r="9"/><circle cx="220" cy="131" r="9"/><circle cx="290" cy="131" r="9"/><circle cx="360" cy="131" r="9"/><circle cx="430" cy="131" r="9"/>
+                        </g>
+                        <text x="12" y="137">C</text>
+                    </g>
+                    <g id="slabD" class="slab" data-layer="D">
+                        <rect x="30" y="160" width="460" height="168" fill="#3F5E12" stroke="#1A1A1A" stroke-width="2"/>
+                        <g stroke="#95C12B" stroke-width="1.6" fill="none" opacity=".8">
+                            <path d="M70 180 q-9 13 0 26 q9 13 0 26 q-9 13 0 26 q9 13 0 26 M140 180 q-9 13 0 26 q9 13 0 26 q-9 13 0 26 q9 13 0 26 M210 180 q-9 13 0 26 q9 13 0 26 q-9 13 0 26 q9 13 0 26 M280 180 q-9 13 0 26 q9 13 0 26 q-9 13 0 26 q9 13 0 26 M350 180 q-9 13 0 26 q9 13 0 26 q-9 13 0 26 q9 13 0 26 M420 180 q-9 13 0 26 q9 13 0 26 q-9 13 0 26 q9 13 0 26"/>
+                        </g>
+                        <text x="12" y="192" fill="#FEFEFE">D</text>
+                    </g>
+                    <g id="slabE" class="slab" data-layer="E">
+                        <path d="M30 332 L490 332 L490 356 Q490 380 450 380 L70 380 Q30 380 30 356 Z" fill="#F6F8F1" stroke="#95C12B" stroke-width="2"/>
+                        <path d="M60 358 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10 l16 -10 l16 10" stroke="#95C12B" stroke-width="1.1" fill="none" opacity=".6"/>
+                        <text x="12" y="362">E</text>
+                    </g>
+                </svg>
+
+                <div id="layerList">
+                    <div class="layer-item active" data-layer="A" tabindex="0" role="button">
+                        <h3><span class="letter">A.</span> Super Plush Luxeknit Fabric</h3>
+                        <p>Premium stretch-knit fabric offering breathability, durability, and a luxurious soft touch.</p>
+                    </div>
+                    <div class="layer-item" data-layer="B" tabindex="0" role="button">
+                        <h3><span class="letter">B.</span> Aeroflex Foam Quilting</h3>
+                        <p>Cushioned comfort layer offering enhanced softness and gentle contouring support.</p>
+                    </div>
+                    <div class="layer-item" data-layer="C" tabindex="0" role="button">
+                        <h3><span class="letter">C.</span> Plush Core Latex Foam</h3>
+                        <p>Conforms to body contours, reducing pressure points and enhancing personalized comfort.</p>
+                    </div>
+                    <div class="layer-item" data-layer="D" tabindex="0" role="button">
+                        <h3><span class="letter">D.</span> Posture Bond Foam</h3>
+                        <p>High-density bonded foam delivering firm orthopedic support and superior durability.</p>
+                    </div>
+                    <div class="layer-item" data-layer="E" tabindex="0" role="button">
+                        <h3><span class="letter">E.</span> Soft Foam with Quilting</h3>
+                        <p>Additional cushioning at the base for enhanced comfort and a cozy sleeping experience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="firmness">
+                <h3>Where the Sova Classic sits on our comfort scale</h3>
+                <div class="scale"><div class="scale-marker" style="left:70%;" title="Firm"></div></div>
+                <div class="scale-labels"><span>Ultra plush</span><b>Sova Classic — firm</b><span>Extra firm</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--paper">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <h2>Deep, undisturbed sleep — by design</h2>
+            </div>
+            <div class="feature-cards">
+                <article class="fcard reveal" style="transition-delay:0ms;">
+                    <div class="fcard-media"><img src="{{ 'product-sova-angle4.jpg' | asset_url }}" alt="Close-up of the Sova's Luxeknit geometric cover and tufting" loading="lazy"></div>
+                    <div class="fcard-body">
+                        <h3>Luxeknit Breathability</h3>
+                        <p>A precision-tufted stretch-knit cover that circulates air all night — made for Indian summers, not against them.</p>
+                    </div>
+                </article>
+                <article class="fcard reveal" style="transition-delay:80ms;">
+                    <div class="fcard-media"><img src="{{ 'product-sova-angle2.jpg' | asset_url }}" alt="Side profile of the Sova Classic showing its layered construction" loading="lazy"></div>
+                    <div class="fcard-body">
+                        <h3>Posture Bond Core</h3>
+                        <p>High-density orthopedic support beneath the plush layers keeps your spine aligned in every sleeping position.</p>
+                    </div>
+                </article>
+                <article class="fcard reveal" style="transition-delay:160ms;">
+                    <div class="fcard-media"><img src="{{ 'product-sova-angle3.jpg' | asset_url }}" alt="Front view of the Sova Classic mattress with plush pillow top" loading="lazy"></div>
+                    <div class="fcard-body">
+                        <h3>Plush Core Comfort</h3>
+                        <p>A single Plush Core Latex layer keeps the everyday Sova simple — supportive comfort without unnecessary extras.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="compare">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <h2>Which Sova is yours?</h2>
+            </div>
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr><th>Feature</th><th class="hl">Classic</th><th>Premium</th><th>Luxury</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th>Top Fabric</th><td class="hl">Super Plush Luxeknit Fabric</td><td>Super Plush Luxeknit Fabric</td><td>Super Plush Luxeknit Fabric</td></tr>
+                        <tr><th>Comfort Layer</th><td class="hl">Aeroflex Foam Quilting</td><td>Aeroflex Foam Quilting</td><td>Aeroflex Foam Quilting</td></tr>
+                        <tr><th>Body Support Layer</th><td class="hl">Plush Core Latex Foam</td><td>Cosmic Byte Foam + Plush Core Latex Foam</td><td>Memorest Foam + Cosmic Byte Foam + Plush Core Latex Foam</td></tr>
+                        <tr><th>Main Support</th><td class="hl">Posture Bond Foam</td><td>Posture Bond Foam</td><td>Posture Bond Foam</td></tr>
+                        <tr><th>Bottom Layer</th><td class="hl">Soft Foam with Quilting</td><td>Soft Foam with Quilting</td><td>Soft Foam with Quilting</td></tr>
+                        <tr><th>Thickness</th><td class="hl">6"</td><td>6.5"</td><td>7"</td></tr>
+                        <tr><th>Comfort Scale</th><td class="hl">Firm</td><td>Medium Firm</td><td>Medium</td></tr>
+                        <tr><th>Warranty</th><td class="hl">15 Years + 5 Years Full Replacement*</td><td>15 Years + 5 Years Full Replacement*</td><td>15 Years + 5 Years Full Replacement*</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="compare-note">*As per Foamico warranty terms. Not sure which one to pick? <a href="{{ pages.mattresses.url | default: '/pages/mattresses' }}#compare">Use our comparison tool</a> or visit our store to try them in person.</p>
+        </div>
+    </section>
+
+    <section class="section section--paper">
+        <div class="wrap" style="text-align:center;">
+            <span class="stars reveal" aria-hidden="true">★★★★★</span>
+            <div class="quote-banner reveal" style="margin-top:16px;">
+                <blockquote>"The first mattress where I stopped noticing the mattress. My back pain eased within two weeks, and I haven't slept past an alarm since — because I don't need to."</blockquote>
+                <cite>— Verified buyer, New Delhi</cite>
+            </div>
+        </div>
+    </section>
+
+    {% render 'size-guide', product: product %}
+
+    <section class="section section--paper" id="faq">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <h2>Mattress FAQs</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">What makes the Classic different from the Premium and Luxury?<span class="plus">+</span></button>
+                    <div class="faq-a"><p>All three share the Luxeknit cover, Aeroflex quilting, and Posture Bond orthopedic core. The Classic keeps a single Plush Core Latex comfort layer, while Premium adds Cosmic Byte Foam and Luxury adds both Cosmic Byte and Memorest foams for a deeper comfort zone.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">Does a plush mattress mean less back support?<span class="plus">+</span></button>
+                    <div class="faq-a"><p>No — softness and support live in different layers. The plush comfort foams are what you feel; the high-density Posture Bond foam underneath is what holds your spine in alignment.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">Will it sleep hot?<span class="plus">+</span></button>
+                    <div class="faq-a"><p>The Luxeknit stretch fabric and quilted comfort layers are chosen for breathability, so air keeps moving through the sleep surface all night.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">What does the warranty cover?<span class="plus">+</span></button>
+                    <div class="faq-a"><p>Every Sova comes with a 15-year warranty, including 5 years of full replacement*, covering manufacturing defects under normal use. Full terms are available from our team.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" aria-expanded="false">Can I try it before buying?<span class="plus">+</span></button>
+                    <div class="faq-a"><p>Yes — visit our store in Ghitorni, New Delhi to try the full Sova range in person, or call us at +91 74969 82886 (Mon–Sat, 9 AM–6 PM) and our sleep experts will help you choose.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endcase %}
