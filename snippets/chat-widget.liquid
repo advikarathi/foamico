@@ -2,7 +2,11 @@
     <div class="chat-panel" data-chat-panel role="dialog" aria-label="Foamico chat assistant">
         <div class="chat-header">
             <div class="chat-header-brand">
-                {{ settings.logo | image_url: width: 240 | image_tag: width: 240, height: 240, alt: '', loading: 'lazy' }}
+                {% if settings.logo %}
+                    {{ settings.logo | image_url: width: 240 | image_tag: width: 240, height: 240, alt: '', loading: 'lazy' }}
+                {% else %}
+                    <img src="{{ 'logo.jpeg' | asset_url }}" width="240" height="240" alt="" loading="lazy">
+                {% endif %}
                 <div><strong>Foamico Assistant</strong><span>Typically replies instantly</span></div>
             </div>
             <button class="chat-close-btn" type="button" data-chat-close aria-label="Close chat">&times;</button>
