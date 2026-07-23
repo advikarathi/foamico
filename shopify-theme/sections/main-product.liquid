@@ -38,6 +38,7 @@
                 </div>
                 <div class="thumbs" role="tablist" aria-label="Product photos">
                     <button class="thumb" role="tab" aria-selected="true" data-src="{{ 'lifestyle-' | append: line | append: '.jpg' | asset_url }}" data-alt="{{ product.title }} — lifestyle in a bedroom setting"><img src="{{ 'lifestyle-' | append: line | append: '.jpg' | asset_url }}" alt=""></button>
+                    <button class="thumb" role="tab" aria-selected="false" data-src="{{ product.handle | append: '.png' | asset_url }}" data-alt="{{ product.title }} — product shot"><img src="{{ product.handle | append: '.png' | asset_url }}" alt=""></button>
                     <button class="thumb" role="tab" aria-selected="false" data-src="{{ 'product-' | append: line | append: '-main.jpg' | asset_url }}" data-alt="{{ product.title }} — main view"><img src="{{ 'product-' | append: line | append: '-main.jpg' | asset_url }}" alt=""></button>
                     {% for i in (1..angle_count) %}
                         {% assign angle_asset = 'product-' | append: line | append: '-angle' | append: i | append: '.jpg' | asset_url %}
