@@ -13,7 +13,11 @@
     <header>
         <div class="wrap header-row">
             <a class="brand" href="{{ routes.root_url }}">
-                {{ settings.logo | image_url: width: 240 | image_tag: width: 240, height: 240, alt: shop.name }}
+                {% if settings.logo %}
+                    {{ settings.logo | image_url: width: 240 | image_tag: width: 240, height: 240, alt: shop.name }}
+                {% else %}
+                    <img src="{{ 'logo.jpeg' | asset_url }}" width="240" height="240" alt="{{ shop.name }}">
+                {% endif %}
             </a>
             <ul class="header-nav" id="primary-nav" data-header-nav>
                 <li><a href="{{ routes.root_url }}">Home</a></li>
