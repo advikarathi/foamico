@@ -3,7 +3,7 @@
    chrome already covered by theme.css. Loaded only on templates/page.about.json. */
 
 .about-hero { position: relative; height: 62vh; min-height: 420px; max-height: 640px; overflow: hidden; }
-.about-hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.about-hero video, .about-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .about-hero-overlay { position: absolute; inset: 0; background: rgba(26, 26, 26, .4); display: flex; align-items: center; justify-content: center; }
 .about-hero-overlay h1 { color: var(--ms-white); font-size: clamp(32px, 5vw, 52px); }
 
